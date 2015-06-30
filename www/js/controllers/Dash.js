@@ -2,13 +2,14 @@ angular.module('starter.controllers')
 .controller('DashCtrl', ['$scope', '$state', '$ionicPopup', 'entryService', 'preferenceService', '$stateParams',
 	function($scope, $state, $ionicPopup, entryService, preferenceService, $stateParams) {
 
+	var threadId = $stateParams.threadId;
 	$scope.entries = entryService.get($stateParams.threadId);
 	$scope.dateFormat = preferenceService.getDateFormat();
 
 
 	$scope.quoteEntry = function (index) {
-		entryService.selectEntry(index);
-		$state.go('tab.newEntry');
+		entryService.selectEntry(threadId, index);
+		$state.go('forum.thread.newEntry');
 	};
 
 	$scope.confirmDelete = function (index){
@@ -19,7 +20,7 @@ angular.module('starter.controllers')
 		confirmPopup.then(function(res) {
 			if(res) {
 				console.log("Deleting entry " + index);
-				entryService.deleteEntry(index);
+				entryService.deleteEntry(threadId, index);
 			} else {
 
 			}

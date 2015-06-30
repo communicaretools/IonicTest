@@ -8,14 +8,14 @@ angular.module('starter.controllers')
 	}
 
 	$scope.cancel = function () {
-		$state.go('tab.dash');
+		$state.go('forum.thread.dash');
 	};
 
 	$scope.addEntry = function(entry) {
 		var newEntry = {};
 		newEntry.content = entry;
 		newEntry.quoteText = $scope.quoteText;
-		entryService.add(newEntry);
-		$state.go('tab.dash');
+		entryService.add($scope.threadId, newEntry);
+		$state.go('forum.thread.dash');
 	};
 }]);

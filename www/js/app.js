@@ -34,7 +34,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   .state('forum', {
     url: '/forum',
-    abstract: true,
     templateUrl: 'templates/menu.html',
     controller: 'MenuCtrl'
   })
@@ -51,7 +50,53 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 
 
-  .state('forum.login', {
+
+
+  .state('forum.thread', {
+    url: '/thread/:threadId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/test.html',
+        controller: 'ThreadCtrl'
+      }
+    }
+  })
+
+  // Each tab has its own nav history stack:
+
+  .state('forum.thread.dash', {
+    cache: false,
+    url: '/dash',
+    views: {
+      'tab-dash': {
+        templateUrl: 'templates/tab-dash.html',
+        controller: 'DashCtrl'
+      }
+    }
+  })
+
+  .state('forum.thread.newEntry', {
+      cache: false,
+      url: '/newEntry',
+      views: {
+        'tab-newEntry': {
+          templateUrl: 'templates/newEntry.html',
+          controller: 'EntryCtrl'
+        }
+      }
+    })
+
+  .state('forum.account', {
+    url: '/account',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/tab-account.html',
+        controller: 'AccountCtrl'
+      }
+    }
+  })
+
+    .state('forum.login', {
     url: '/login',
     views: {
       'menuContent': {
@@ -64,49 +109,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
-  })
-
-  .state('forum.test', {
-    url: '/test',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/test.html'
-      }
-    }
-  })
-
-  // Each tab has its own nav history stack:
-/*
-  .state('forum.threads.tab.dash', {
-    cache: false,
-    url: '/dash/:threadId',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
-
-  .state('tab.newEntry', {
-      cache: false,
-      url: '/newEntry',
-      views: {
-        'tab-newEntry': {
-          templateUrl: 'templates/newEntry.html',
-          controller: 'EntryCtrl'
-        }
-      }
-    })
-*/
-  .state('forum.login.tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
-      }
-    }
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('forum/threads');
