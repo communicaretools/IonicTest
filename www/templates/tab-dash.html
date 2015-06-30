@@ -1,0 +1,18 @@
+<ion-view view-title="Forum">
+  <ion-content padding="true">
+    <ion-list ng-repeat="entry in entries">
+      <ion-item>
+        <b>{{entry.date | date: dateFormat }}</b>
+        <p ng-if="entry.quoteText" style ="background-color: #f5f5f5;
+  padding: .5em 1em;">{{entry.quoteText}}</pre>
+        <p>{{entry.content}}<p>
+        <ion-option-button class="button-positive" ng-click="quoteEntry($index)">
+          Siter
+        </ion-option-button>
+        <ion-option-button class="button-assertive" ng-click="confirmDelete($index)">
+          Slett
+        </ion-option-button>
+        </ion-item>
+      </ion-list>
+  </ion-content>
+</ion-view>
