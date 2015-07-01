@@ -34,7 +34,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             // setup an abstract state for the tabs directive
             .state('forum', {
                 url: '/forum',
-                cache:false,
+                cache: false,
+                abstract: true,
                 templateUrl: 'templates/menu.html',
                 controller: 'MenuCtrl'
             })

@@ -1,13 +1,9 @@
-<ion-side-menus enable-menu-with-back-views="false">
+<ion-side-menus enable-menu-with-back-views="true">
   <ion-side-menu-content>
     <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-
-      <ion-nav-buttons side="left">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-        </button>
-      </ion-nav-buttons>
+        <ion-nav-buttons side="left">
+            <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+        </ion-nav-buttons>
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
@@ -16,18 +12,19 @@
     <ion-header-bar class="bar-stable">
       <h1 class="title">Meny</h1>
     </ion-header-bar>
-    <ion-content>
-      <ion-list>
-        <ion-item menu-close ui-sref="forum.login">
-          Logg inn
-        </ion-item>
-        <ion-item menu-close ui-sref="forum.threads">
-          Forum tråder
-        </ion-item>
-        <ion-item ng-if="isLoggedIn" menu-close ui-sref="forum.account">
-          Kontoinnstillinger
-        </ion-item>
-      </ion-list>
-    </ion-content>
+      <ion-content>
+          <p ng-if="!isLoggedIn">Logg inn for å få tilgang til funksjonalitet</p>
+          <ion-list>
+              <ion-item ng-if="isLoggedIn" menu-close ui-sref="forum.threads">
+                  Forum tråder
+              </ion-item>
+              <ion-item ng-if="isLoggedIn" menu-close ui-sref="forum.account">
+                  Kontoinnstillinger
+              </ion-item>
+              <ion-item ng-if="isLoggedIn" menu-close ui-sref="forum.login">
+                  Logg ut
+              </ion-item>
+          </ion-list>
+      </ion-content>
   </ion-side-menu>
 </ion-side-menus>
