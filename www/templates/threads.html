@@ -2,7 +2,7 @@
   <ion-content>
     <ion-list>
       <ion-item ng-repeat="thread in threads" ui-sref="forum.thread.dash({threadId: {{thread.id}}})">
-        {{thread.name}}
+        {{thread.name}} ({{thread["entry-count"]}})
       </ion-item>
     </ion-list>
   </ion-content>
