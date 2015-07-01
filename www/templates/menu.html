@@ -24,7 +24,7 @@
         <ion-item menu-close ui-sref="forum.threads">
           Forum tråder
         </ion-item>
-        <ion-item menu-close ui-sref="forum.account">
+        <ion-item ng-if="isLoggedIn" menu-close ui-sref="forum.account">
           Kontoinnstillinger
         </ion-item>
       </ion-list>

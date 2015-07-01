@@ -1,16 +1,21 @@
 angular.module('starter.controllers')
-.controller('LoginCtrl', function ($scope, $http, $log, $state, ApiEndpoint) {
+.controller('LoginCtrl', ["$scope", "$log", "$state", "loginManager", function ($scope, $log, $state, loginManager) {
+    var onLoginSuccess = function (result) {
+        $log.info(result);
+        $state.go('forum.threads');
+    };
+    var onLogoutSuccess = function() {
+        loginManager.options(options)
+    };
+    var options = function (data) {
+        $scope.options = data;
+    };
+    loginManager.options(options);
+
     $scope.login = function (username, password) {
-        $http.post(ApiEndpoint.url + "/login", { username: username, password: password }).then(
-            function (result) {
-                $log.info(result);
-                $state.go('forum');
-            },
-            function () { });
+        loginManager.login(username, password, onLoginSuccess);
     };
     $scope.logout = function() {
-        $http.get(ApiEndpoint.url + "/logout").then(
-            function() {},
-            function() {});
+        loginManager.logout(onLogoutSuccess);
     };
-});
+}]);

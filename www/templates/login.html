@@ -1,14 +1,23 @@
 <ion-view view-title="Login">
     <ion-content>
-        <a ui-sref="forum.test">Logg inn her</a>
-        <label class="item item-input">Brukernavn</label>
-        <input type="text" ng-model="username" placeholder="[Brukernavn]" />
-        <label class="item item-input">Passord</label>
-        <input type="password" ng-model="password" placeholder="[Passord]" />
-        <div class="padding button-bar">
-            <button class="button button-positive" ng-click="login(username, password)">
-                Logg inn
-            </button>
+        <div ng-hide="options.isLoggedIn">
+            <a ui-sref="forum.test">Logg inn her</a>
+            <label class="item item-input">Brukernavn</label>
+            <input type="text" ng-model="username" placeholder="[Brukernavn]"/>
+            <label class="item item-input">Passord</label>
+            <input type="password" ng-model="password" placeholder="[Passord]"/>
+            <div class="padding button-bar">
+                <button class="button button-positive" ng-click="login(username, password)">
+                    Logg inn
+                </button>
+            </div>
+        </div>
+        <div ng-show="options.isLoggedIn">
+            <div class="padding button-bar">
+                <button class="button button-positive" ng-click="logout()">
+                    Logg ut
+                </button>
+            </div>
         </div>
     </ion-content>
 </ion-view>

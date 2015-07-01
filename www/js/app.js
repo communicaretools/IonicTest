@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.infrastructure'])
     .constant("ApiEndpoint", {
         url: "http://localhost:8100/api"
     //url: "http://sps.rr-research.no/demo/connectwcp/webchoice/api"
@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             }
         });
     })
-    .config(function($stateProvider, $urlRouterProvider, $httpProvider) {
+    .config(function($stateProvider, $urlRouterProvider) {
 
         // Ionic uses AngularUI Router which uses the concept of states
         // Learn more here: https://github.com/angular-ui/ui-router
@@ -34,6 +34,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             // setup an abstract state for the tabs directive
             .state('forum', {
                 url: '/forum',
+                cache:false,
                 templateUrl: 'templates/menu.html',
                 controller: 'MenuCtrl'
             })
@@ -88,6 +89,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             })
             .state('forum.login', {
                 url: '/login',
+                cache: false,
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/login.html',
