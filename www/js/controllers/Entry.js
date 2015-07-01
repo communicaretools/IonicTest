@@ -1,9 +1,8 @@
 angular.module('starter.controllers')
-.controller('EntryCtrl', ['$scope', '$state', 'entryService' ,
-	function($scope, $state, entryService) {
+.controller('EntryCtrl', ['$scope', '$state', '$stateParams', 'entryService' ,
+	function($scope, $state, $stateParams, entryService) {
 	if(entryService.getSelected()){
 		$scope.quoteText = entryService.getSelected().content;
-		console.log($scope.quoteText);
 		entryService.selectEntry(-1);
 	}
 
@@ -15,7 +14,7 @@ angular.module('starter.controllers')
 		var newEntry = {};
 		newEntry.content = entry;
 		newEntry.quoteText = $scope.quoteText;
-		entryService.add($scope.threadId, newEntry);
+		entryService.add($stateParams.threadId, newEntry);
 		$state.go('forum.thread.dash');
 	};
 }]);
