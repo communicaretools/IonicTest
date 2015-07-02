@@ -2,13 +2,11 @@ angular.module('starter.services')
 	.factory('registrationService', ['$http', '$log', 'ApiEndpoint', function ($http, $log, ApiEndpoint) {
 	    var onError = function (e) {
 		    $log.error(e.msg);
-		};
-		
-	    var addSmiley = function (entry) {
+	    };
 
-		};
-	    var addDaily = function (entry) {
-
+	    var add = function (type, entry, onSuccess) {
+	        console.log(entry);
+	        $http.post(ApiEndpoint.url + "/register/" + type, entry).then(onSuccess, onError);
 	    };
 
 		var transform = function (list) {
@@ -30,8 +28,7 @@ angular.module('starter.services')
         }
 
 		return {
-		    "addSmiley": addSmiley,
-		    "addDaily": addDaily,
+		    "add": add,
 		    "getList": getList,
             "get": getReg
 		};
