@@ -1,24 +1,23 @@
 angular.module('starter.controllers')
     .controller('ThreadCtrl', [
-        '$scope', '$stateParams', '$http', '$log', 'ApiEndpoint', function ($scope, $stateParams, $http, $log, ApiEndpoint ) {
-            var onError = function (e) {
-                $log.error(e.msg);
-            };
-            var transform = function (entries) {
-                return entries.map(function(e) {
-                    var parts = e.links[0].href.split("/");
-                    var id = parts[parts.length - 1];
-                    return angular.extend(e, { "id": id });
+        '$scope', '$stateParams', '$state', '$ionicPopup', 'entryService', 'preferenceService', function ($scope, $stateParams, $state, $ionicPopup, entryService, preferenceService) {
+
+            var threadId = $stateParams.threadId;
+
+            var loadThread = function (id) {
+                entryService.get(id, function (result) {
+                    $scope.thread = result;
                 });
             };
-            var loadThread = function(id) {
-                $http.get(ApiEndpoint.url + "/forum/thread/" + id).then(function(result) {
-                    $scope.thread = result;
-                    $scope.thread.entries = transform(result.data["entries"]);
-                }, onError);
+
+            $scope.dateFormat = preferenceService.getDateFormat();
+
+            $scope.quoteEntry = function (entry) {
+                entryService.selectEntry(entry);
+                $state.go('forum.thread.newEntry');
             };
 
-            $scope.thread = {};
-            loadThread($stateParams.threadId);
+            $scope.thread = [];
+            loadThread(threadId);
         }
     ]);

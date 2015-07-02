@@ -1,9 +1,11 @@
 <ion-view view-title="Nytt innlegg">
   <ion-content class="padding">
-      <p ng-if="quoteText">Sitert tekst: <br/>
-          <b>
-            {{quoteText}}
-          </b>
+      <p ng-if="toQuote">
+          Sitert tekst: <br/>
+          <b>{{toQuote.author}}</b>
+          <i>
+              {{toQuote.content}}
+          </i>
       </p>
       <label class="item item-input">
         <textarea ng-model="entry" placeholder="Fortell om dagen din her..."></textarea>

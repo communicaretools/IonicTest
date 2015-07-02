@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.infrastructure'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.infrastructure', 'starter.filters'])
     .constant("ApiEndpoint", {
         url: "http://localhost:8100/api"
     //url: "http://sps.rr-research.no/demo/connectwcp/webchoice/api"
@@ -53,8 +53,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 cache: false,
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/test.html',
-                        controller: 'ThreadCtrl'
+                        templateUrl: 'templates/test.html'
                     }
                 }
             })
@@ -66,7 +65,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 views: {
                     'tab-dash': {
                         templateUrl: 'templates/tab-dash.html',
-                        controller: 'DashCtrl'
+                        controller: 'ThreadCtrl'
                     }
                 }
             })
