@@ -3,7 +3,7 @@ angular.module('starter.controllers')
     var onLoginSuccess = function (result) {
         $log.info(result);
         $scope.$emit("logInChange", true);
-        $state.go('forum.threads');
+        $state.go('home.forum');
     };
     var onLogoutSuccess = function () {
         $scope.$emit("logInChange", false);

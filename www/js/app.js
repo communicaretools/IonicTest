@@ -32,14 +32,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         $stateProvider
 
             // setup an abstract state for the tabs directive
-            .state('forum', {
-                url: '/forum',
+            .state('home', {
+                url: '/home',
                 cache: false,
                 abstract: true,
                 templateUrl: 'templates/menu.html',
                 controller: 'MenuCtrl'
             })
-            .state('forum.threads', {
+            .state('home.forum', {
                 url: '/threads',
                 views: {
                     'menuContent': {
@@ -48,47 +48,47 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                     }
                 }
             })
-            .state('forum.thread', {
+            .state('home.thread', {
                 url: '/thread/:threadId',
                 cache: false,
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/test.html'
+                        templateUrl: 'templates/thread.html'
                     }
                 }
             })
 
             // Each tab has its own nav history stack:
-            .state('forum.thread.dash', {
+            .state('home.thread.list', {
                 cache: false,
-                url: '/dash',
+                url: '/list',
                 views: {
-                    'tab-dash': {
-                        templateUrl: 'templates/tab-dash.html',
+                    'tab-list': {
+                        templateUrl: 'templates/tab-list.html',
                         controller: 'ThreadCtrl'
                     }
                 }
             })
-            .state('forum.thread.newEntry', {
+            .state('home.thread.newEntry', {
                 cache: false,
                 url: '/newEntry',
                 views: {
                     'tab-newEntry': {
-                        templateUrl: 'templates/newEntry.html',
+                        templateUrl: 'templates/tab-newEntry.html',
                         controller: 'EntryCtrl'
                     }
                 }
             })
-            .state('forum.account', {
+            .state('home.account', {
                 url: '/account',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/tab-account.html',
+                        templateUrl: 'templates/account.html',
                         controller: 'AccountCtrl'
                     }
                 }
             })
-            .state('forum.login', {
+            .state('home.login', {
                 url: '/login',
                 cache: false,
                 views: {
@@ -97,12 +97,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                         controller: 'LoginCtrl'
                     }
                 }
-            })
-            .state('forum.login.tab', {
-                url: '/tab',
-                abstract: true,
-                templateUrl: 'templates/tabs.html'
             });
         // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('forum/login');
+        $urlRouterProvider.otherwise('home/login');
     });

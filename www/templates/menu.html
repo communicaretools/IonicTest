@@ -15,13 +15,13 @@
       <ion-content>
           <p ng-if="!isLoggedIn">Logg inn for å få tilgang til funksjonalitet</p>
           <ion-list>
-              <ion-item ng-if="isLoggedIn" menu-close ui-sref="forum.threads">
-                  Forum tråder
+              <ion-item ng-if="isLoggedIn" menu-close ui-sref="home.forum">
+                  Forum
               </ion-item>
-              <ion-item ng-if="isLoggedIn" menu-close ui-sref="forum.account">
+              <ion-item ng-if="isLoggedIn" menu-close ui-sref="home.account">
                   Kontoinnstillinger
               </ion-item>
-              <ion-item ng-if="isLoggedIn" menu-close ui-sref="forum.login">
+              <ion-item ng-if="isLoggedIn" menu-close ui-sref="home.login">
                   Logg ut
               </ion-item>
           </ion-list>

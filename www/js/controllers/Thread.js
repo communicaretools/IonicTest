@@ -14,7 +14,7 @@ angular.module('starter.controllers')
 
             $scope.quoteEntry = function (entry) {
                 entryService.selectEntry(entry);
-                $state.go('forum.thread.newEntry');
+                $state.go('home.thread.newEntry');
             };
 
             $scope.thread = [];

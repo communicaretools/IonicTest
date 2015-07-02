@@ -8,7 +8,7 @@ angular.module('starter.controllers')
 	    }
 
 	    $scope.cancel = function () {
-	        $state.go('forum.thread.dash');
+	        $state.go('home.thread.list');
 	    };
 
 	    $scope.addEntry = function (entry) {
@@ -17,7 +17,7 @@ angular.module('starter.controllers')
 	            toQuote: $scope.toQuote
 	        };
 	        entryService.add($stateParams.threadId, newEntry, function () {
-	            $state.go('forum.thread.dash');
+	            $state.go('home.thread.list');
 	        });
 	    };
 	}]);
