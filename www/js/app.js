@@ -50,6 +50,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             })
             .state('forum.thread', {
                 url: '/thread/:threadId',
+                cache: false,
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/test.html',
