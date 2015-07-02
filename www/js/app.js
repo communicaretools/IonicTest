@@ -106,12 +106,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                     }
                 }
             })
-            .state('home.registration.new', {
+            .state('home.registration.newDaily', {
                 cache: false,
-                url: '/newEntry',
+                url: '/newDaily',
                 views: {
-                    'tab-new': {
-                        templateUrl: 'templates/tab-regNew.html',
+                    'tab-newDaily': {
+                        templateUrl: 'templates/tab-regNewDaily.html',
+                        controller: 'NewRegCtrl'
+                    }
+                }
+            })
+            .state('home.registration.newSmiley', {
+                cache: false,
+                url: '/newSmiley',
+                views: {
+                    'tab-newSmiley': {
+                        templateUrl: 'templates/tab-regNewSmiley.html',
                         controller: 'NewRegCtrl'
                     }
                 }

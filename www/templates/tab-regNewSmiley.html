@@ -1,0 +1,28 @@
+<ion-view view-title="Ny smiley registrering">
+    <ion-content class="has-header" padding="true">
+        <div class="list list-inset">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Har du det jææævlig? </span>
+                <input placeholder="Fyll inn her....." type="text" ng-model="newReg.text">
+            </label>
+            <label class="item">
+                <div class="item-content">
+                    Så bra
+                </div>
+                <div class="range range-positive">
+                    <i>0</i>
+                    <input max="12" min="1" value="6" type="range" ng-model="newReg.imageIndex">
+                    <i>10</i>
+                </div>
+            </label>
+        </div>
+        <div class="padding button-bar">
+            <button class="button button-positive" ng-click="sendRegistration('Smiley')">
+                Send inn
+            </button>
+            <button class="button button-negative" ui-sref="home.registration.list">
+                Avbryt
+            </button>
+        </div>
+    </ion-content>
+</ion-view>
