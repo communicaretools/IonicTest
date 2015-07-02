@@ -8,10 +8,10 @@
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.infrastructure', 'starter.filters'])
     .constant("ApiEndpoint", {
         url: "http://localhost:8100/api"
-    //url: "http://sps.rr-research.no/demo/connectwcp/webchoice/api"
+        //url: "http://sps.rr-research.no/demo/connectwcp/webchoice/api"
     })
-    .run(function($ionicPlatform) {
-        $ionicPlatform.ready(function() {
+    .run(function ($ionicPlatform) {
+        $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
             if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             }
         });
     })
-    .config(function($stateProvider, $urlRouterProvider) {
+    .config(function ($stateProvider, $urlRouterProvider) {
 
         // Ionic uses AngularUI Router which uses the concept of states
         // Learn more here: https://github.com/angular-ui/ui-router
@@ -39,6 +39,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 templateUrl: 'templates/menu.html',
                 controller: 'MenuCtrl'
             })
+            .state('home.registration', {
+                url: '/registration',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/registration.html'
+                    }
+                }
+            })
             .state('home.forum', {
                 url: '/threads',
                 views: {
@@ -50,7 +58,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             })
             .state('home.thread', {
                 url: '/thread/:threadId',
-                cache: false,
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/thread.html'
@@ -58,13 +65,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 }
             })
 
+            .state('home.registrationView', {
+                cache: false,
+                url: 'registration/:type/:regId',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/regView.html',
+                        controller: 'ViewRegCtrl'
+                    }
+                }
+            })
             // Each tab has its own nav history stack:
             .state('home.thread.list', {
                 cache: false,
                 url: '/list',
                 views: {
                     'tab-list': {
-                        templateUrl: 'templates/tab-list.html',
+                        templateUrl: 'templates/tab-entryList.html',
                         controller: 'ThreadCtrl'
                     }
                 }
@@ -73,9 +90,29 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 cache: false,
                 url: '/newEntry',
                 views: {
-                    'tab-newEntry': {
-                        templateUrl: 'templates/tab-newEntry.html',
+                    'tab-new': {
+                        templateUrl: 'templates/tab-entryNew.html',
                         controller: 'EntryCtrl'
+                    }
+                }
+            })
+            .state('home.registration.list', {
+                cache: false,
+                url: '/list',
+                views: {
+                    'tab-list': {
+                        templateUrl: 'templates/tab-regList.html',
+                        controller: 'RegistrationCtrl'
+                    }
+                }
+            })
+            .state('home.registration.new', {
+                cache: false,
+                url: '/newEntry',
+                views: {
+                    'tab-new': {
+                        templateUrl: 'templates/tab-regNew.html',
+                        controller: 'NewRegCtrl'
                     }
                 }
             })

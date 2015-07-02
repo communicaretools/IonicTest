@@ -1,0 +1,84 @@
+<ion-view view-title="Ny daglig registrering">
+    <ion-content class="has-header" padding="true">
+        <div class="list list-inset">
+            <label class="item">
+                <div class="item-content">Humøret mitt i dag:</div>
+                <div class="range range-positive">
+                    <i>0</i>
+                    <input max="10" min="0" value="5" type="range" ng-model="newReg.generalSatisfaction">
+                    <i>10</i>
+                </div>
+            </label>
+            <label class="item">
+                <div class="item-content">Hvordan har du håndtert dagen i dag?</div>
+                <div class="range range-positive">
+                    <i>0</i>
+                    <input max="10" min="0" value="5" type="range" ng-model="newReg.handledTheDay">
+                    <i>10</i>
+                </div>
+            </label>
+            <label class="item">
+                <div class="item-content">Hvor fornøyd er du med kvaliteten på søvnen din i natt?</div>
+                <div class="range range-positive">
+                    <i>0</i>
+                    <input max="10" min="0" value="5" type="range" ng-model="newReg.qualityOfSleep">
+                    <i>10</i>
+                </div>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Hvor mange timer har du sovet i natt?</span>
+                <input placeholder="Antall timer" type="text" ng-model="newReg.numberOfHoursSlept">
+            </label>
+            <label class="item">
+                <div class="item-content">
+                    Hvor fornøyd er du med hvor fysisk aktiv du har vært i dag?
+                </div>
+                <div class="range range-positive">
+                    <i>0</i>
+                    <input max="10" min="0" value="5" type="range" ng-model="newReg.satisfactionWithPhysicalActivity">
+                    <i>10</i>
+                </div>
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Hvor mange minutter har du vært fysisk aktiv i dag?</span>
+                <input placeholder="Antall minutter" type="text" ng-model="newReg.numberOfMinutesInPhysicalActivity">
+            </label>
+            <label class="item">
+                <div class="item-content">
+                    Hvor fornøyd er du med kostholdet ditt i dag?
+                </div>
+                <div class="range range-positive">
+                    <i>0</i>
+                    <input max="10" min="0" value="5" type="range" ng-model="newReg.satisfactionWithDiet">
+                    <i>10</i>
+                </div>
+            </label>
+            <label class="item">
+                <div class="item-content">
+                    Hvor fornøyd er du med hvor sosial du har vært i dag?
+                </div>
+                <div class="range range-positive">
+                    <i>0</i>
+                    <input max="10" min="0" value="5" type="range" ng-model="newReg.satisfactionWithSocialRelations">
+                    <i>10</i>
+                </div>
+            </label>
+            <label class="item">
+                <div class="item-content">Har du tatt medisinene dine i dag?</div>
+                <div class="list list-inline">
+                    <ion-radio ng-model="newReg.takenMedications" ng-value="1">Ja</ion-radio>
+                    <ion-radio ng-model="newReg.takenMedications" ng-value="2">Nei</ion-radio>
+                    <ion-radio ng-model="newReg.takenMedications" ng-value="3">Ikke relevant</ion-radio>
+                </div>
+            </label>
+        </div>
+        <div class="padding button-bar">
+            <button class="button button-positive" ng-click="sendDailyRegistration()">
+                Send inn
+            </button>
+            <button class="button button-negative" ui-sref="home.registration.list">
+                Avbryt
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

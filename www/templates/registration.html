@@ -1,52 +1,10 @@
 <ion-view style="" title="Regist">
     <ion-tabs style="" class="tabs-stable tabs-icon-top">
-        <ion-tab style="" title="Tab" icon="ion-ios7-camera">
-            <ion-content style="" class="has-header" padding="true">
-                <form style="">
-                    <ion-item style="" class="range range-positive">
-                        Range
-                        <input max="100" min="0" value="50" type="range">
-                    </ion-item>
-                    <ion-item style="" class="range range-positive">
-                        Range
-                        <input max="100" min="0" value="50" type="range">
-                    </ion-item>
-                    <ion-item style="" class="range range-positive">
-                        Range
-                        <input max="100" min="0" value="50" type="range">
-                    </ion-item>
-                    <label style="" class="item item-input">
-                        <span class="input-label">Input</span>
-                        <input placeholder="" type="text">
-                    </label>
-                    <ion-item style="" class="range range-positive">
-                        Range
-                        <input max="100" min="0" value="50" type="range">
-                    </ion-item>
-                    <label style="" class="item item-input">
-                        <span class="input-label">Input</span>
-                        <input placeholder="" type="text">
-                    </label>
-                    <ion-item style="" class="range range-positive">
-                        Range
-                        <input max="100" min="0" value="50" type="range">
-                    </ion-item>
-                    <ion-item style="" class="range range-positive">
-                        Range
-                        <input max="100" min="0" value="50" type="range">
-                    </ion-item>
-                    <ion-radio style="">Radio</ion-radio>
-                </form>
-            </ion-content>
+        <ion-tab style="" title="Ny registrering" icon="ion-ios7-camera" ui-sref="home.registration.new">
+            <ion-nav-view name="tab-new"></ion-nav-view>
         </ion-tab>
-        <ion-tab style="" title="Tab" icon="ion-ios7-camera">
-            <ion-content style="" class="has-header" padding="true">
-                <ion-list style="">
-                    <ion-item style="">Item 1</ion-item>
-                    <ion-item style="">Item 2</ion-item>
-                    <ion-item style="">Item 3</ion-item>
-                </ion-list>
-            </ion-content>
+        <ion-tab style="" title="Oversikt" icon="ion-ios7-camera" ui-sref="home.registration.list">
+            <ion-nav-view name="tab-list"></ion-nav-view>
         </ion-tab>
     </ion-tabs>
 </ion-view>

@@ -1,6 +1,6 @@
 angular.module('starter.services')
 	.factory('threadService', ['$http', '$log', 'ApiEndpoint', function ($http, $log, ApiEndpoint) {
-	    var forumId = 2;
+	    var forumId = 1;
 
 		var onError = function (e) {
 		    $log.error(e.msg);

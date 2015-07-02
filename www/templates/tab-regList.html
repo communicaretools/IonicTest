@@ -1,0 +1,9 @@
+<ion-view view-title="Registreringsoversikt">
+    <ion-content style="" class="has-header" padding="true">
+        <ion-list>
+            <ion-item ng-repeat="reg in list" ui-sref="home.registrationView({ type: '{{reg.type}}', regId: '{{reg.id}}'})">
+                <b>{{reg.postedAt | date: dateFormat}}</b> ({{reg.type}})
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

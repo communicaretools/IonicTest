@@ -1,0 +1,39 @@
+<ion-view class="" title="Registrering {{reg.type}}">
+    <ion-content>
+        <div class="card">
+            <div class="item item-divider">
+                {{reg.postedAt | date: dateFormat}}
+            </div>
+            <div class="item item-avatar" ng-if="reg.type == 'Smiley'">
+                <img src="img/ionic.png" />
+                <p>
+                    {{reg.text}}
+                </p>
+            </div>
+            <dl class="item item-body" ng-if="reg.type == 'Daily'">
+                <dt>Humøret mitt i dag:</dt>
+                <dd>{{reg.data.generalSatisfaction}}</dd>
+                <dt>Hvordan har du håndtert dagen i dag?</dt>
+                <dd>{{reg.data.handledTheDay}}</dd>
+                <dt>Hvor fornøyd er du med kvaliteten på søvnen din i natt?</dt>
+                <dd>{{reg.data.qualityOfSleep}}</dd>
+                <dt>Hvor mange timer har du sovet i natt?</dt>
+                <dd>{{reg.data.numberOfHoursSlept}}</dd>
+                <dt>Hvor fornøyd er du med hvor fysisk aktiv du har vært i dag?</dt>
+                <dd>{{reg.data.satisfactionWithPhysicalActivity}}</dd>
+                <dt>Hvor mange minutter har du vært fysisk aktiv i dag?</dt>
+                <dd>{{reg.data.numberOfMinutesInPhysicalActivity}}</dd>
+                <dt>Hvor fornøyd er du med kostholdet ditt i dag?</dt>
+                <dd>{{reg.data.satisfactionWithDiet}}</dd>
+                <dt>Hvor fornøyd er du med hvor sosial du har vært i dag?</dt>
+                <dd>{{reg.data.satisfactionWithSocialRelations}}</dd>
+                <dt>Har du tatt medisinene dine i dag?</dt>
+                <dd>{{reg.data.takenMedications}}</dd>
+            </dl>
+        </div>
+    </ion-content>
+
+    <div class="bar bar-footer bar-balanced" ui-sref="home.registration.list">
+        <div class="title">Tilbake</div>
+    </div>
+</ion-view>

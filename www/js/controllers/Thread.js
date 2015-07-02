@@ -1,7 +1,6 @@
 angular.module('starter.controllers')
     .controller('ThreadCtrl', [
         '$scope', '$stateParams', '$state', '$ionicPopup', 'entryService', 'preferenceService', function ($scope, $stateParams, $state, $ionicPopup, entryService, preferenceService) {
-
             var threadId = $stateParams.threadId;
 
             var loadThread = function (id) {
