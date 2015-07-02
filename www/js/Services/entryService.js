@@ -26,7 +26,10 @@ angular.module('starter.services')
 			id: 1,
 			entries: entries2
 		}];
-		
+
+		var onError = function (e) {
+		    $log.error(e.msg);
+		};
 		
 		var addEntry = function (threadId, entry) {
 			var entries = getEntries(threadId);
@@ -36,7 +39,13 @@ angular.module('starter.services')
 				quoteText: entry.quoteText
 			});
 		};
-
+		var transform = function (list) {
+		    return list.map(function (entry) {
+		        var parts = entry.links[0].href.split("/");
+		        var id = parts[parts.length - 1];
+		        return angular.extend(entry, { "id": id });
+		    });
+		};
 		var getEntries = function (threadId){
 			console.log("threadId :" + threadId + "=== 0 is" + threadId === 0);
 			var idAsInt = parseInt(threadId);
