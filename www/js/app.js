@@ -40,6 +40,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 controller: 'MenuCtrl'
             })
             .state('home.registration', {
+                cache: false,
                 url: '/registration',
                 views: {
                     'menuContent': {
@@ -48,6 +49,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 }
             })
             .state('home.forum', {
+                cache: false,
                 url: '/threads',
                 views: {
                     'menuContent': {
@@ -57,6 +59,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 }
             })
             .state('home.thread', {
+                cache: false,
                 url: '/thread/:threadId',
                 views: {
                     'menuContent': {
@@ -127,6 +130,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 }
             })
             .state('home.account', {
+                cache: false,
                 url: '/account',
                 views: {
                     'menuContent': {
