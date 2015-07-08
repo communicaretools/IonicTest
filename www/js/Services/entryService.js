@@ -17,9 +17,11 @@ angular.module('starter.services')
 	        return "[quote " + "user=\'" + toQuote.author + "\']" + toQuote.content + "[/quote]";
 	    };
 	    var addEntry = function (threadId, entry, onSuccess) {
-
-	        $http.post(ApiEndpoint.url + "/forum/thread/" + threadId, { "entry-content": quoteWrap(entry.toQuote) +" "+ entry.content })
-                .then(onSuccess, onError)
+	    	var postContent = entry.toQuote ?
+	    	{ "entry-content": quoteWrap(entry.toQuote) +" "+ entry.content }:
+	    	{"entry-content" : entry.content};
+	        $http.post(ApiEndpoint.url + "/forum/thread/" + threadId, postContent)
+                .then(onSuccess, onError);
 	    };
 	    var getEntries = function (threadId, onSuccess) {
 	        $http.get(ApiEndpoint.url + "/forum/thread/" + threadId).then(function (result) {
