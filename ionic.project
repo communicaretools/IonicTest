@@ -4,7 +4,7 @@
   "proxies": [
     {
       "path": "/api",
-      "proxyUrl": "http://sps.rr-research.no/test/reconnect-pretest/webchoice/api"
+      "proxyUrl": "http://sps.rr-research.no/demo/connectwcp/webchoice/api"
     }
   ]
 }
