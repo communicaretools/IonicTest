@@ -1,9 +1,7 @@
 <ion-view title="Messages">
 	 <ion-content>
-	 	<ion-list>
-      		<ion-item ng-repeat="message in messages">
-        		from: {{message.sender}}<br/> subject: {{message.subject}}
-      		</ion-item>
-    	</ion-list>
+  		<ion-item collection-repeat="message in messages"> <!-- This is supposed to be faster than ng-repeat -->
+    		from: {{message.sender}}<br/> subject: {{message.subject}}
+  		</ion-item>
 	</ion-content>
 </ion-view>
