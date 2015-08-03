@@ -4,9 +4,9 @@ angular.module('starter.services')
 		    $log.error(e.msg);
 	    };
 
+	    //TODO
 	    var add = function (type, entry, onSuccess) {
 	        console.log(entry);
-	        //$http.post(ApiEndpoint.url + "//" + type, entry).then(onSuccess, onError);
 	    };
 
 		var transform = function (list) {
@@ -23,7 +23,6 @@ angular.module('starter.services')
 		        onSuccess(transform(result.data["messages"]));
 		    }, onError);
 		};
-
 
 		return {
 		    "add": add,
