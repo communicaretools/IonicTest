@@ -7,9 +7,10 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.infrastructure', 'starter.filters', 'starter.directives'])
     .constant("ApiEndpoint", {
-       //url: "http://localhost:8100/api" // for localhost debugging
+       url: "http://localhost:8100/api" // for localhost debugging
+       //url: "http://sps.rr-research.no/test/reconnect-pretest/webchoice/api"
        //url: "http://sps.rr-research.no/demo/connectwcp/webchoice/api"
-       url: "http://10.163.101.120:8080/api" // For running on device, add correct IP and port
+       //url: "http://10.163.2.45:8080/api" // For running on device, add correct IP and port
     })
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -69,16 +70,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                 }
             })
 
-            .state('home.registrationView', {
-                cache: false,
-                url: 'registration/:type/:regId',
-                views: {
-                    'menuContent': {
-                        templateUrl: 'templates/regView.html',
-                        controller: 'ViewRegCtrl'
-                    }
-                }
-            })
             // Each tab has its own nav history stack:
             .state('home.thread.list', {
                 cache: false,
@@ -100,6 +91,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                     }
                 }
             })
+
+            .state('home.registrationView', {
+                cache: false,
+                url: 'registration/:type/:regId',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/regView.html',
+                        controller: 'ViewRegCtrl'
+                    }
+                }
+            })
+
             .state('home.registration.list', {
                 cache: false,
                 url: '/list',
@@ -147,6 +150,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                     'menuContent': {
                         templateUrl: 'templates/login.html',
                         controller: 'LoginCtrl'
+                    }
+                }
+            })
+            .state('home.camera', {
+                url: '/camera',
+                cache: false,
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/camera.html',
+                        controller: 'CameraCtrl'
+                    }
+                }
+            })
+            .state('home.video', {
+                url: '/video',
+                cache: false,
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/video.html',
+                        controller: 'VideoCtrl'
                     }
                 }
             })

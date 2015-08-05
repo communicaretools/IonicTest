@@ -1,10 +1,10 @@
 {
   "name": "IonicTest",
-  "app_id": "",
+  "app_id": "a42b77a7",
   "proxies": [
     {
       "path": "/api",
-      "proxyUrl": "http://sps.rr-research.no/demo/connectwcp/webchoice/api"
+      "proxyUrl": "http://sps.rr-research.no/test/reconnect-pretest/webchoice/api"
     }
   ]
 }
