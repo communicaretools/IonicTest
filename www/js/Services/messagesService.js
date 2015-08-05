@@ -16,10 +16,10 @@ angular.module('starter.services')
 		        return angular.extend(entry, { "id": id });
 		    });
 		};
-		/* Old message module */
+
 		var getList = function (onSuccess) {
 			console.log(ApiEndpoint);
-		    $http.get(ApiEndpoint.url + "/messages/inbox").then(function (result) {
+		    $http.get(ApiEndpoint.url + "/commonmessages/inbox").then(function (result) {
 		        onSuccess(transform(result.data["messages"]));
 		    }, onError);
 		};
