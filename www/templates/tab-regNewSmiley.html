@@ -1,39 +1,20 @@
 <ion-view view-title="Ny smiley registrering">
     <ion-content class="has-header" padding="true">
-        <div class="mood">
-            <a class="mood-1"></a>
-            <a class="mood-2"></a>
-            <a class="mood-3"></a>
-            <a class="mood-4"></a>
-            <a class="mood-5"></a>
-            <a class="mood-6"></a>
-            <a class="mood-7"></a>
-            <a class="mood-8"></a>
-            <a class="mood-9"></a>
-            <a class="mood-10"></a>
-            <a class="mood-11"></a>
-            <a class="mood-12"></a>
-        <div class="middle-mood"></div>
-        </div>
-
-        <div class="" ng-repeat="mood in moods">
-            <a class="mood mood-1"></a>
         <div class="list list-inset">
             <label class="item item-input item-stacked-label">
-                <span class="input-label">Har du det jææævlig? </span>
+                <span class="input-label">Hvordan har du det i dag?</span>
                 <input placeholder="Fyll inn her....." type="text" ng-model="newReg.text">
             </label>
-            <label class="item">
-                <div class="item-content">
-                    Så bra
-                </div>
-                <div class="range range-positive">
-                    <i>0</i>
-                    <input max="12" min="1" value="6" type="range" ng-model="newReg.imageIndex">
-                    <i>10</i>
-                </div>
-            </label>
+            
         </div>
+            <div class="mood">
+                <div ng-repeat="t in numberOfTimes(12) track by $index">
+                    <a class="mood-{{$index}}" ng-click="selectSmiley($index)"></a>       
+                </div>
+                <div class="no-mood-selected" ng-show="newReg.imageIndex===-1"></div>
+                <div class="mood-image-{{newReg.imageIndex}}" ng-show="newReg.imageIndex!==-1"></div>
+
+            </div>
         <div class="padding button-bar">
             <button class="button button-positive" ng-click="sendRegistration('Smiley')">
                 Send inn

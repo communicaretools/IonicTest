@@ -40,16 +40,31 @@
   position: relative;
 }
 
-.middle-mood {
-  position: absolute;
-  top: calc(50% - 16px);
-  left: calc(50% - 16px);
-  height: $moodSize;
-  width: $moodSize;
-  line-height: moodSize;
-  background-image: url($imagesPath + "1.png");
-  background-repeat: no-repeat;
+@for $i from 1 through 12 {
+    .mood-image-#{$i} {
+        background-image: url($imagesPath + "#{$i}.png");
+        background-repeat: no-repeat;
+        @extend %center-mood;
+    }
 }
+
+.no-mood-selected {
+    @extend %center-mood;
+}
+
+%center-mood {
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 200%;
+}
+
+
 
 .mood {
     @extend %mood-style;
