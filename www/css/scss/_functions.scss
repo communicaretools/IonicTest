@@ -1,0 +1,15 @@
+
+//using compass functions sin($number) and pi()
+@function calculateLeft($i){
+	@return 50-35*cos(pi()*(-0.5 - $i/6));
+}
+
+//using compass functions sin($number) and pi()
+@function calculateTop($i){
+	@return 50+35*sin(pi()*(-0.5 - $i/6));
+}
+
+//to convert a numerical operation to a unit you need to multiply the result with the unit
+@function converToPercent($number){
+	@return $number*1%;
+}

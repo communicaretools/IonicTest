@@ -1,0 +1,58 @@
+
+@import '_variables';
+@import '_colors';
+@import '_functions';
+@import '_mixins';
+
+.citation {
+    background-color: $citationColor;
+    padding: .5em 1em;
+}
+.citation-author {
+    font-weight: bold;
+}
+
+.centerme {
+    margin: 0 auto;
+    width: 100%;
+    height:100%;
+}
+
+.fullscreen-player {
+    max-width: 100%;
+    max-height: 100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    overflow: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+
+%mood-style {
+  width: 250px;
+  height: 250px;
+  //align center of the div
+  margin: 0 auto;
+  //make sure everything stays within the div
+  position: relative;
+}
+
+.middle-mood {
+  position: absolute;
+  top: calc(50% - 16px);
+  left: calc(50% - 16px);
+  height: $moodSize;
+  width: $moodSize;
+  line-height: moodSize;
+  background-image: url($imagesPath + "1.png");
+  background-repeat: no-repeat;
+}
+
+.mood {
+    @extend %mood-style;
+    @include moods;
+
+}

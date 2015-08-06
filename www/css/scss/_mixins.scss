@@ -1,0 +1,25 @@
+@mixin moods {
+	@for $i from 1 through 12 {
+		.mood-#{$i} {
+			text-decoration: none;
+  			color: white;
+  			display: block;
+  			//height of the smiley
+  			height: $moodSize;
+  			//height of the smiley
+  			width: $moodSize;
+  			line-height: $moodSize;
+  			//center the image
+  			margin-left: -$moodSize/2;
+			//center the image
+		    margin-top: -$moodSize/2;
+  			text-align: center;
+			position: absolute;
+			//user variable to select the correct image
+			background-image: url($imagesPath + "#{$i}.png");
+			background-repeat: no-repeat;
+			left: converToPercent(calculateLeft($i));
+			top: converToPercent(calculateTop($i));
+		}
+	}
+}
