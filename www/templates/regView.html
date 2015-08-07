@@ -1,5 +1,6 @@
 <ion-view class="" title="Registrering {{reg.type}}">
-    <ion-content>
+    <ion-content padding="true">
+        <button  class="button button-small icon-left ion-chevron-left button-light" ui-sref="home.registration.list"></button>
         <div class="card">
             <div class="item item-divider">
                 {{reg.postedAt | date: dateFormat}}
@@ -33,7 +34,8 @@
         </div>
     </ion-content>
 
-    <div class="bar bar-footer bar-balanced" ui-sref="home.registration.list">
-        <div class="title">Tilbake</div>
+    <div class="bar bar-footer bar-light" ui-sref="home.registration.list">
+        <div class="title icon-left ion-chevron-left">Tilbake</div>
     </div>
+
 </ion-view>

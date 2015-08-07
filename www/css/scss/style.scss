@@ -4,6 +4,13 @@
 @import '_functions';
 @import '_mixins';
 
+.item-content {
+    img {
+        vertical-align: middle;
+
+    }
+}
+
 .citation {
     background-color: $citationColor;
     padding: .5em 1em;
