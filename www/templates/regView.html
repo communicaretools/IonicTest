@@ -5,7 +5,7 @@
                 {{reg.postedAt | date: dateFormat}}
             </div>
             <div class="item item-avatar" ng-if="reg.type == 'Smiley'">
-                <img src="img/ionic.png" />
+                <img ng-src="css/images/{{reg.imageIndex}}.png" ng-if="reg.imageIndex!==-1" />
                 <p>
                     {{reg.text}}
                 </p>
