@@ -14,10 +14,27 @@
     </ion-header-bar>
       <ion-content>
           <p ng-if="!isLoggedIn">Logg inn for å få tilgang til funksjonalitet</p>
-          <ion-list ng-repeat="menuItem in menuItems">
-              <ion-item ng-if="isLoggedIn" ng-class="menuItem.state === activeState ? 'activated': ''" 
-              menu-close ui-sref="{{menuItem.state}}" ng-click="setActiveState(menuItem.state)">
-                  {{menuItem.name}}
+          <ion-list>
+              <ion-item ng-if="isLoggedIn" menu-close ui-sref="home.forum">
+                  Forum
+              </ion-item>
+              <ion-item ng-if="isLoggedIn" menu-close ui-sref="home.registration.list">
+                  Registreringer
+              </ion-item>
+              <ion-item ng-if="isLoggedIn" menu-close ui-sref="home.account">
+                  Kontoinnstillinger
+              </ion-item>
+              <ion-item ng-if="isLoggedIn" menu-close ui-sref="home.messages">
+                  Meldinger
+              </ion-item>
+              <ion-item ng-if="isLoggedIn" menu-close ui-sref="home.camera">
+                  Kamera      
+              </ion-item>
+              <ion-item ng-if="isLoggedIn" menu-close ui-sref="home.video">
+                  Video      
+              </ion-item>
+              <ion-item ng-if="isLoggedIn" menu-close ui-sref="home.login">
+                  Logg ut
               </ion-item>
           </ion-list>
       </ion-content>
