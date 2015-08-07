@@ -52,10 +52,6 @@
     }
 }
 
-.no-mood-selected {
-    @extend .center-mood;
-}
-
 .center-mood {
     position: absolute;
     top: calc(50% - 25px);

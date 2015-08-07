@@ -169,8 +169,8 @@
   margin-top: 8px;
 }
 
-/* line 59, scss/style.scss */
-.center-mood, .no-mood-selected {
+/* line 55, scss/style.scss */
+.center-mood {
   position: absolute;
   top: calc(50% - 25px);
   left: calc(50% - 25px);

@@ -10,8 +10,8 @@
                 <div ng-repeat="t in numberOfTimes(12) track by $index">
                     <a class="mood-{{$index}}" ng-click="selectSmiley($index)"></a>       
                 </div>
-                <div class="no-mood-selected">
-                    <div class="mood-image-{{newReg.imageIndex}}" ng-show="newReg.imageIndex!==-1"></div>
+                <div class="center-mood">
+                    <div class="mood-image-{{newReg.imageIndex}}" ng-show="newReg.imageIndex"></div>
                 </div>
             </div>
         <div class="padding button-bar">
