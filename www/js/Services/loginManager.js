@@ -12,9 +12,9 @@ angular.module('starter.services')
                     onError);
             };
 
-            var performLogin = function(username, password, onSuccess) {
+            var performLogin = function(username, password, onSuccess, onLoginError) {
                 $http.post(ApiEndpoint.url + "/login", { username: username, password: password })
-                    .then(onSuccess, onError);
+                    .then(onSuccess, onLoginError);
             };
 
             var logout = function(onSuccess) {

@@ -24,7 +24,6 @@ angular.module('starter.services')
 		};
 
 		var getThreads = function (onSuccess){
-		    console.log(ApiEndpoint.url + "/forum/" + forumId);
 		    $http.get(ApiEndpoint.url + "/forum/" + forumId).then(function (result) {
 		        onSuccess(transform(result.data["forum-threads"]));
 		    }, onError);

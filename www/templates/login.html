@@ -10,6 +10,7 @@
                 <span class="input-label">Passord</span>
                 <input type="password" ng-model="password" placeholder="Passord" />
             </label>
+            <div ng-show="informationText !== ''">{{informationText}}</div>
             <div class="padding button-bar">
                 <button class="button button-positive" ng-click="login(username, password)">
                     Logg inn

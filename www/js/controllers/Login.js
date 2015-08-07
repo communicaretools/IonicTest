@@ -1,10 +1,18 @@
 angular.module('starter.controllers')
-.controller('LoginCtrl', ['$scope', '$log', '$state', 'loginManager', function ($scope, $log, $state, loginManager) {
+.controller('LoginCtrl', ['$scope', '$log', '$state', '$ionicLoading', 'loginManager', function ($scope, $log, $state, $ionicLoading, loginManager) {
     var onLoginSuccess = function (result) {
-        $log.info(result);
+        $ionicLoading.hide();
         $scope.$emit("logInChange", true);
         $state.go('home.forum');
     };
+
+    var onLoginError = function(result) {
+        $ionicLoading.hide();
+        $log.error(result);
+        if(result.status === 403) {
+            $scope.informationText ="Feil brukernavn eller passord";
+        }
+    }
     var onLogoutSuccess = function () {
         $scope.$emit("logInChange", false);
         loginManager.options(options)
@@ -16,7 +24,8 @@ angular.module('starter.controllers')
     loginManager.options(options);
 
     $scope.login = function (username, password) {
-        loginManager.login(username, password, onLoginSuccess);
+        $ionicLoading.show({template: 'Loading...'});
+        loginManager.login(username, password, onLoginSuccess, onLoginError);
     };
     $scope.logout = function() {
         loginManager.logout(onLogoutSuccess);

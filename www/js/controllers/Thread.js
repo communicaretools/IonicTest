@@ -1,11 +1,13 @@
 angular.module('starter.controllers')
     .controller('ThreadCtrl', [
-        '$scope', '$stateParams', '$state', '$ionicPopup', 'entryService', 'preferenceService', function ($scope, $stateParams, $state, $ionicPopup, entryService, preferenceService) {
+        '$scope', '$stateParams', '$state','$ionicLoading', 'entryService', 'preferenceService', function ($scope, $stateParams, $state, $ionicLoading, entryService, preferenceService) {
             var threadId = $stateParams.threadId;
 
             var loadThread = function (id) {
+                $ionicLoading.show({template: 'Loading...'});
                 entryService.get(id, function (result) {
                     $scope.thread = result;
+                    $ionicLoading.hide();
                 });
             };
 

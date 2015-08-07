@@ -3,7 +3,6 @@ angular.module('starter.controllers')
 	function ($scope, $state, $stateParams, entryService) {
 	    if (entryService.getSelected()) {
 	        $scope.toQuote = entryService.getSelected();
-	        console.log($scope.toQuote);
 	        entryService.selectEntry();
 	    }
 
