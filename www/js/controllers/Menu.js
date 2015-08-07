@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-	.controller('MenuCtrl', ['$scope', 'loginManager', '$state', function ($scope, loginManager, $state) {
+	.controller('MenuCtrl', ['$scope', 'loginManager', function ($scope, loginManager) {
 
 
         $scope.menuItems=[
@@ -36,15 +36,8 @@ angular.module('starter.controllers')
             })
         }
 	    $scope.$on("logInChange", function (e, status) {
-        console.log(status);
         $scope.isLoggedIn = status;
 
         
-        $activeState="";
-
-        $scope.setActiveState=function (stat) {
-            activeState=stat;
-            console.log("test");
-        }
     });
 }]);

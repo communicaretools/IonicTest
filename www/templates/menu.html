@@ -22,28 +22,7 @@
           <ion-item ng-if="isLoggedIn" menu-close ng-repeat= "item in menuItems" ui-sref="home.{{item.state}}" ui-sref-active="activated">
           {{item.name}}
         </ion-item>
-        <!--
-            <ion-item ng-if="isLoggedIn" menu-close ui-sref="home.forum">
-                Forum
-            </ion-item>
-            <ion-item ng-if="isLoggedIn" menu-close ui-sref="home.registration.list">
-                Registreringer
-            </ion-item>
-            <ion-item ng-if="isLoggedIn" menu-close ui-sref="home.account">
-                Kontoinnstillinger
-            </ion-item>
-            <ion-item ng-if="isLoggedIn" menu-close ui-sref="home.messages">
-                Meldinger
-            </ion-item>
-            <ion-item ng-if="isLoggedIn" menu-close ui-sref="home.camera">
-                Kamera      
-            </ion-item>
-            <ion-item ng-if="isLoggedIn" menu-close ui-sref="home.video">
-                Video      
-            </ion-item>
-            <ion-item ng-if="isLoggedIn" menu-close ui-sref="home.login">
-                Logg ut
-            </ion-item>-->
+
         </ion-list>
       </ion-content>
   </ion-side-menu>
