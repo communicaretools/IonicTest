@@ -44,15 +44,19 @@
     .mood-image-#{$i} {
         background-image: url($imagesPath + "#{$i}.png");
         background-repeat: no-repeat;
-        @extend %center-mood;
+        height: $moodSize;
+        width: $moodSize;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: $moodSize/4;
     }
 }
 
 .no-mood-selected {
-    @extend %center-mood;
+    @extend .center-mood;
 }
 
-%center-mood {
+.center-mood {
     position: absolute;
     top: calc(50% - 25px);
     left: calc(50% - 25px);

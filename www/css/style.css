@@ -41,76 +41,136 @@
 .mood-image-1 {
   background-image: url("images/1.png");
   background-repeat: no-repeat;
+  height: 32px;
+  width: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
 }
 
 /* line 44, scss/style.scss */
 .mood-image-2 {
   background-image: url("images/2.png");
   background-repeat: no-repeat;
+  height: 32px;
+  width: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
 }
 
 /* line 44, scss/style.scss */
 .mood-image-3 {
   background-image: url("images/3.png");
   background-repeat: no-repeat;
+  height: 32px;
+  width: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
 }
 
 /* line 44, scss/style.scss */
 .mood-image-4 {
   background-image: url("images/4.png");
   background-repeat: no-repeat;
+  height: 32px;
+  width: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
 }
 
 /* line 44, scss/style.scss */
 .mood-image-5 {
   background-image: url("images/5.png");
   background-repeat: no-repeat;
+  height: 32px;
+  width: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
 }
 
 /* line 44, scss/style.scss */
 .mood-image-6 {
   background-image: url("images/6.png");
   background-repeat: no-repeat;
+  height: 32px;
+  width: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
 }
 
 /* line 44, scss/style.scss */
 .mood-image-7 {
   background-image: url("images/7.png");
   background-repeat: no-repeat;
+  height: 32px;
+  width: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
 }
 
 /* line 44, scss/style.scss */
 .mood-image-8 {
   background-image: url("images/8.png");
   background-repeat: no-repeat;
+  height: 32px;
+  width: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
 }
 
 /* line 44, scss/style.scss */
 .mood-image-9 {
   background-image: url("images/9.png");
   background-repeat: no-repeat;
+  height: 32px;
+  width: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
 }
 
 /* line 44, scss/style.scss */
 .mood-image-10 {
   background-image: url("images/10.png");
   background-repeat: no-repeat;
+  height: 32px;
+  width: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
 }
 
 /* line 44, scss/style.scss */
 .mood-image-11 {
   background-image: url("images/11.png");
   background-repeat: no-repeat;
+  height: 32px;
+  width: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
 }
 
 /* line 44, scss/style.scss */
 .mood-image-12 {
   background-image: url("images/12.png");
   background-repeat: no-repeat;
+  height: 32px;
+  width: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
 }
 
-/* line 55, scss/style.scss */
-.mood-image-1, .mood-image-2, .mood-image-3, .mood-image-4, .mood-image-5, .mood-image-6, .mood-image-7, .mood-image-8, .mood-image-9, .mood-image-10, .mood-image-11, .mood-image-12, .no-mood-selected {
+/* line 59, scss/style.scss */
+.center-mood, .no-mood-selected {
   position: absolute;
   top: calc(50% - 25px);
   left: calc(50% - 25px);
