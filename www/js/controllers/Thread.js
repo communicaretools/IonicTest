@@ -25,7 +25,7 @@ angular.module('starter.controllers')
                 $state.go('home.thread.newEntry');
             };
 
-            $scope.thread = [];
+            $scope.thread = {};
             
             resources.load().then(function () {
                 loadThread(threadId);

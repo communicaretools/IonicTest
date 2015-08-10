@@ -1,0 +1,7 @@
+<ion-view title="{{title}}">
+    <ion-content>
+        <div>from: {{message.sender.name}}<br/> subject: {{message.subject}}
+        </div>
+        <div ng-bind-html="message.content | unsafe"></div>
+    </ion-content>
+</ion-view>

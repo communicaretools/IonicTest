@@ -23,6 +23,7 @@ angular.module('starter.services')
 	        $http.post(ApiEndpoint.url + "/forum/thread/" + threadId, postContent)
                 .then(onSuccess, onError);
 	    };
+
 	    var getEntries = function (threadId, onSuccess) {
 	        $http.get(ApiEndpoint.url + "/forum/thread/" + threadId).then(function (result) {
 	            onSuccess(transform(result.data["entries"]))

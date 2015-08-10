@@ -219,6 +219,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                         controller: 'MessagesCtrl'
                     }
                 }
+            })
+            .state('home.messageView', {
+                url: '/messages/:messageId',
+                cache: false,
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/messageView.html',
+                        controller: 'MessageCtrl'
+                    }
+                }
             });
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('home/login');

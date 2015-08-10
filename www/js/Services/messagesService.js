@@ -1,5 +1,6 @@
 angular.module('starter.services')
 	.factory('messagesService', ['$http', '$log', 'ApiEndpoint', function ($http, $log, ApiEndpoint) {
+
 	    var onError = function (e) {
 		    $log.error(e.msg);
 	    };
@@ -23,8 +24,16 @@ angular.module('starter.services')
 		    }, onError);
 		};
 
+
+		var getMessage = function (messageId, onSuccess) {
+		    $http.get(ApiEndpoint.url + "/commonmessages/" + messageId).then(function (result) {
+		        onSuccess(result.data)
+		    }, onError);
+		};
+
 		return {
 		    "add": add,
+		    "get": getMessage,
 		    "getList": getList,
 		};
 	}]);
