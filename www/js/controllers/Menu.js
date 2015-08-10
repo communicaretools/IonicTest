@@ -11,6 +11,10 @@ angular.module('starter.controllers')
                         name: resources.get("menuForum")
                     },
                     {
+                        state: "exercises",
+                        name: resources.get("menuExercises")
+                    },                    
+                    {
                         state: "registration",
                         name: resources.get("menuRegistrations")
                     },

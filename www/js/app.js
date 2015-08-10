@@ -44,6 +44,49 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                     }
                 }
             })
+
+            //--------------------------------------
+            .state('home.exercises', {
+                cache: false,
+                url: '/exercises',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/exercises.html'
+                    }
+                }
+            }) 
+            .state('home.exercises.list', {
+                cache: false,
+                url: '/list',
+                views: {
+                    'tab-list': {
+                        templateUrl: 'templates/tab-exercisesList.html',
+                        controller: 'ExercisesCtrl'
+                    }
+                }
+            }) 
+            .state('home.exercises.mine', {
+                cache: false,
+                url: '/mine',
+                views: {
+                    'tab-mine': {
+                        templateUrl: 'templates/tab-exercisesList.html',
+                        controller: 'ExercisesCtrl'
+                    }
+                }
+            })  
+           .state('home.exerciseView', {
+                cache: false,
+                url: '/exercises/:exerciseId',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/exerciseView.html',
+                        controller: 'ExercisesCtrl'
+                    }
+                }
+            })
+
+            //------------------------------------------                                 
             .state('home.forum', {
                 cache: false,
                 url: '/threads',
@@ -88,7 +131,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
             .state('home.registrationView', {
                 cache: false,
-                url: 'registration/:type/:regId',
+                url: '/registration/:type/:regId',
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/regView.html',
