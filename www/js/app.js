@@ -5,13 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.infrastructure', 'starter.filters', 'starter.directives'])
-    .constant("ApiEndpoint", {
-       url: "http://localhost:8100/api" // for localhost debugging
-       //url: "http://sps.rr-research.no/test/reconnect-pretest/webchoice/api"
-       //url: "http://sps.rr-research.no/demo/connectwcp/webchoice/api"
-       //url: "http://10.163.2.45:8080/api" // For running on device, add correct IP and port
-    })
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'starter.infrastructure', 'starter.filters', 'starter.directives', 'starter.config'])
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
