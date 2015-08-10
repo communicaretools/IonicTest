@@ -17,13 +17,7 @@ angular.module('starter.services')
                 resources = {};
 
                 var path = resourcePath + 'global.' + language + '.json';
-                $http.get(path, {
-                    headers: {
-                        'Accept': 'application/json;charset=utf-8',
-                        'Accept-Charset': 'charset=utf-8',
-                        'Content-Type': 'application/json;charset=utf-8'
-                    }
-                }).success(function(result) {
+                $http.get(path).success(function(result) {
                     resources = angular.extend(resources, result);
                     loaded = true;
                     deferred.resolve("Loaded");
