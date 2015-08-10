@@ -1,29 +1,33 @@
 ﻿angular.module('starter.directives')
     .directive('r', ['resources', function(resources) {
-        
-        var setContent = function (resText, element, attrs) {
-            console.log(element[0]);
+    var setContent = function(resText, element, attrs) {
+        if (!resText) {
+            resText = 'missing:' + attrs.r;
+        }
+        elm = angular.element(element);
+        var nameTag = elm[0].nodeName.toLowerCase();
+        var type = elm[0].type;
 
-            if (!resText) {
-                resText = 'missing:' + attrs.r;
-            }
-            if (element[0].localName === "ion-view") {
-                //element[0].attr("view-title", resText);
-                element.attr("view-title", resText);
-            }
-
-            //element.html(resText);
-        };
+        if (nameTag !== 'button' &&
+        ((nameTag === 'input' && type === 'submit') || (nameTag === 'input' && type === 'reset'))) {
+            elm.val(resText);
+        } else if (nameTag !== 'button' && nameTag === 'input') {
+            elm.attr("placeholder", resText);
+        } else if (nameTag === 'img') {
+            elm.attr('alt', resText);
+        } else {
+            elm.html(resText);
+        }
+    };
 
         return function(scope, element, attrs) {
-            console.log(element);
-            setContent(resources.get(attrs.r), element, attrs);
-            /*if (promise && angular.isFunction(promise.then)) {
+            var promise = resources.get(attrs.r);
+            if (promise && angular.isFunction(promise.then)) {
                 promise.then(function (value) {
                     setContent(value, element, attrs);
                 });
             } else {
                 setContent(resources.get(attrs.r), element, attrs);
-            }*/
+            }
         };
     }]);

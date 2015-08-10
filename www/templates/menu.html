@@ -10,13 +10,11 @@
 
   <ion-side-menu side="left" expose-aside-when="large">
     <ion-header-bar class="bar-stable">
-      <h1 class="title">Meny</h1>
+        <h1 class="title" r="menuTitle"></h1>
     </ion-header-bar>
       <ion-content>
         <div ng-if="!isLoggedIn" class="list card">
-          <div class="item item-text-wrap">
-            Logg inn for å få tilgang til funksjonalitet
-          </div>
+          <div class="item item-text-wrap" r="loginInfo"></div>
         </div>
         <ion-list>
           <ion-item ng-if="isLoggedIn" menu-close ng-repeat= "item in menuItems" ui-sref="home.{{item.state}}" ui-sref-active="activated">

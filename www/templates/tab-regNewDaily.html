@@ -1,8 +1,8 @@
-<ion-view view-title="Ny daglig registrering">
+<ion-view view-title="{{titleDaily}}">
     <ion-content class="has-header" padding="true">
         <div class="list list-inset">
             <label class="item">
-                <div class="item-content">Humøret mitt i dag:</div>
+                <div class="item-content" r="registrationMyMood"></div>
                 <div class="range range-positive">
                     <i>0</i>
                     <input max="10" min="0" value="5" type="range" ng-model="newReg.generalSatisfaction">
@@ -10,7 +10,7 @@
                 </div>
             </label>
             <label class="item">
-                <div class="item-content">Hvordan har du håndtert dagen i dag?</div>
+                <div class="item-content" r="registrationHandledDay"></div>
                 <div class="range range-positive">
                     <i>0</i>
                     <input max="10" min="0" value="5" type="range" ng-model="newReg.handledTheDay">
@@ -18,7 +18,7 @@
                 </div>
             </label>
             <label class="item">
-                <div class="item-content">Hvor fornøyd er du med kvaliteten på søvnen din i natt?</div>
+                <div class="item-content" r="registrationQualityOfSleep"></div>
                 <div class="range range-positive">
                     <i>0</i>
                     <input max="10" min="0" value="5" type="range" ng-model="newReg.qualityOfSleep">
@@ -26,13 +26,11 @@
                 </div>
             </label>
             <label class="item item-input item-stacked-label">
-                <span class="input-label">Hvor mange timer har du sovet i natt?</span>
-                <input placeholder="Antall timer" type="text" ng-model="newReg.numberOfHoursSlept">
+                <span class="input-label" r="registrationHouresOfSleep"></span>
+                <input r="registrationNoOfHoures" type="text" ng-model="newReg.numberOfHoursSlept">
             </label>
             <label class="item">
-                <div class="item-content">
-                    Hvor fornøyd er du med hvor fysisk aktiv du har vært i dag?
-                </div>
+                <div class="item-content" r="registrationQualityOfPhysicalActivity"></div>
                 <div class="range range-positive">
                     <i>0</i>
                     <input max="10" min="0" value="5" type="range" ng-model="newReg.satisfactionWithPhysicalActivity">
@@ -40,13 +38,11 @@
                 </div>
             </label>
             <label class="item item-input item-stacked-label">
-                <span class="input-label">Hvor mange minutter har du vært fysisk aktiv i dag?</span>
-                <input placeholder="Antall minutter" type="text" ng-model="newReg.numberOfMinutesInPhysicalActivity">
+                <span class="input-label"  r="registrationMinutesOfPhysicalActivity"></span>
+                <input r="registrationNoOfMinutes" type="text" ng-model="newReg.numberOfMinutesInPhysicalActivity">
             </label>
             <label class="item">
-                <div class="item-content">
-                    Hvor fornøyd er du med kostholdet ditt i dag?
-                </div>
+                <div class="item-content"  r="registrationQualityOfDiet"></div>
                 <div class="range range-positive">
                     <i>0</i>
                     <input max="10" min="0" value="5" type="range" ng-model="newReg.satisfactionWithDiet">
@@ -54,9 +50,7 @@
                 </div>
             </label>
             <label class="item">
-                <div class="item-content">
-                    Hvor fornøyd er du med hvor sosial du har vært i dag?
-                </div>
+                <div class="item-content" r="registrationQualityOfSocial"></div>
                 <div class="range range-positive">
                     <i>0</i>
                     <input max="10" min="0" value="5" type="range" ng-model="newReg.satisfactionWithSocialRelations">
@@ -64,21 +58,17 @@
                 </div>
             </label>
             <label class="item">
-                <div class="item-content">Har du tatt medisinene dine i dag?</div>
+                <div class="item-content" r="registrationTakenMeds"></div>
                 <div class="list list-inline">
-                    <ion-radio ng-model="newReg.takenMedications" ng-value="1">Ja</ion-radio>
-                    <ion-radio ng-model="newReg.takenMedications" ng-value="2">Nei</ion-radio>
-                    <ion-radio ng-model="newReg.takenMedications" ng-value="3">Ikke relevant</ion-radio>
+                    <ion-radio ng-model="newReg.takenMedications" ng-value="1" r="yes"></ion-radio>
+                    <ion-radio ng-model="newReg.takenMedications" ng-value="2" r="no"></ion-radio>
+                    <ion-radio ng-model="newReg.takenMedications" ng-value="3" r="notRelevant"></ion-radio>
                 </div>
             </label>
         </div>
         <div class="padding button-bar">
-            <button class="button button-positive" ng-click="sendRegistration('Daily')">
-                Send inn
-            </button>
-            <button class="button button-negative" ui-sref="home.registration.list">
-                Avbryt
-            </button>
+            <button class="button button-positive" ng-click="sendRegistration('Daily')" r="post"></button>
+            <button class="button button-negative" ui-sref="home.registration.list" r="cancel"></button>
         </div>
     </ion-content>
 </ion-view>

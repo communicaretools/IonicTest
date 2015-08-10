@@ -1,22 +1,18 @@
-<ion-view view-title="Nytt innlegg">
+<ion-view view-title="{{titleNewEntry}}">
   <ion-content class="padding">
       <p ng-if="toQuote">
-          Sitert tekst: <br/>
+          <span r="forumCited"></span><br/>
           <b>{{toQuote.author}}</b>
           <i>
               {{toQuote.content}}
           </i>
       </p>
       <label class="item item-input">
-        <textarea ng-model="entry" placeholder="Fortell om dagen din her..."></textarea>
+        <textarea ng-model="entry" r="forumEntryHint"></textarea>
       </label>
       <div class="padding button-bar">
-        <button class="button button-positive" ng-click="addEntry(entry)">
-          Send inn
-        </button>
-          <button class="button button-negative" ui-sref="home.thread.list">
-              Avbryt
-          </button>
+        <button class="button button-positive" ng-click="addEntry(entry)" r="post"></button>
+          <button class="button button-negative" ui-sref="home.thread.list" r="cancel"></button>
       </div>
   </ion-content>
 </ion-view>

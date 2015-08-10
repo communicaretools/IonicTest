@@ -1,8 +1,8 @@
-<ion-view view-title="Account">
+<ion-view view-title="{{title}}">
   <ion-content>
     <ion-list>
     <ion-toggle  ng-model="dateFormat" ng-change="updateFormat(dateFormat)">
-        Vis klokkeslett med AM/PM
+        {{dateToggle}}
     </ion-toggle>
     </ion-list>
   </ion-content>

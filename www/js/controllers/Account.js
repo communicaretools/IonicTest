@@ -1,8 +1,17 @@
 angular.module('starter.controllers')
-.controller('AccountCtrl', function($scope, preferenceService) {
-	$scope.dateFormat = preferenceService.getDateFormat();
+    .controller('AccountCtrl', [
+        '$scope', 'resources', 'preferenceService',
+        function ($scope, resources, preferenceService) {
 
-	$scope.updateFormat = function (format){
-		preferenceService.updateFormat(format);
-	}; 
-});
+            resources.load().then(function () {
+                $scope.title = resources.get("settingsTitle");
+                $scope.dateToggle = resources.get("settingsDateFormat");
+            });
+
+            $scope.dateFormat = preferenceService.getDateFormat();
+
+            $scope.updateFormat = function(format) {
+                preferenceService.updateFormat(format);
+            };
+        }
+    ]);

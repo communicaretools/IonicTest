@@ -1,9 +1,9 @@
-<ion-view view-title="Ny smiley registrering">
+<ion-view view-title="{{titleSmiley}}">
     <ion-content class="has-header" padding="true">
         <div class="list list-inset">
             <label class="item item-input item-stacked-label">
-                <span class="input-label">Hvordan har du det i dag?</span>
-                <input placeholder="Fyll inn her....." type="text" ng-model="newReg.text">
+                <span class="input-label" r="registrationHowAreYou"></span>
+                <input r="inputFillIn" type="text" ng-model="newReg.text">
             </label>
         </div>
             <div class="mood">
@@ -15,12 +15,9 @@
                 </div>
             </div>
         <div class="padding button-bar">
-            <button class="button button-positive" ng-click="sendRegistration('Smiley')">
-                Send inn
+            <button class="button button-positive" ng-click="sendRegistration('Smiley')" r="post">
             </button>
-            <button class="button button-negative" ui-sref="home.registration.list">
-                Avbryt
-            </button>
+            <button class="button button-negative" ui-sref="home.registration.list" r="cancel"></button>
         </div>
     </ion-content>
 </ion-view>

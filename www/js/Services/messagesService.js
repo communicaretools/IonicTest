@@ -18,7 +18,6 @@ angular.module('starter.services')
 		};
 
 		var getList = function (onSuccess) {
-			console.log(ApiEndpoint);
 		    $http.get(ApiEndpoint.url + "/commonmessages/inbox").then(function (result) {
 		        onSuccess(transform(result.data["messages"]));
 		    }, onError);

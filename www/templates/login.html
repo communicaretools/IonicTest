@@ -1,27 +1,22 @@
-<ion-view view-title="Login">
+<ion-view view-title="{{title}}">
     <ion-content>
         <div ng-hide="options.isLoggedIn" class="list list-inset">
-            <p r="burka"></p>
             <label class="item item-input item-floating-label">
-                <span class="input-label">Brukernavn</span>
-                <input type="text" ng-model="username" placeholder="Brukernavn" />
+                <span class="input-label" r="userName"></span>
+                <input type="text" ng-model="username" r="userName" />
             </label>
             <label class="item item-input item-floating-label">
-                <span class="input-label">Passord</span>
-                <input type="password" ng-model="password" placeholder="Passord" />
+                <span class="input-label" r="password"></span>
+                <input type="password" ng-model="password" r="password" />
             </label>
             <div ng-show="informationText !== ''">{{informationText}}</div>
             <div class="padding button-bar">
-                <button class="button button-positive" ng-click="login(username, password)">
-                    Logg inn
-                </button>
+                <button class="button button-positive" ng-click="login(username, password)" r="logIn"></button>
             </div>
         </div>
         <div ng-show="options.isLoggedIn">
             <div class="padding button-bar">
-                <button class="button button-positive" ng-click="logout()">
-                    Logg ut
-                </button>
+                <button class="button button-positive" ng-click="logout()" r="logOut"></button>
             </div>
         </div>
     </ion-content>

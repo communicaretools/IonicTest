@@ -1,43 +1,50 @@
 angular.module('starter.controllers')
-	.controller('MenuCtrl', ['$scope', 'loginManager', function ($scope, loginManager) {
+    .controller('MenuCtrl', [
+        '$scope',
+        'loginManager',
+        'resources',
+        function ($scope, loginManager, resources) {
+            resources.load().then(function() {
+                $scope.menuItems = [
+                    {
+                        state: "forum",
+                        name: resources.get("menuForum")
+                    },
+                    {
+                        state: "registration",
+                        name: resources.get("menuRegistrations")
+                    },
+                    {
+                        state: "messages",
+                        name: resources.get("menuMessages")
+                    },
+                    {
+                        state: "camera",
+                        name: resources.get("menuCamera")
+                    },
+                    {
+                        state: "video",
+                        name: resources.get("menuVideo")
+                    },
+                    {
+                        state: "account",
+                        name: resources.get("menuSettings")
+                    },
+                    {
+                        state: "login",
+                        name: resources.get("logOut")
+                    },
+                ]
+            });
+            
 
-
-        $scope.menuItems=[
-            {
-                state: "forum",
-                name: "Forum"},
-            {
-                state: "registration",
-                name: "Registreringer"},
-            {
-                state: "account",
-                name: "Instillnger",
-            },
-            {
-                state: "messages",
-                name: "Meldinger"},
-            {
-                state: "camera",
-                name: "Kamera"},
-            {
-                state: "video",
-                name:"Video"},
-            {
-                state: "login",
-                name:"Logg ut"},
-        ]
-
-        
-        console.log($scope.menuItems);
-
-        if (typeof $scope.isLoggedIn === "undefined") {
-            loginManager.options(function(data) {
-                $scope.isLoggedIn = data.isLoggedIn;
-            })
+            if (typeof $scope.isLoggedIn === "undefined") {
+                loginManager.options(function(data) {
+                    $scope.isLoggedIn = data.isLoggedIn;
+                })
+            }
+            $scope.$on("logInChange", function(e, status) {
+                $scope.isLoggedIn = status;
+            });
         }
-	    $scope.$on("logInChange", function (e, status) {
-        $scope.isLoggedIn = status;
-
-        
-    });
-}]);
+    ]);

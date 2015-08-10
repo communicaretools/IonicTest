@@ -1,8 +1,19 @@
 angular.module('starter.controllers')
     .controller('NewRegCtrl', [
-        '$scope', '$stateParams', '$state', 'registrationService', function($scope, $stateParams, $state, registrationService) {
+        '$scope',
+        '$stateParams',
+        '$state',
+        'resources',
+        'registrationService',
+        function ($scope, $stateParams, $state, resources, registrationService) {
+
+            resources.load().then(function () {
+                $scope.titleSmiley = resources.get("registrationNewSmileyTitle");
+                $scope.titleDaily = resources.get("registrationNewDailyTitle");
+            });
+
             $scope.newReg = {};
-            $scope.numberOfTimes=function(n){
+            $scope.numberOfTimes = function(n) {
                 return new Array(n + 1);
             };
 

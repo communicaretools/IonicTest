@@ -1,4 +1,4 @@
-<ion-view view-title="Registreringsoversikt">
+<ion-view view-title="{{title}}">
     <ion-content style="" class="has-header">
         <ion-list class="list">
             <ion-item class="item item-icon-left" ng-repeat="reg in list" ui-sref="home.registrationView({ type: '{{reg.type}}', regId: '{{reg.id}}'})">

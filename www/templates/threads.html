@@ -1,7 +1,9 @@
-<ion-view view-title="Forum tråder">
-  <ion-content>
-      <ion-item collection-repeat="thread in threads" ui-sref="home.thread.list({threadId: thread.id})">
-        {{thread.name}} ({{thread["entry-count"]}})
-      </ion-item>
-  </ion-content>
+<ion-view view-title="{{title}}">
+    <ion-content>
+        <ion-list class="list">
+            <ion-item class="item" collection-repeat="thread in threads" ui-sref="home.thread.list({threadId: thread.id})">
+                <div>{{thread.name}} ({{thread["entry-count"]}})</div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
 </ion-view>

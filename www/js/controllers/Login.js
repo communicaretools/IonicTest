@@ -7,7 +7,8 @@ angular.module('starter.controllers')
         'loginManager',
         'resources',
         function($scope, $log, $state, $ionicLoading, loginManager, resources) {
-            var onLoginSuccess = function(result) {
+            
+            var onLoginSuccess = function (result) {
                 $ionicLoading.hide();
                 $scope.$emit("logInChange", true);
                 $state.go('home.forum');
@@ -30,8 +31,14 @@ angular.module('starter.controllers')
             };
             loginManager.options(options);
 
+            resources.load().then(function() {
+                $scope.title = options.isLoggedIn ?
+                    resources.get("logOut") : resources.get("logIn");
+            })
+
+
             $scope.login = function(username, password) {
-                $ionicLoading.show({ template: 'Loading...' });
+                $ionicLoading.show({ template: resources.get('loading') });
                 loginManager.login(username, password, onLoginSuccess, onLoginError);
             };
             $scope.logout = function() {

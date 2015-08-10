@@ -1,6 +1,6 @@
-<ion-view class="" title="Registrering {{reg.type}}">
+<ion-view class="" title="{{title}} - {{reg.type}}">
     <ion-content padding="true">
-        <button  class="button button-small icon-left ion-chevron-left button-light" ui-sref="home.registration.list"></button>
+        <button class="button button-small icon-left ion-chevron-left button-light" ui-sref="home.registration.list"></button>
         <div class="card">
             <div class="item item-divider">
                 {{reg.postedAt | date: dateFormat}}
@@ -12,30 +12,30 @@
                 </p>
             </div>
             <dl class="item item-body" ng-if="reg.type == 'Daily'">
-                <dt>Humøret mitt i dag:</dt>
+                <dt r="registrationMyMood"></dt>
                 <dd>{{reg.data.generalSatisfaction}}</dd>
-                <dt>Hvordan har du håndtert dagen i dag?</dt>
+                <dt r="registrationHandledDay"></dt>
                 <dd>{{reg.data.handledTheDay}}</dd>
-                <dt>Hvor fornøyd er du med kvaliteten på søvnen din i natt?</dt>
+                <dt r="registrationQualityOfSleep"></dt>
                 <dd>{{reg.data.qualityOfSleep}}</dd>
-                <dt>Hvor mange timer har du sovet i natt?</dt>
+                <dt r="registrationHoursOfSleep"></dt>
                 <dd>{{reg.data.numberOfHoursSlept}}</dd>
-                <dt>Hvor fornøyd er du med hvor fysisk aktiv du har vært i dag?</dt>
+                <dt r="registrationQualityOfPhysicalActivity"></dt>
                 <dd>{{reg.data.satisfactionWithPhysicalActivity}}</dd>
-                <dt>Hvor mange minutter har du vært fysisk aktiv i dag?</dt>
+                <dt r="registrationMinutesOfPhysicalActivity"></dt>
                 <dd>{{reg.data.numberOfMinutesInPhysicalActivity}}</dd>
-                <dt>Hvor fornøyd er du med kostholdet ditt i dag?</dt>
+                <dt r="registrationQualityOfDiet"></dt>
                 <dd>{{reg.data.satisfactionWithDiet}}</dd>
-                <dt>Hvor fornøyd er du med hvor sosial du har vært i dag?</dt>
+                <dt r="registrationQualityOfSocial"></dt>
                 <dd>{{reg.data.satisfactionWithSocialRelations}}</dd>
-                <dt>Har du tatt medisinene dine i dag?</dt>
+                <dt r="registrationTakenMeds"></dt>
                 <dd>{{reg.data.takenMedications}}</dd>
             </dl>
         </div>
     </ion-content>
 
     <div class="bar bar-footer bar-light" ui-sref="home.registration.list">
-        <div class="title icon-left ion-chevron-left">Tilbake</div>
+        <div class="title icon-left ion-chevron-left" r="back"></div>
     </div>
 
 </ion-view>

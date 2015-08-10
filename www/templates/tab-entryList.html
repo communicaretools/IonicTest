@@ -1,11 +1,11 @@
-<ion-view view-title="Forum">
+<ion-view view-title="{{titleEntries}} - {{thread.name}}">
     <ion-content padding="true">
         <ion-list ng-repeat="entry in thread">
             <ion-item>
                 <b>{{entry.author}} - {{entry.date | date: dateFormat }}</b>
                 <p ng-bind-html="entry.content | unsafe">
                 <p>
-                <ion-option-button class="button-positive" ng-click="quoteEntry(entry)">
+                <ion-option-button class="button-positive" ng-click="quoteEntry(entry)" r="forumCite">
                     Siter
                 </ion-option-button>
             </ion-item>
