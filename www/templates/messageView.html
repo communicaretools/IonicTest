@@ -1,7 +1,18 @@
 <ion-view title="{{title}}">
-    <ion-content>
-        <div>from: {{message.sender.name}}<br/> subject: {{message.subject}}
+    <ion-content class="padding">
+        <button class="button button-small icon-left ion-chevron-left button-light" ui-sref="home.messages"></button>     	
+
         </div>
-        <div ng-bind-html="message.content | unsafe"></div>
+		<div class="card">
+		  	<div class="item item-divider">
+		    	from: {{message.sender.name}}
+		  	</div>
+			<div class="padding">
+         		<h2>{{message.subject}}</h2>
+		        <div ng-bind-html="message.content | unsafe">
+		        </div>  
+		    </div> 
+
+		</div>
     </ion-content>
 </ion-view>
