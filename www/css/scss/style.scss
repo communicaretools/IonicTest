@@ -36,6 +36,22 @@
     top: 0;
 }
 
+#menu-header {
+    background-image: url("../media/images/menu/menu-header.png");
+    background-color: #cccccc;
+    img {
+        border: 1px solid #999;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        margin-top: 2em;
+    }
+    h2 {
+        margin: 0;
+    }
+}
+
 %mood-style {
   width: 250px;
   height: 250px;

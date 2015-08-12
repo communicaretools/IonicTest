@@ -9,10 +9,17 @@
   </ion-side-menu-content>
 
   <ion-side-menu side="left" expose-aside-when="large">
-    <ion-header-bar class="bar-stable">
-        <h1 class="title" r="menuTitle"></h1>
-    </ion-header-bar>
+
+
+
       <ion-content>
+        <div id="menu-header" class="padding">
+          <img src="media/images/avatar/sample-avatar.jpg">
+          <h2>User name</h2>
+          <p>ibhjoibhpibv</p>
+        </div>
+
+        <!--LIST-->
         <div ng-if="!isLoggedIn" class="list card">
           <div class="item item-text-wrap" ui-sref="home.login" menu-close r="loginInfo">
                 <button class="button button-positive" r="loginInfo">
