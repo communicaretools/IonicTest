@@ -22,6 +22,7 @@ angular.module('starter.services')
             var logout = function(onSuccess) {
                 $http.get(ApiEndpoint.url + "/logout")
                     .then(onSuccess, onError);
+                $localStorage.$reset();
             };
 
             return {
