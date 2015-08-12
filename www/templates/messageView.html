@@ -1,8 +1,12 @@
 <ion-view title="{{title}}">
+    <ion-nav-bar>
+        <ion-nav-buttons side="primary">
+            <button class="button button-clear " ui-sref="home.messages" >
+                <i class="icon ion-ios-arrow-left"></i>
+            </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
     <ion-content class="padding">
-        <button class="button button-small icon-left ion-chevron-left button-light" ui-sref="home.messages"></button>     	
-
-        </div>
 		<div class="card">
 		  	<div class="item item-divider">
 		    	from: {{message.sender.name}}
