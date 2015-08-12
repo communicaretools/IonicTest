@@ -13,10 +13,9 @@
 
 
       <ion-content>
-        <div id="menu-header" class="padding">
+        <div id="menu-header" class="padding" ng-show="isLoggedIn">
           <img src="media/images/avatar/sample-avatar.jpg">
-          <h2>User name</h2>
-          <p>ibhjoibhpibv</p>
+          <h2>{{loggedInUser}}</h2>
         </div>
 
         <!--LIST-->
