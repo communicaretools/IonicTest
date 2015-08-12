@@ -40,7 +40,8 @@ angular.module('starter.controllers')
 
       // Close the new task modal
       $scope.closeExercise = function() {
-        $scope.exerciseModal.remove();
+        
+        $scope.exerciseModal.hide();
       };
     }]
 );
