@@ -77,7 +77,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             })  
             .state('home.exerciseModal', {
                 cache: false,
-                url: '/exercises/:exerciseId',
+                url: '/exercises/:exerciseId/:exerciseName',
                 templateUrl: 'templates/modal-exerciseView.html'
             })
 
