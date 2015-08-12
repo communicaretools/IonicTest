@@ -14,7 +14,12 @@
     </ion-header-bar>
       <ion-content>
         <div ng-if="!isLoggedIn" class="list card">
-          <div class="item item-text-wrap" r="loginInfo"></div>
+          <div class="item item-text-wrap" ui-sref="home.login" menu-close r="loginInfo">
+                <button class="button button-positive" r="loginInfo">
+                  
+
+                </button>
+          </div>
         </div>
         <ion-list>
           <ion-item ng-if="isLoggedIn" menu-close ng-repeat= "item in menuItems" ui-sref="home.{{item.state}}" ui-sref-active="activated">
