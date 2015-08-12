@@ -1,10 +1,12 @@
 angular.module('starter.controllers')
     .controller('MenuCtrl', [
         '$scope',
+        '$localStorage',
         'loginManager',
         'resources',
-        function ($scope, loginManager, resources) {
-            resources.load().then(function() {
+        function ($scope, $localStorage, loginManager, resources) {
+            resources.load().then(function () {
+                $scope.loggedInUser = $localStorage.userName;
                 $scope.menuItems = [
                     {
                         state: "forum",

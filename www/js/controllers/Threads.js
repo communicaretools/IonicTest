@@ -9,11 +9,12 @@ angular.module('starter.controllers')
                     $scope.threads = result;
                 });
             };
-            resources.load().then(function () {
-                $scope.title = resources.get("forumThreadsTitle");
-                loadThreads();
-            });
             $scope.threads = [];
+
+            resources.load().then(function () {
+                loadThreads();
+                $scope.title = resources.get("forumThreadsTitle");
+            });
 
         }
     ]);

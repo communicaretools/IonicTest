@@ -1,10 +1,11 @@
 angular.module('starter.services')
     .factory("loginManager", [
-        "$http", "$log", "ApiEndpoint", function($http, $log, ApiEndpoint) {
+        "$http", "$log", "ApiEndpoint", "$localStorage", function ($http, $log, ApiEndpoint, $localStorage) {
             var onError = function(e) {
                 $log.error(e.msg);
             };
-            var getLoginOptions = function(onSuccess) {
+
+            var getLoginOptions = function (onSuccess) {
                 $http.get(ApiEndpoint.url + "/login").then(
                     function(result) {
                         onSuccess(result.data);
@@ -15,6 +16,7 @@ angular.module('starter.services')
             var performLogin = function(username, password, onSuccess, onLoginError) {
                 $http.post(ApiEndpoint.url + "/login", { username: username, password: password })
                     .then(onSuccess, onLoginError);
+                $localStorage.userName = username;
             };
 
             var logout = function(onSuccess) {
