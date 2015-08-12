@@ -75,15 +75,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
                     }
                 }
             })  
-           .state('home.exerciseView', {
+            .state('home.exerciseModal', {
                 cache: false,
                 url: '/exercises/:exerciseId',
-                views: {
-                    'menuContent': {
-                        templateUrl: 'templates/exerciseView.html',
-                        controller: 'ExercisesCtrl'
-                    }
-                }
+                templateUrl: 'templates/modal-exerciseView.html'
             })
 
             //------------------------------------------                                 
