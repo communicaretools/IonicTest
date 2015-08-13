@@ -6,3 +6,5 @@ platforms/
 plugins/
 www/css/.sass-cache
 resources/
+*.sublime-project
+ionictest.sublime-workspace
