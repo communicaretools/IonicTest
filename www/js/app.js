@@ -237,7 +237,40 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/messages.html',
+                    },
+                    'tab-list': {
+                        templateUrl: 'templates/tab-messageList.html',
                         controller: 'MessagesCtrl'
+                    }
+                }
+            })
+            .state('home.messages.inbox', {
+                url: '/list/inbox',
+                cache: false,
+                views: {
+                    'tab-inbox': {
+                        templateUrl: 'templates/tab-messageList.html',
+                        controller: 'MessagesCtrl'
+                    }
+                }
+            })
+            .state('home.messages.outbox', {
+                url: '/list/outbox',
+                cache: false,
+                views: {
+                    'tab-outbox': {
+                        templateUrl: 'templates/tab-messageList.html',
+                        controller: 'MessagesCtrl'
+                    }
+                }
+            })
+            .state('home.messages.new', {
+                url: '/new',
+                cache: false,
+                views: {
+                    'tab-new': {
+                        templateUrl: 'templates/tab-messageNew.html',
+                        controller: 'MessageComposeCtrl'
                     }
                 }
             })

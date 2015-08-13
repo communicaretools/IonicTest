@@ -16,7 +16,7 @@ angular.module('starter.controllers')
                 });
             };
 
-            $scope.message = [];
+            $scope.message = {};
 
             resources.load().then(function () {
                 loadMessage(messageId);

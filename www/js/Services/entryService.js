@@ -16,6 +16,7 @@ angular.module('starter.services')
 	    var quoteWrap = function (toQuote) {
 	        return "[quote " + "user=\'" + toQuote.author + "\']" + toQuote.content + "[/quote]";
 	    };
+
 	    var addEntry = function (threadId, entry, onSuccess) {
 	    	var postContent = entry.toQuote ?
 	    	{ "entry-content": quoteWrap(entry.toQuote) +" "+ entry.content }:

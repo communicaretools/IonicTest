@@ -1,0 +1,14 @@
+<ion-view title="New">
+    <ion-content>
+        <label class="item item-input">
+            <input ng-model="subject"></input>
+        </label>
+        <label class="item item-input">
+            <textarea ng-model="content"></textarea>
+        </label>
+        <div class="padding button-bar">
+            <button class="button button-positive" ng-click="addEntry(content, subject)" r="post"></button>
+            <button class="button button-negative" ui-sref="home.messages.inbox" r="cancel"></button>
+        </div>
+    </ion-content>
+</ion-view>

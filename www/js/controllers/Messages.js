@@ -1,21 +1,25 @@
 angular.module('starter.controllers')
     .controller('MessagesCtrl', [
         '$scope',
+        '$state',
         'resources',
         'messagesService',
-        function ($scope, resources, messagesService) {
-            var loadMessages = function() {
-                messagesService.getList(function(result) {
+        function ($scope, $state, resources, messagesService) {
+            var box = $state.current.name.split(/[.]+/).pop();
+
+            var loadMessages = function (box) {
+                messagesService.getList(box, function(result) {
                     $scope.messages = result;
                 });
             };
 
-            resources.load().then(function () {
-                $scope.title = resources.get("messagesTitle");
-            });
-
             $scope.messages = [];
 
-            loadMessages();
+            resources.load().then(function () {
+                $scope.title = resources.get("messagesTitle");
+
+                loadMessages(box);
+            });
+
         }
     ]);

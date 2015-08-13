@@ -6,8 +6,9 @@ angular.module('starter.services')
 	    };
 
 	    //TODO
-	    var add = function (type, entry, onSuccess) {
-	        console.log(entry);
+	    var add = function (msg, onSuccess) {
+	        $http.post(ApiEndpoint.url + "/commonmessages/send/", msg)
+                .then(onSuccess, onError);
 	    };
 
 		var transform = function (list) {
@@ -18,8 +19,8 @@ angular.module('starter.services')
 		    });
 		};
 
-		var getList = function (onSuccess) {
-		    $http.get(ApiEndpoint.url + "/commonmessages/inbox").then(function (result) {
+		var getList = function (box, onSuccess) {
+		    $http.get(ApiEndpoint.url + "/commonmessages/"+box+"/").then(function (result) {
 		        onSuccess(transform(result.data["messages"]));
 		    }, onError);
 		};
