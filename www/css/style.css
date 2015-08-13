@@ -94,147 +94,108 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
 
 /* line 92, scss/style.scss */
 .mood-image-1 {
-  background-image: url("images/1.png");
+  background-image: url("images/moods/big/big-1.png");
   background-repeat: no-repeat;
-  height: 32px;
-  width: 32px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 8px;
+  height: 105%;
+  width: 105%;
 }
 
 /* line 92, scss/style.scss */
 .mood-image-2 {
-  background-image: url("images/2.png");
+  background-image: url("images/moods/big/big-2.png");
   background-repeat: no-repeat;
-  height: 32px;
-  width: 32px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 8px;
+  height: 105%;
+  width: 105%;
 }
 
 /* line 92, scss/style.scss */
 .mood-image-3 {
-  background-image: url("images/3.png");
+  background-image: url("images/moods/big/big-3.png");
   background-repeat: no-repeat;
-  height: 32px;
-  width: 32px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 8px;
+  height: 105%;
+  width: 105%;
 }
 
 /* line 92, scss/style.scss */
 .mood-image-4 {
-  background-image: url("images/4.png");
+  background-image: url("images/moods/big/big-4.png");
   background-repeat: no-repeat;
-  height: 32px;
-  width: 32px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 8px;
+  height: 105%;
+  width: 105%;
 }
 
 /* line 92, scss/style.scss */
 .mood-image-5 {
-  background-image: url("images/5.png");
+  background-image: url("images/moods/big/big-5.png");
   background-repeat: no-repeat;
-  height: 32px;
-  width: 32px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 8px;
+  height: 105%;
+  width: 105%;
 }
 
 /* line 92, scss/style.scss */
 .mood-image-6 {
-  background-image: url("images/6.png");
+  background-image: url("images/moods/big/big-6.png");
   background-repeat: no-repeat;
-  height: 32px;
-  width: 32px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 8px;
+  height: 105%;
+  width: 105%;
 }
 
 /* line 92, scss/style.scss */
 .mood-image-7 {
-  background-image: url("images/7.png");
+  background-image: url("images/moods/big/big-7.png");
   background-repeat: no-repeat;
-  height: 32px;
-  width: 32px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 8px;
+  height: 105%;
+  width: 105%;
 }
 
 /* line 92, scss/style.scss */
 .mood-image-8 {
-  background-image: url("images/8.png");
+  background-image: url("images/moods/big/big-8.png");
   background-repeat: no-repeat;
-  height: 32px;
-  width: 32px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 8px;
+  height: 105%;
+  width: 105%;
 }
 
 /* line 92, scss/style.scss */
 .mood-image-9 {
-  background-image: url("images/9.png");
+  background-image: url("images/moods/big/big-9.png");
   background-repeat: no-repeat;
-  height: 32px;
-  width: 32px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 8px;
+  height: 105%;
+  width: 105%;
 }
 
 /* line 92, scss/style.scss */
 .mood-image-10 {
-  background-image: url("images/10.png");
+  background-image: url("images/moods/big/big-10.png");
   background-repeat: no-repeat;
-  height: 32px;
-  width: 32px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 8px;
+  height: 105%;
+  width: 105%;
 }
 
 /* line 92, scss/style.scss */
 .mood-image-11 {
-  background-image: url("images/11.png");
+  background-image: url("images/moods/big/big-11.png");
   background-repeat: no-repeat;
-  height: 32px;
-  width: 32px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 8px;
+  height: 105%;
+  width: 105%;
 }
 
 /* line 92, scss/style.scss */
 .mood-image-12 {
-  background-image: url("images/12.png");
+  background-image: url("images/moods/big/big-12.png");
   background-repeat: no-repeat;
-  height: 32px;
-  width: 32px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 8px;
+  height: 105%;
+  width: 105%;
 }
 
 /* line 103, scss/style.scss */
 .center-mood {
   position: absolute;
-  top: calc(50% - 25px);
-  left: calc(50% - 25px);
-  height: 50px;
-  width: 50px;
+  top: 90px;
+  left: 90px;
+  height: 70px;
+  width: 70px;
   line-height: 50px;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 200%;
 }
 
 /* line 3, scss/_mixins.scss */
@@ -249,7 +210,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   margin-top: -16px;
   text-align: center;
   position: absolute;
-  background-image: url("images/1.png");
+  background-image: url("images/moods/small/1.png");
   background-repeat: no-repeat;
   left: 67.5%;
   top: 19.68911%;
@@ -266,7 +227,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   margin-top: -16px;
   text-align: center;
   position: absolute;
-  background-image: url("images/2.png");
+  background-image: url("images/moods/small/2.png");
   background-repeat: no-repeat;
   left: 80.31089%;
   top: 32.5%;
@@ -283,7 +244,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   margin-top: -16px;
   text-align: center;
   position: absolute;
-  background-image: url("images/3.png");
+  background-image: url("images/moods/small/3.png");
   background-repeat: no-repeat;
   left: 85%;
   top: 50.0%;
@@ -300,7 +261,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   margin-top: -16px;
   text-align: center;
   position: absolute;
-  background-image: url("images/4.png");
+  background-image: url("images/moods/small/4.png");
   background-repeat: no-repeat;
   left: 80.31089%;
   top: 67.5%;
@@ -317,7 +278,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   margin-top: -16px;
   text-align: center;
   position: absolute;
-  background-image: url("images/5.png");
+  background-image: url("images/moods/small/5.png");
   background-repeat: no-repeat;
   left: 67.5%;
   top: 80.31089%;
@@ -334,7 +295,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   margin-top: -16px;
   text-align: center;
   position: absolute;
-  background-image: url("images/6.png");
+  background-image: url("images/moods/small/6.png");
   background-repeat: no-repeat;
   left: 50.0%;
   top: 85%;
@@ -351,7 +312,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   margin-top: -16px;
   text-align: center;
   position: absolute;
-  background-image: url("images/7.png");
+  background-image: url("images/moods/small/7.png");
   background-repeat: no-repeat;
   left: 32.5%;
   top: 80.31089%;
@@ -368,7 +329,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   margin-top: -16px;
   text-align: center;
   position: absolute;
-  background-image: url("images/8.png");
+  background-image: url("images/moods/small/8.png");
   background-repeat: no-repeat;
   left: 19.68911%;
   top: 67.5%;
@@ -385,7 +346,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   margin-top: -16px;
   text-align: center;
   position: absolute;
-  background-image: url("images/9.png");
+  background-image: url("images/moods/small/9.png");
   background-repeat: no-repeat;
   left: 15%;
   top: 50.0%;
@@ -402,7 +363,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   margin-top: -16px;
   text-align: center;
   position: absolute;
-  background-image: url("images/10.png");
+  background-image: url("images/moods/small/10.png");
   background-repeat: no-repeat;
   left: 19.68911%;
   top: 32.5%;
@@ -419,7 +380,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   margin-top: -16px;
   text-align: center;
   position: absolute;
-  background-image: url("images/11.png");
+  background-image: url("images/moods/small/11.png");
   background-repeat: no-repeat;
   left: 32.5%;
   top: 19.68911%;
@@ -436,7 +397,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   margin-top: -16px;
   text-align: center;
   position: absolute;
-  background-image: url("images/12.png");
+  background-image: url("images/moods/small/12.png");
   background-repeat: no-repeat;
   left: 50.0%;
   top: 15%;

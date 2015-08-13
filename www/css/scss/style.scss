@@ -90,26 +90,28 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
 
 @for $i from 1 through 12 {
     .mood-image-#{$i} {
-        background-image: url($imagesPath + "#{$i}.png");
+        background-image: url($imagesPathBig + "big-"+ "#{$i}.png");
         background-repeat: no-repeat;
-        height: $moodSize;
-        width: $moodSize;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: $moodSize/4;
+        height: 105%;
+        width: 105%;
+        //margin-left: auto;
+        //margin-right: auto;
+        //margin-top: $moodSize/4;
     }
 }
 
 .center-mood {
     position: absolute;
-    top: calc(50% - 25px);
-    left: calc(50% - 25px);
-    height: 50px;
-    width: 50px;
+    //top: calc(50% - 25px);
+    //left: calc(50% - 25px);
+    top: 90px;
+    left: 90px;    
+    height: 70px;
+    width: 70px;
     line-height: 50px;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 200%;
+    //border-style: solid;
+    //border-width: 1px;
+    //border-radius: 200%;
 }
 
 
