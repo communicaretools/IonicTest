@@ -15,11 +15,10 @@ angular.module('starter.controllers')
 
             var onLoginSuccess = function (result) {
                 $ionicLoading.hide();
-                $scope.$emit("logInChange", true);
                 profileManager.get(function (result) {
-                    console.log(result.data);
                     $localStorage.user = result.data;
                 }, onError);
+                $scope.$emit("logInChange", true);
                 $state.go('home.forum');
             };
 

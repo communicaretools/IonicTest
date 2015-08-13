@@ -6,7 +6,9 @@ angular.module('starter.controllers')
         'resources',
         function ($scope, $localStorage, loginManager, resources) {
             resources.load().then(function () {
-                $scope.user = $localStorage.user;
+                if (!$scope.user) {
+                    $scope.user = $localStorage.user;   
+                }
                 $scope.menuItems = [
                     {
                         state: "forum",
