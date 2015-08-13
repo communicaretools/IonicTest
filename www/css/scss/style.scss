@@ -84,6 +84,8 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   margin: 0 auto;
   //make sure everything stays within the div
   position: relative;
+    background-image: url("images/mood-bg/mood-bg.png");
+
 }
 
 @for $i from 1 through 12 {
@@ -115,5 +117,6 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
 .mood {
     @extend %mood-style;
     @include moods;
-
 }
+
+
