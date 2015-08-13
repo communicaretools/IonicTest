@@ -1,27 +1,32 @@
-/* line 8, scss/style.scss */
+/* line 7, scss/style.scss */
+.bar.bar-stable .title {
+  color: #37a2fc;
+}
+
+/* line 11, scss/style.scss */
 .item-content img {
   vertical-align: middle;
 }
 
-/* line 13, scss/style.scss */
+/* line 16, scss/style.scss */
 .citation {
   background-color: #f5f5f5;
   padding: .5em 1em;
 }
 
-/* line 17, scss/style.scss */
+/* line 20, scss/style.scss */
 .citation-author {
   font-weight: bold;
 }
 
-/* line 21, scss/style.scss */
+/* line 24, scss/style.scss */
 .centerme {
   margin: 0 auto;
   width: 100%;
   height: 100%;
 }
 
-/* line 27, scss/style.scss */
+/* line 30, scss/style.scss */
 .fullscreen-player {
   max-width: 100%;
   max-height: 100%;
@@ -34,12 +39,36 @@
   top: 0;
 }
 
-/* line 39, scss/style.scss */
+/* line 42, scss/style.scss */
+ion-content,
+.list ion-item.item .item-content {
+  background-color: #eceeef;
+}
+
+/* line 48, scss/style.scss */
+ion-side-menu ion-content,
+ion-side-menu ion-content .list ion-item.item .item-content {
+  background-color: #4db295;
+  color: #f3e4b5;
+}
+
+/* line 53, scss/style.scss */
+ion-side-menu ion-content .list ion-item.item {
+  border: 1px solid #449981;
+  border-color: #449981;
+}
+
+/* line 57, scss/style.scss */
+ion-side-menu ion-content .list ion-item.item.activated .item-content {
+  background-color: #449981;
+}
+
+/* line 64, scss/style.scss */
 #menu-header {
   background-image: url("../media/images/menu/menu-header.png");
   background-color: #cccccc;
 }
-/* line 42, scss/style.scss */
+/* line 67, scss/style.scss */
 #menu-header img {
   border: 1px solid #999;
   border-bottom-left-radius: 50%;
@@ -48,12 +77,12 @@
   border-top-right-radius: 50%;
   margin-top: 2em;
 }
-/* line 50, scss/style.scss */
+/* line 75, scss/style.scss */
 #menu-header h2 {
   margin: 0;
 }
 
-/* line 55, scss/style.scss */
+/* line 80, scss/style.scss */
 .mood {
   width: 250px;
   height: 250px;
@@ -61,7 +90,7 @@
   position: relative;
 }
 
-/* line 65, scss/style.scss */
+/* line 90, scss/style.scss */
 .mood-image-1 {
   background-image: url("images/1.png");
   background-repeat: no-repeat;
@@ -72,7 +101,7 @@
   margin-top: 8px;
 }
 
-/* line 65, scss/style.scss */
+/* line 90, scss/style.scss */
 .mood-image-2 {
   background-image: url("images/2.png");
   background-repeat: no-repeat;
@@ -83,7 +112,7 @@
   margin-top: 8px;
 }
 
-/* line 65, scss/style.scss */
+/* line 90, scss/style.scss */
 .mood-image-3 {
   background-image: url("images/3.png");
   background-repeat: no-repeat;
@@ -94,7 +123,7 @@
   margin-top: 8px;
 }
 
-/* line 65, scss/style.scss */
+/* line 90, scss/style.scss */
 .mood-image-4 {
   background-image: url("images/4.png");
   background-repeat: no-repeat;
@@ -105,7 +134,7 @@
   margin-top: 8px;
 }
 
-/* line 65, scss/style.scss */
+/* line 90, scss/style.scss */
 .mood-image-5 {
   background-image: url("images/5.png");
   background-repeat: no-repeat;
@@ -116,7 +145,7 @@
   margin-top: 8px;
 }
 
-/* line 65, scss/style.scss */
+/* line 90, scss/style.scss */
 .mood-image-6 {
   background-image: url("images/6.png");
   background-repeat: no-repeat;
@@ -127,7 +156,7 @@
   margin-top: 8px;
 }
 
-/* line 65, scss/style.scss */
+/* line 90, scss/style.scss */
 .mood-image-7 {
   background-image: url("images/7.png");
   background-repeat: no-repeat;
@@ -138,7 +167,7 @@
   margin-top: 8px;
 }
 
-/* line 65, scss/style.scss */
+/* line 90, scss/style.scss */
 .mood-image-8 {
   background-image: url("images/8.png");
   background-repeat: no-repeat;
@@ -149,7 +178,7 @@
   margin-top: 8px;
 }
 
-/* line 65, scss/style.scss */
+/* line 90, scss/style.scss */
 .mood-image-9 {
   background-image: url("images/9.png");
   background-repeat: no-repeat;
@@ -160,7 +189,7 @@
   margin-top: 8px;
 }
 
-/* line 65, scss/style.scss */
+/* line 90, scss/style.scss */
 .mood-image-10 {
   background-image: url("images/10.png");
   background-repeat: no-repeat;
@@ -171,7 +200,7 @@
   margin-top: 8px;
 }
 
-/* line 65, scss/style.scss */
+/* line 90, scss/style.scss */
 .mood-image-11 {
   background-image: url("images/11.png");
   background-repeat: no-repeat;
@@ -182,7 +211,7 @@
   margin-top: 8px;
 }
 
-/* line 65, scss/style.scss */
+/* line 90, scss/style.scss */
 .mood-image-12 {
   background-image: url("images/12.png");
   background-repeat: no-repeat;
@@ -193,7 +222,7 @@
   margin-top: 8px;
 }
 
-/* line 76, scss/style.scss */
+/* line 101, scss/style.scss */
 .center-mood {
   position: absolute;
   top: calc(50% - 25px);

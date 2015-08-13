@@ -4,6 +4,9 @@
 @import '_functions';
 @import '_mixins';
 
+.bar.bar-stable .title {
+    color: $headerTitleColor;
+}
 .item-content {
     img {
         vertical-align: middle;
@@ -35,6 +38,28 @@
     right: 0;
     top: 0;
 }
+
+ion-content,
+.list ion-item.item .item-content {
+    background-color: $appBgColor;
+}
+
+
+ion-side-menu ion-content,
+ion-side-menu ion-content .list ion-item.item .item-content {
+    background-color: $menuBgColor;
+    color: $menuItemColor;
+}
+ion-side-menu ion-content .list ion-item.item {
+    border: 1px solid $menuActivatedColor;
+    border-color: $menuActivatedColor;
+}
+ion-side-menu ion-content .list ion-item.item.activated .item-content {
+    background-color: $menuActivatedColor;
+}
+
+
+
 
 #menu-header {
     background-image: url("../media/images/menu/menu-header.png");
