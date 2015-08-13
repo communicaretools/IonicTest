@@ -54,7 +54,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                         templateUrl: 'templates/exercises.html'
                     }
                 }
-            }) 
+            })
             .state('home.exercises.list', {
                 cache: false,
                 url: '/list',
@@ -64,7 +64,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                         controller: 'ExercisesCtrl'
                     }
                 }
-            }) 
+            })
             .state('home.exercises.mine', {
                 cache: false,
                 url: '/mine',
@@ -74,7 +74,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                         controller: 'ExercisesCtrl'
                     }
                 }
-            })  
+            })
             .state('home.exerciseModal', {
                 cache: false,
                 url: '/exercises/:exerciseId/:exerciseName',
@@ -102,7 +102,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 }
             })   
 
-            //------------------------------------------                                 
+            //------------------------------------------
             .state('home.forum', {
                 cache: false,
                 url: '/threads',
