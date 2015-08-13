@@ -6,10 +6,26 @@
         <button class="button button-clear
         " ng-click="closeExercise()">X</button>
     </ion-header-bar>
-    <ion-content>
-        <audio controls>
-          <source src="media/sound/sound-sample.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-    </ion-content>
+        <ion-content>
+            <div class="button-bar padding">
+                <button class="button "><i class="icon ion-headphone" ui-sref="home.exerciseModal.sound"></i></button>
+                <button class="button "><i class="icon ion-document-text" ui-sref="home.exerciseModal.text"></i></button>
+            </div>  
+            <div class="card padding">
+                <audio controls>
+                  <source src="media/sound/sound-sample.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+            </div>
+
+
+            <ion-nav-view name="exerciseContent"></ion-nav-view>
+
+
+            <div class="button-bar padding">
+                <button class="button button-clear"><i class="icon ion-heart"></i></button>
+                <button class="button button-clear"><i class="icon ion-more"></i></button>
+                <button class="button button-clear"><i class="icon ion-close"></i></button>                
+            </div>  
+        </ion-content>
 </ion-modal-view>

@@ -80,6 +80,27 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/exercises/:exerciseId/:exerciseName',
                 templateUrl: 'templates/modal-exerciseView.html'
             })
+            //------------------------------------------ 
+            
+            .state('home.exerciseModal.sound', {
+                cache: false,
+                url: '/sound',
+                views: {
+                    'exerciseContent': {
+                        templateUrl: 'templates/tab-exerciseSound.html',
+                    }
+                }
+            })
+            .state('home.exerciseModal.text', {
+                cache: false,
+                url: '/text',
+                views: {
+                    'exerciseContent': {
+                        templateUrl: 'templates/tab-exerciseText.html',
+
+                    }
+                }
+            })   
 
             //------------------------------------------                                 
             .state('home.forum', {
