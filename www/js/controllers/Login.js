@@ -5,12 +5,21 @@ angular.module('starter.controllers')
         '$state',
         '$ionicLoading', 
         '$localStorage',
-        'loginManager',
+        'loginManager', 
+        'profileManager',
         'resources',
-        function ($scope, $log, $state, $ionicLoading, $localStorage, loginManager, resources) {
+        function ($scope, $log, $state, $ionicLoading, $localStorage, loginManager, profileManager, resources) {
+            var onError = function (e) {
+                $log.error(e.msg);
+            };
+
             var onLoginSuccess = function (result) {
                 $ionicLoading.hide();
                 $scope.$emit("logInChange", true);
+                profileManager.get(function (result) {
+                    console.log(result.data);
+                    $localStorage.user = result.data;
+                }, onError);
                 $state.go('home.forum');
             };
 

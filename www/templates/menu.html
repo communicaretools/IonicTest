@@ -9,22 +9,17 @@
   </ion-side-menu-content>
 
   <ion-side-menu side="left" expose-aside-when="large">
-
-
-
       <ion-content>
         <div id="menu-header" class="padding" ng-show="isLoggedIn">
-          <img src="media/images/avatar/sample-avatar.jpg">
-          <h2>{{loggedInUser}}</h2>
+          <img src='data:image/jpeg;base64,{{user.avatar}}' ng-show="user.avatar">
+          <img src="media/images/avatar/sample-avatar.jpg" ng-hide="user.avatar">
+          <h2>{{user.userName}}</h2>
         </div>
 
         <!--LIST-->
         <div ng-if="!isLoggedIn" class="list card">
           <div class="item item-text-wrap" ui-sref="home.login" menu-close r="loginInfo">
-                <button class="button button-positive" r="loginInfo">
-                  
-
-                </button>
+                <button class="button button-positive" r="loginInfo"></button>
           </div>
         </div>
         <ion-list>

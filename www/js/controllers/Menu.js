@@ -6,7 +6,7 @@ angular.module('starter.controllers')
         'resources',
         function ($scope, $localStorage, loginManager, resources) {
             resources.load().then(function () {
-                $scope.loggedInUser = $localStorage.userName;
+                $scope.user = $localStorage.user;
                 $scope.menuItems = [
                     {
                         state: "forum",
@@ -51,7 +51,7 @@ angular.module('starter.controllers')
             }
             $scope.$on("logInChange", function(e, status) {
                 $scope.isLoggedIn = status;
-                $scope.loggedInUser = $localStorage.userName;
+                $scope.user = $localStorage.user;
             });
         }
     ]);
