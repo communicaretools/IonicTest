@@ -12,7 +12,9 @@
   <!-- A wildcard can be used to whitelist the entire network,
      over HTTP and HTTPS.
      *NOT RECOMMENDED* -->
-  <allow-navigation href="http://*/*" />
+  <allow-navigation href="*" />
+  <allow-intent href="http://*/*" />
+  <allow-intent href="https://*/*" />
   <preference name="webviewbounce" value="false"/>
   <preference name="UIWebViewBounce" value="false"/>
   <preference name="DisallowOverscroll" value="true"/>
