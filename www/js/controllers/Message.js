@@ -3,9 +3,8 @@ angular.module('starter.controllers')
         '$scope',
         '$stateParams',
         '$ionicLoading',
-        'resources',
         'messagesService',
-        function ($scope, $stateParams, $ionicLoading, resources, messagesService) {
+        function ($scope, $stateParams, $ionicLoading, messagesService) {
             var messageId = $stateParams.messageId;
 
             var loadMessage = function (id) {
@@ -18,9 +17,6 @@ angular.module('starter.controllers')
 
             $scope.message = {};
 
-            resources.load().then(function () {
-                loadMessage(messageId);
-                $scope.title = resources.get("messageTitle");
-            });
+            loadMessage(messageId);
         }
     ]);
