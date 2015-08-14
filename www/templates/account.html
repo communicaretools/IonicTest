@@ -1,9 +1,8 @@
-<ion-view view-title="{{title}}">
-  <ion-content>
-    <ion-list>
-    <ion-toggle  ng-model="dateFormat" ng-change="updateFormat(dateFormat)">
-        {{dateToggle}}
-    </ion-toggle>
-    </ion-list>
-  </ion-content>
+<ion-view>
+    <ion-nav-title r="settingsTitle"></ion-nav-title>
+    <ion-content>
+        <ion-list>
+            <ion-toggle ng-model="dateFormat" ng-change="updateFormat(dateFormat)"><span r="settingsDateFormat"></span></ion-toggle>
+        </ion-list>
+    </ion-content>
 </ion-view>

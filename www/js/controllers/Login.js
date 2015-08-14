@@ -22,7 +22,8 @@ angular.module('starter.controllers')
                 $state.go('home.forum');
             };
 
-            var onLoginError = function(result) {
+            var onLoginError = function (result) {
+                $scope.informationText = null;
                 $ionicLoading.hide();
                 $log.error(result);
                 $scope.$emit("logInChange", false);
@@ -33,7 +34,7 @@ angular.module('starter.controllers')
             var onLogoutSuccess = function() {
                 $scope.$emit("logInChange", false);
                 loginManager.options(options);
-                $localStorage.$reset();
+                $localStorage.user = null;
             };
             var options = function(data) {
                 $scope.$emit("logInChange", data.isLoggedIn);
@@ -41,11 +42,6 @@ angular.module('starter.controllers')
             };
             loginManager.options(options);
 
-            resources.load().then(function() {
-                $scope.title = options.isLoggedIn ?
-                    resources.get("logOut") : resources.get("logIn");
-            })
-            
             $scope.login = function(username, password) {
                 $ionicLoading.show({ template: resources.get('loading') });
                 loginManager.login(username, password, onLoginSuccess, onLoginError);
