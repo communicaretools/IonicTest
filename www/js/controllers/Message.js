@@ -18,9 +18,6 @@ angular.module('starter.controllers')
 
             $scope.message = {};
 
-            resources.load().then(function () {
-                loadMessage(messageId);
-                $scope.title = resources.get("messageTitle");
-            });
+            loadMessage(messageId);
         }
     ]);

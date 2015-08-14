@@ -239,7 +239,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                         templateUrl: 'templates/messages.html',
                     },
                     'tab-list': {
-                        templateUrl: 'templates/tab-messageList.html',
+                        templateUrl: 'templates/tab-messageInbox.html',
                         controller: 'MessagesCtrl'
                     }
                 }
@@ -249,7 +249,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 cache: false,
                 views: {
                     'tab-inbox': {
-                        templateUrl: 'templates/tab-messageList.html',
+                        templateUrl: 'templates/tab-messageInbox.html',
                         controller: 'MessagesCtrl'
                     }
                 }
@@ -259,7 +259,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 cache: false,
                 views: {
                     'tab-outbox': {
-                        templateUrl: 'templates/tab-messageList.html',
+                        templateUrl: 'templates/tab-messageOutbox.html',
                         controller: 'MessagesCtrl'
                     }
                 }

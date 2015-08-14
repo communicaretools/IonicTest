@@ -1,22 +1,26 @@
-<ion-view title="{{title}}">
+<ion-view>
     <ion-nav-bar>
         <ion-nav-buttons side="primary">
-            <button class="button button-clear " ui-sref="home.messages" >
+            <button class="button button-clear " ui-sref="home.messages">
                 <i class="icon ion-ios-arrow-left"></i>
             </button>
         </ion-nav-buttons>
     </ion-nav-bar>
+    <ion-nav-title r="messageTitle"></ion-nav-title>
     <ion-content class="padding">
-		<div class="card">
-		  	<div class="item item-divider">
-		    	from: {{message.sender.name}}
-		  	</div>
-			<div class="padding">
-         		<h2>{{message.subject}}</h2>
-		        <div ng-bind-html="message.content | unsafe">
-		        </div>  
-		    </div> 
+        <div class="card">
+            <div class="item item-divider">
+                from: {{message.sender.name}}
+            </div>
+            <div class="item item-divider">
+                to: <span ng-repeat="receiver in message.receivers">{{receiver.name}} </span>
+            </div>
+            <div class="padding">
+                <h2>{{message.subject}}</h2>
+                <div ng-bind-html="message.content | unsafe">
+                </div>
+            </div>
 
-		</div>
+        </div>
     </ion-content>
 </ion-view>

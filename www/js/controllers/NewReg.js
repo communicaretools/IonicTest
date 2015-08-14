@@ -3,15 +3,8 @@ angular.module('starter.controllers')
         '$scope',
         '$stateParams',
         '$state',
-        'resources',
         'registrationService',
-        function ($scope, $stateParams, $state, resources, registrationService) {
-
-            resources.load().then(function () {
-                $scope.titleSmiley = resources.get("registrationNewSmileyTitle");
-                $scope.titleDaily = resources.get("registrationNewDailyTitle");
-            });
-
+        function ($scope, $stateParams, $state, registrationService) {
             $scope.newReg = {};
             $scope.numberOfTimes = function(n) {
                 return new Array(n + 1);

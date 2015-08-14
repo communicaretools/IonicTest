@@ -3,18 +3,13 @@ angular.module('starter.controllers')
         '$scope',
         '$state',
         '$stateParams',
-        'resources',
         'entryService',
-        function($scope, $state, $stateParams, resources, entryService) {
+        function($scope, $state, $stateParams, entryService) {
             if (entryService.getSelected()) {
                 $scope.toQuote = entryService.getSelected();
                 entryService.selectEntry();
             }
-
-            resources.load().then(function () {
-                $scope.title = resources.get("forumNewEntryTitle");
-            });
-
+            
             $scope.cancel = function() {
                 $state.go('home.thread.list');
             };

@@ -26,11 +26,7 @@ angular.module('starter.controllers')
             };
 
             $scope.thread = {};
-            
-            resources.load().then(function () {
-                loadThread(threadId);
-                $scope.titleEntries = resources.get("forumThreadEntries");
-                $scope.titleNewEntry = resources.get("forumThreadNewEntry");
-            });
+
+            loadThread(threadId);
         }
     ]);
