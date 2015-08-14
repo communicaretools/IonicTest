@@ -10,15 +10,12 @@ angular.module('starter.controllers')
             var regType = $stateParams.type;
 
             var loadRegistration = function(type, id) {
-                registrationService.get(type, id, function(result) {
+                registrationService.get(type, id, function (result) {
+                    $scope.title = resources.get("registrationTitle");
                     $scope.reg = result.data;
                     $scope.reg.type = $stateParams.type;
                 });
             };
-
-            resources.load().then(function () {
-                $scope.title = resources.get("registrationTitle");
-            });
 
             $scope.reg = {};
             loadRegistration(regType, regId);

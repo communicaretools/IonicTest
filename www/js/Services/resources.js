@@ -2,9 +2,10 @@ angular.module('starter.services')
     .service('resources', [
         '$q',
         '$http',
+        '$localStorage',
         'resourcePath',
         'language',
-        function ($q, $http, resourcePath, language) {
+        function ($q, $http, $localStorage, resourcePath, language) {
             var resources = {};
             var deferred = $q.defer();
             var loaded = false;
@@ -19,6 +20,7 @@ angular.module('starter.services')
                 var path = resourcePath + 'global.' + language + '.json';
                 $http.get(path).success(function(result) {
                     resources = angular.extend(resources, result);
+                    $localStorage.resources = resources; 
                     loaded = true;
                     deferred.resolve("Loaded");
                 });
@@ -30,7 +32,7 @@ angular.module('starter.services')
                         return get(key);
                     });
                 }
-                return resources[key] ? resources[key] : "Missing key: '" + key + "'";
+                return $localStorage.resources[key] ? $localStorage.resources[key] : "Missing key: '" + key + "'";
             };
 
             var load = function () {

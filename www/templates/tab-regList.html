@@ -1,9 +1,10 @@
-<ion-view view-title="{{title}}">
+<ion-view>
+    <ion-nav-title r="registrationTitle"></ion-nav-title>
     <ion-content style="" class="has-header">
         <ion-list class="list">
             <ion-item class="item item-icon-left" ng-repeat="reg in list" ui-sref="home.registrationView({ type: '{{reg.type}}', regId: '{{reg.id}}'})">
                 <img ng-src="css/images/registration-list/{{reg.type}}.png"/>
-                <b>{{reg.postedAt | date: dateFormat}}</b> ({{reg.type}})
+                <b>{{reg.postedAt | date: dateFormat}}
             </ion-item>
         </ion-list>
     </ion-content>

@@ -1,9 +1,8 @@
 angular.module('starter.controllers')
     .controller('CameraCtrl', [
         '$scope',
-        'resources',
         'Camera',
-        function ($scope, resources, Camera) {
+        function ($scope, Camera) {
             var setPhoto = function(imageURI) {
                 console.log(imageURI);
                 $scope.imageURI = imageURI;
@@ -12,9 +11,7 @@ angular.module('starter.controllers')
             var reportError = function(err) {
                 console.err(err);
             };
-            resources.load().then(function() {
-                $scope.title = resources.get("cameraTitle");
-            });
+
             $scope.getPhoto = function() {
                 Camera.getPicture().then(setPhoto, reportError);
             };

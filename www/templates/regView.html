@@ -12,12 +12,13 @@
                 {{reg.postedAt | date: dateFormat}}
             </div>
             <div class="item item-avatar" ng-if="reg.type == 'Smiley'">
-                <img ng-src="css/images/{{reg.imageIndex}}.png" ng-if="reg.imageIndex!==-1" />
+                <img ng-src="css/images/moods/small/{{reg.imageIndex}}.png" ng-if="reg.imageIndex!==-1" />
                 <p>
                     {{reg.text}}
                 </p>
             </div>
-            <dl class="item item-body" ng-if="reg.type == 'Daily'">
+
+            <dl class="item " ng-if="reg.type == 'Daily'">
                 <dt r="registrationMyMood"></dt>
                 <dd>{{reg.data.generalSatisfaction}}</dd>
                 <dt r="registrationHandledDay"></dt>

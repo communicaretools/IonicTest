@@ -3,13 +3,8 @@ angular.module('starter.controllers')
         '$scope',
         '$state',
         '$stateParams',
-        'resources',
         'messagesService',
-        function ($scope, $state, $stateParams, resources, messagesService) {
-            resources.load().then(function () {
-                $scope.title = resources.get("forumNewEntryTitle");
-            });
-
+        function ($scope, $state, $stateParams, messagesService) {
             $scope.cancel = function() {
                 $state.go('home.messages.inbox');
             };

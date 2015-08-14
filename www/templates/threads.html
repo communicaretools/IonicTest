@@ -1,4 +1,5 @@
-<ion-view view-title="{{title}}">
+<ion-view>
+    <ion-nav-title r="forumThreadsTitle"></ion-nav-title>
     <ion-content>
         <ion-list class="list">
             <ion-item class="item" collection-repeat="thread in threads" ui-sref="home.thread.list({threadId: thread.id})">

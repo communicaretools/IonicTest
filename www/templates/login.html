@@ -1,23 +1,30 @@
-<ion-view view-title="{{title}}">
-    <ion-content>
-        <div ng-hide="options.isLoggedIn" class="list list-inset">
-            <label class="item item-input item-floating-label">
-                <span class="input-label" r="userName"></span>
-                <input type="text" ng-model="username" r="userName" />
-            </label>
-            <label class="item item-input item-floating-label">
-                <span class="input-label" r="password"></span>
-                <input type="password" ng-model="password" r="password" />
-            </label>
-            <div ng-show="informationText !== ''">{{informationText}}</div>
-            <div class="padding button-bar">
-                <button class="button button-positive" ng-click="login(username, password)" r="logIn"></button>
+<ion-view >
+    <ion-nav-title r="loginTitle"></ion-nav-title>
+    <div ng-if="options.isLoggedIn">
+        <ion-content>
+            <div>
+                <div class="padding button-bar">
+                    <button class="button button-positive" ng-click="logout()" r="logOut"></button>
+                </div>
             </div>
-        </div>
-        <div ng-show="options.isLoggedIn">
-            <div class="padding button-bar">
-                <button class="button button-positive" ng-click="logout()" r="logOut"></button>
+        </ion-content>
+    </div>
+    <div ng-if="!options || !options.isLoggedIn">
+        <ion-content>
+            <div class="list list-inset">
+                <label class="item item-input item-floating-label">
+                    <span class="input-label" r="userName"></span>
+                    <input type="text" ng-model="username" r="userName"/>
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label" r="password"></span>
+                    <input type="password" ng-model="password" r="password"/>
+                </label>
+                <div ng-show="informationText">{{informationText}}</div>
+                <div class="padding button-bar">
+                    <button class="button button-positive" ng-click="login(username, password)" r="logIn"></button>
+                </div>
             </div>
-        </div>
-    </ion-content>
+        </ion-content>
+    </div>
 </ion-view>

@@ -70,38 +70,38 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/mine',
                 views: {
                     'tab-mine': {
-                        templateUrl: 'templates/tab-exercisesList.html',
+                        templateUrl: 'templates/tab-exercisesMine.html',
                         controller: 'ExercisesCtrl'
                     }
                 }
             })
-            .state('home.exerciseModal', {
+            .state('home.exerciseView', {
                 cache: false,
-                url: '/exercises/:exerciseId/:exerciseName',
-                templateUrl: 'templates/modal-exerciseView.html',                
+                url: '/exercises/:exerciseId/:exerciseName',         
                 views: {
-                    'exerciseContent': {
-                        templateUrl: 'templates/tab-exerciseSound.html',
+                    'menuContent': {
+                        templateUrl: 'templates/exerciseView.html',
+                        controller: 'ExercisesCtrl'
                     }
                 }
             })
             //------------------------------------------ 
             
-            .state('home.exerciseModal.sound', {
+            .state('home.exerciseView.sound', {
                 cache: false,
                 url: '/sound',
                 views: {
                     'exerciseContent': {
-                        templateUrl: 'templates/tab-exerciseSound.html',
+                        templateUrl: 'templates/exerciseSound.html',
                     }
                 }
             })
-            .state('home.exerciseModal.text', {
+            .state('home.exerciseView.text', {
                 cache: false,
                 url: '/text',
                 views: {
                     'exerciseContent': {
-                        templateUrl: 'templates/tab-exerciseText.html',
+                        templateUrl: 'templates/exerciseText.html',
 
                     }
                 }
@@ -239,7 +239,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                         templateUrl: 'templates/messages.html',
                     },
                     'tab-list': {
-                        templateUrl: 'templates/tab-messageList.html',
+                        templateUrl: 'templates/tab-messageInbox.html',
                         controller: 'MessagesCtrl'
                     }
                 }
@@ -249,7 +249,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 cache: false,
                 views: {
                     'tab-inbox': {
-                        templateUrl: 'templates/tab-messageList.html',
+                        templateUrl: 'templates/tab-messageInbox.html',
                         controller: 'MessagesCtrl'
                     }
                 }
@@ -259,7 +259,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 cache: false,
                 views: {
                     'tab-outbox': {
-                        templateUrl: 'templates/tab-messageList.html',
+                        templateUrl: 'templates/tab-messageOutbox.html',
                         controller: 'MessagesCtrl'
                     }
                 }
