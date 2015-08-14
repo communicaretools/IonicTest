@@ -27,6 +27,28 @@
     height:100%;
 }
 
+dl.item.row {
+    padding: 0;
+}
+dt.col.col-80,
+dt.col.col-50, {
+    white-space: normal;
+    padding: 1em;
+}
+dd.col {
+    background-color: $appColor;
+    color: white;
+    font-size: 2em;
+    text-align: center;    
+}
+dd.col.col-50 {
+    background-color: $appColor;
+    color: white;
+    font-size: 1em;
+    padding-top: 2em;
+    text-align: center;    
+}
+
 .fullscreen-player {
     max-width: 100%;
     max-height: 100%;

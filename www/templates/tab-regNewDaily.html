@@ -58,15 +58,22 @@
                     <i>10</i>
                 </div>
             </label>
+
+
+            <!--should be a radiogroup-->
             <label class="item">
                 <div class="item-content" r="registrationTakenMeds"></div>
-                <div class="list list-inline">
-                    <ion-radio ng-model="newReg.takenMedications" ng-value="1" r="yes"></ion-radio>
-                    <ion-radio ng-model="newReg.takenMedications" ng-value="2" r="no"></ion-radio>
-                    <ion-radio ng-model="newReg.takenMedications" ng-value="3" r="notRelevant"></ion-radio>
+
+            <!--resource attribute destroy radiogroup functionality-->
+                <div class="list">
+                    <ion-radio ng-model="newReg.takenMedications" ng-value="1" s>Yes</ion-radio>
+                    <ion-radio ng-model="newReg.takenMedications" ng-value="2" >No</ion-radio>
+                    <ion-radio ng-model="newReg.takenMedications" ng-value="3" >Doesnt matter</ion-radio>
                 </div>
             </label>
         </div>
+
+        <!--Buttons-->
         <div class="padding button-bar">
             <button class="button button-positive" ng-click="sendRegistration('Daily')" r="post"></button>
             <button class="button button-negative" ui-sref="home.registration.list" r="cancel"></button>

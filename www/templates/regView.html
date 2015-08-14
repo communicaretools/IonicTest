@@ -1,4 +1,4 @@
-<ion-view class="" title="{{title}} - {{reg.type}}">
+<ion-view title="{{title}} - {{reg.type}}">
     <ion-nav-bar>
         <ion-nav-buttons side="primary">
             <button class="button button-clear " ui-sref="home.registration.list" >
@@ -17,27 +17,44 @@
                     {{reg.text}}
                 </p>
             </div>
-
-            <dl class="item " ng-if="reg.type == 'Daily'">
-                <dt r="registrationMyMood"></dt>
-                <dd>{{reg.data.generalSatisfaction}}</dd>
-                <dt r="registrationHandledDay"></dt>
-                <dd>{{reg.data.handledTheDay}}</dd>
-                <dt r="registrationQualityOfSleep"></dt>
-                <dd>{{reg.data.qualityOfSleep}}</dd>
-                <dt r="registrationHoursOfSleep"></dt>
-                <dd>{{reg.data.numberOfHoursSlept}}</dd>
-                <dt r="registrationQualityOfPhysicalActivity"></dt>
-                <dd>{{reg.data.satisfactionWithPhysicalActivity}}</dd>
-                <dt r="registrationMinutesOfPhysicalActivity"></dt>
-                <dd>{{reg.data.numberOfMinutesInPhysicalActivity}}</dd>
-                <dt r="registrationQualityOfDiet"></dt>
-                <dd>{{reg.data.satisfactionWithDiet}}</dd>
-                <dt r="registrationQualityOfSocial"></dt>
-                <dd>{{reg.data.satisfactionWithSocialRelations}}</dd>
-                <dt r="registrationTakenMeds"></dt>
-                <dd>{{reg.data.takenMedications}}</dd>
-            </dl>
+            <div ng-if="reg.type == 'Daily'">
+                <dl class="item row">
+                    <dt class="col col-80" r="registrationMyMood"></dt>
+                    <dd class="col">{{reg.data.generalSatisfaction}}</dd>
+                </dl>
+                <dl class="item row">
+                    <dt class="col col-80"r="registrationHandledDay"></dt>
+                    <dd class="col">{{reg.data.handledTheDay}}</dd>
+                </dl>
+                <dl class="item row">
+                    <dt class="col col-80" r="registrationQualityOfSleep"></dt>
+                    <dd class="col">{{reg.data.qualityOfSleep}}</dd>
+                </dl>
+                <dl class="item row">
+                    <dt class="col col-80" r="registrationHoursOfSleep"></dt>
+                    <dd class="col">{{reg.data.numberOfHoursSlept}}</dd>
+                </dl>
+                <dl class="item row">                
+                    <dt class="col col-80" r="registrationQualityOfPhysicalActivity"></dt>
+                    <dd class="col">{{reg.data.satisfactionWithPhysicalActivity}}</dd>
+                </dl>
+                <dl class="item row">                 
+                    <dt class="col col-80" r="registrationMinutesOfPhysicalActivity"></dt>
+                    <dd class="col">{{reg.data.numberOfMinutesInPhysicalActivity}}</dd>
+                </dl>
+                <dl class="item row">                   
+                    <dt class="col col-80" r="registrationQualityOfDiet"></dt>
+                    <dd class="col">{{reg.data.satisfactionWithDiet}}</dd>
+                </dl>
+                <dl class="item row">                 
+                    <dt class="col col-80" r="registrationQualityOfSocial"></dt>
+                    <dd class="col">{{reg.data.satisfactionWithSocialRelations}}</dd>
+                </dl>
+                <dl class="item row">                 
+                    <dt class="col col-50" r="registrationTakenMeds"></dt>
+                    <dd class="col col-50">{{reg.data.takenMedications}}</dd>
+                </dl>
+            </div>
         </div>
     </ion-content>
 
