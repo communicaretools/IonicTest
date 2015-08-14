@@ -45,10 +45,11 @@ dd.col {
   color: white;
   font-size: 2em;
   text-align: center;
+  white-space: normal;
 }
 
-/* line 44, scss/style.scss */
-dd.col.col-50 {
+/* line 45, scss/style.scss */
+dd.col.col-20 {
   background-color: #4db295;
   color: white;
   font-size: 1em;
@@ -56,7 +57,7 @@ dd.col.col-50 {
   text-align: center;
 }
 
-/* line 52, scss/style.scss */
+/* line 53, scss/style.scss */
 .fullscreen-player {
   max-width: 100%;
   max-height: 100%;
@@ -69,36 +70,36 @@ dd.col.col-50 {
   top: 0;
 }
 
-/* line 64, scss/style.scss */
+/* line 65, scss/style.scss */
 ion-content,
 .list ion-item.item .item-content {
   background-color: #eceeef;
 }
 
-/* line 70, scss/style.scss */
+/* line 71, scss/style.scss */
 ion-side-menu ion-content,
 ion-side-menu ion-content .list ion-item.item .item-content {
   background-color: #4db295;
   color: #f3e4b5;
 }
 
-/* line 75, scss/style.scss */
+/* line 76, scss/style.scss */
 ion-side-menu ion-content .list ion-item.item {
   border: 1px solid #449981;
   border-color: #449981;
 }
 
-/* line 79, scss/style.scss */
+/* line 80, scss/style.scss */
 ion-side-menu ion-content .list ion-item.item.activated .item-content {
   background-color: #449981;
 }
 
-/* line 86, scss/style.scss */
+/* line 87, scss/style.scss */
 #menu-header {
   background-image: url("../media/images/menu/menu-header.png");
   background-color: #cccccc;
 }
-/* line 89, scss/style.scss */
+/* line 90, scss/style.scss */
 #menu-header img {
   border: 1px solid #999;
   border-bottom-left-radius: 50%;
@@ -107,12 +108,12 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   border-top-right-radius: 50%;
   margin-top: 2em;
 }
-/* line 97, scss/style.scss */
+/* line 98, scss/style.scss */
 #menu-header h2 {
   margin: 0;
 }
 
-/* line 102, scss/style.scss */
+/* line 103, scss/style.scss */
 .mood {
   width: 250px;
   height: 250px;
@@ -121,7 +122,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   background-image: url("images/mood-bg/mood-bg.png");
 }
 
-/* line 114, scss/style.scss */
+/* line 115, scss/style.scss */
 .mood-image-1 {
   background-image: url("images/moods/big/big-1.png");
   background-repeat: no-repeat;
@@ -129,7 +130,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 114, scss/style.scss */
+/* line 115, scss/style.scss */
 .mood-image-2 {
   background-image: url("images/moods/big/big-2.png");
   background-repeat: no-repeat;
@@ -137,7 +138,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 114, scss/style.scss */
+/* line 115, scss/style.scss */
 .mood-image-3 {
   background-image: url("images/moods/big/big-3.png");
   background-repeat: no-repeat;
@@ -145,7 +146,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 114, scss/style.scss */
+/* line 115, scss/style.scss */
 .mood-image-4 {
   background-image: url("images/moods/big/big-4.png");
   background-repeat: no-repeat;
@@ -153,7 +154,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 114, scss/style.scss */
+/* line 115, scss/style.scss */
 .mood-image-5 {
   background-image: url("images/moods/big/big-5.png");
   background-repeat: no-repeat;
@@ -161,7 +162,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 114, scss/style.scss */
+/* line 115, scss/style.scss */
 .mood-image-6 {
   background-image: url("images/moods/big/big-6.png");
   background-repeat: no-repeat;
@@ -169,7 +170,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 114, scss/style.scss */
+/* line 115, scss/style.scss */
 .mood-image-7 {
   background-image: url("images/moods/big/big-7.png");
   background-repeat: no-repeat;
@@ -177,7 +178,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 114, scss/style.scss */
+/* line 115, scss/style.scss */
 .mood-image-8 {
   background-image: url("images/moods/big/big-8.png");
   background-repeat: no-repeat;
@@ -185,7 +186,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 114, scss/style.scss */
+/* line 115, scss/style.scss */
 .mood-image-9 {
   background-image: url("images/moods/big/big-9.png");
   background-repeat: no-repeat;
@@ -193,7 +194,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 114, scss/style.scss */
+/* line 115, scss/style.scss */
 .mood-image-10 {
   background-image: url("images/moods/big/big-10.png");
   background-repeat: no-repeat;
@@ -201,7 +202,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 114, scss/style.scss */
+/* line 115, scss/style.scss */
 .mood-image-11 {
   background-image: url("images/moods/big/big-11.png");
   background-repeat: no-repeat;
@@ -209,7 +210,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 114, scss/style.scss */
+/* line 115, scss/style.scss */
 .mood-image-12 {
   background-image: url("images/moods/big/big-12.png");
   background-repeat: no-repeat;
@@ -217,7 +218,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 125, scss/style.scss */
+/* line 126, scss/style.scss */
 .center-mood {
   position: absolute;
   top: 90px;
@@ -227,7 +228,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   line-height: 50px;
 }
 
-/* line 141, scss/style.scss */
+/* line 142, scss/style.scss */
 .mood {
   margin-top: 3em;
   margin-bottom: 3em;

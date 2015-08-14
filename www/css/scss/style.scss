@@ -39,9 +39,10 @@ dd.col {
     background-color: $appColor;
     color: white;
     font-size: 2em;
-    text-align: center;    
+    text-align: center; 
+    white-space: normal;   
 }
-dd.col.col-50 {
+dd.col.col-20 {
     background-color: $appColor;
     color: white;
     font-size: 1em;
