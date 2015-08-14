@@ -1,19 +1,21 @@
 <ion-view view-title="{{titleSmiley}}">
     <ion-content class="has-header" padding="true">
+        <div class="mood">
+            <div ng-repeat="t in numberOfTimes(12) track by $index">
+                <a class="mood-{{$index}}" ng-click="selectSmiley($index)"></a>       
+            </div>
+            <div class="center-mood">
+                <div class="mood-image-{{newReg.imageIndex}}" ng-show="newReg.imageIndex"></div>
+            </div>
+        </div>
+
         <div class="list list-inset">
             <label class="item item-input item-stacked-label">
                 <span class="input-label" r="registrationHowAreYou"></span>
                 <input r="inputFillIn" type="text" ng-model="newReg.text">
             </label>
         </div>
-            <div class="mood">
-                <div ng-repeat="t in numberOfTimes(12) track by $index">
-                    <a class="mood-{{$index}}" ng-click="selectSmiley($index)"></a>       
-                </div>
-                <div class="center-mood">
-                    <div class="mood-image-{{newReg.imageIndex}}" ng-show="newReg.imageIndex"></div>
-                </div>
-            </div>
+
         <div class="padding button-bar">
             <button class="button button-positive" ng-click="sendRegistration('Smiley')" r="post">
             </button>

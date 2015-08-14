@@ -119,6 +119,8 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
 .mood {
     @extend %mood-style;
     @include moods;
+    margin-top: 3em;
+    margin-bottom: 3em;
 }
 
 

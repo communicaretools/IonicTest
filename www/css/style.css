@@ -198,6 +198,11 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   line-height: 50px;
 }
 
+/* line 119, scss/style.scss */
+.mood {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
 /* line 3, scss/_mixins.scss */
 .mood .mood-1 {
   text-decoration: none;
