@@ -40,7 +40,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/registration',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/registration.html'
+                        templateUrl: 'templates/registration/registration.html'
                     }
                 }
             })
@@ -51,7 +51,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/exercises',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/exercises.html'
+                        templateUrl: 'templates/exercise/exercises.html'
                     }
                 }
             })
@@ -60,7 +60,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/list',
                 views: {
                     'tab-list': {
-                        templateUrl: 'templates/tab-exercisesList.html',
+                        templateUrl: 'templates/exercise/tab-exercisesList.html',
                         controller: 'ExercisesCtrl'
                     }
                 }
@@ -70,7 +70,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/mine',
                 views: {
                     'tab-mine': {
-                        templateUrl: 'templates/tab-exercisesMine.html',
+                        templateUrl: 'templates/exercise/tab-exercisesMine.html',
                         controller: 'ExercisesCtrl'
                     }
                 }
@@ -80,7 +80,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/exercises/:exerciseId/:exerciseName',         
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/exerciseView.html',
+                        templateUrl: 'templates/exercise/exerciseView.html',
                         controller: 'ExercisesCtrl'
                     }
                 }
@@ -92,7 +92,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/sound',
                 views: {
                     'exerciseContent': {
-                        templateUrl: 'templates/exerciseSound.html',
+                        templateUrl: 'templates/exercise/exerciseSound.html',
                     }
                 }
             })
@@ -101,7 +101,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/text',
                 views: {
                     'exerciseContent': {
-                        templateUrl: 'templates/exerciseText.html',
+                        templateUrl: 'templates/exercise/exerciseText.html',
 
                     }
                 }
@@ -113,7 +113,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/threads',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/threads.html',
+                        templateUrl: 'templates/forum/threads.html',
                         controller: 'ThreadsCtrl'
                     }
                 }
@@ -123,7 +123,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/thread/:threadId',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/thread.html'
+                        templateUrl: 'templates/forum/thread.html'
                     }
                 }
             })
@@ -134,7 +134,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/list',
                 views: {
                     'tab-list': {
-                        templateUrl: 'templates/tab-entryList.html',
+                        templateUrl: 'templates/forum/tab-entryList.html',
                         controller: 'ThreadCtrl'
                     }
                 }
@@ -144,7 +144,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/newEntry',
                 views: {
                     'tab-new': {
-                        templateUrl: 'templates/tab-entryNew.html',
+                        templateUrl: 'templates/forum/tab-entryNew.html',
                         controller: 'EntryCtrl'
                     }
                 }
@@ -155,7 +155,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/registration/:type/:regId',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/regView.html',
+                        templateUrl: 'templates/registration/regView.html',
                         controller: 'ViewRegCtrl'
                     }
                 }
@@ -166,7 +166,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/list',
                 views: {
                     'tab-list': {
-                        templateUrl: 'templates/tab-regList.html',
+                        templateUrl: 'templates/registration/tab-regList.html',
                         controller: 'RegistrationCtrl'
                     }
                 }
@@ -176,7 +176,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/newDaily',
                 views: {
                     'tab-newDaily': {
-                        templateUrl: 'templates/tab-regNewDaily.html',
+                        templateUrl: 'templates/registration/tab-regNewDaily.html',
                         controller: 'NewRegCtrl'
                     }
                 }
@@ -186,7 +186,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/newSmiley',
                 views: {
                     'tab-newSmiley': {
-                        templateUrl: 'templates/tab-regNewSmiley.html',
+                        templateUrl: 'templates/registration/tab-regNewSmiley.html',
                         controller: 'NewRegCtrl'
                     }
                 }
@@ -196,7 +196,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 url: '/account',
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/account.html',
+                        templateUrl: 'templates/account/account.html',
                         controller: 'AccountCtrl'
                     }
                 }
@@ -216,7 +216,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 cache: false,
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/camera.html',
+                        templateUrl: 'templates/camera/camera.html',
                         controller: 'CameraCtrl'
                     }
                 }
@@ -226,7 +226,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 cache: false,
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/video.html',
+                        templateUrl: 'templates/video/video.html',
                         controller: 'VideoCtrl'
                     }
                 }
@@ -236,10 +236,10 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 cache: false,
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/messages.html',
+                        templateUrl: 'templates/message/messages.html',
                     },
                     'tab-list': {
-                        templateUrl: 'templates/tab-messageInbox.html',
+                        templateUrl: 'templates/message/tab-messageInbox.html',
                         controller: 'MessagesCtrl'
                     }
                 }
@@ -249,7 +249,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 cache: false,
                 views: {
                     'tab-inbox': {
-                        templateUrl: 'templates/tab-messageInbox.html',
+                        templateUrl: 'templates/message/tab-messageInbox.html',
                         controller: 'MessagesCtrl'
                     }
                 }
@@ -259,7 +259,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 cache: false,
                 views: {
                     'tab-outbox': {
-                        templateUrl: 'templates/tab-messageOutbox.html',
+                        templateUrl: 'templates/message/tab-messageOutbox.html',
                         controller: 'MessagesCtrl'
                     }
                 }
@@ -269,7 +269,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 cache: false,
                 views: {
                     'tab-new': {
-                        templateUrl: 'templates/tab-messageNew.html',
+                        templateUrl: 'templates/message/tab-messageNew.html',
                         controller: 'MessageComposeCtrl'
                     }
                 }
@@ -279,7 +279,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                 cache: false,
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/messageView.html',
+                        templateUrl: 'templates/message/messageView.html',
                         controller: 'MessageCtrl'
                     }
                 }
