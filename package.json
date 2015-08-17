@@ -28,10 +28,6 @@
     {
       "locator": "https://github.com/apache/cordova-plugin-whitelist.git",
       "id": "cordova-plugin-whitelist"
-    },
-    {
-      "locator": "https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git",
-      "id": "nl.x-services.plugins.calendar"
     }
   ],
   "cordovaPlatforms": [
