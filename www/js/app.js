@@ -287,7 +287,7 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
             .state('home.calendar', {
                 url: '/calendar',
                 cache: false,
-                view: {
+                views: {
                     'menuContent': {
                         templateUrl: 'templates/calendar.html',
                         controller: 'CalendarCtrl'
