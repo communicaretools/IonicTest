@@ -66,9 +66,9 @@
 
             <!--resource attribute destroy radiogroup functionality-->
                 <div class="list">
-                    <ion-radio ng-model="newReg.takenMedications" ng-value="1" s>Yes</ion-radio>
-                    <ion-radio ng-model="newReg.takenMedications" ng-value="2" >No</ion-radio>
-                    <ion-radio ng-model="newReg.takenMedications" ng-value="3" >Doesnt matter</ion-radio>
+                    <ion-radio ng-model="newReg.takenMedications" ng-value="1">{{answersOptions.yes}}</ion-radio>
+                    <ion-radio ng-model="newReg.takenMedications" ng-value="2">{{answersOptions.no}}</ion-radio>
+                    <ion-radio ng-model="newReg.takenMedications" ng-value="3" >{{answersOptions.notRelevant}}</ion-radio>
                 </div>
             </label>
         </div>
