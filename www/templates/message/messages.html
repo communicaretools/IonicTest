@@ -1,16 +1,19 @@
 <ion-view>
     <ion-tabs class="tabs-icon-top tabs-color-active-positive">
         <!-- Dashboard Tab -->
-        <ion-tab title="{{entries}}" icon-off="ion-ios-filing-outline" icon-on="ion-ios-filing" ui-sref="home.messages.inbox">
+        <ion-tab title="{{entries}}" icon-off="ion-ios-filing-outline" icon-on="ion-ios-filing" ui-sref=".inbox">
             <ion-nav-title r="messageInboxTitle"></ion-nav-title>
             <ion-nav-view name="tab-inbox"></ion-nav-view>
         </ion-tab>
-        <ion-tab title="{{entries}}" icon-off="ion-filing" icon-on="ion-filing" ui-sref="home.messages.outbox">
+        <ion-tab title="{{entries}}" icon-off="ion-filing" icon-on="ion-filing" ui-sref=".outbox">
             <ion-nav-title r="messageOutboxTitle"></ion-nav-title>
             <ion-nav-view name="tab-outbox"></ion-nav-view>
         </ion-tab>
-        <!-- Chats Tab -->
-        <ion-tab icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" ui-sref="home.messages.new">
+        <ion-tab title="{{entries}}" icon-off="ion-filing" icon-on="ion-filing" ui-sref=".drafts">
+            <ion-nav-title r="messageDraftsTitle"></ion-nav-title>
+            <ion-nav-view name="tab-drafts"></ion-nav-view>
+        </ion-tab>
+        <ion-tab icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" ui-sref=".compose({messageId: ''})">
             <ion-nav-title r="messageNewTitle"></ion-nav-title>
             <ion-nav-view name="tab-new"></ion-nav-view>
         </ion-tab>

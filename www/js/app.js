@@ -264,8 +264,18 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                     }
                 }
             })
-            .state('home.messages.new', {
-                url: '/new',
+            .state('home.messages.drafts', {
+                url: '/list/drafts',
+                cache: false,
+                views: {
+                    'tab-drafts': {
+                        templateUrl: 'templates/message/tab-messageDrafts.html',
+                        controller: 'MessagesCtrl'
+                    }
+                }
+            })
+            .state('home.messages.compose', {
+                url: '/compose/:messageId',
                 cache: false,
                 views: {
                     'tab-new': {

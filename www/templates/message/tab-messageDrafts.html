@@ -1,0 +1,13 @@
+<ion-view>
+    <ion-nav-title r="messageDraftsTitle"></ion-nav-title>
+    <ion-content>
+        <ion-list class="list">
+            <ion-item class="item" collection-repeat="message in messages" ui-sref="home.messages.compose({messageId: message.id})">
+                <!-- This is supposed to be faster than ng-repeat -->
+                <div>subject: {{message.subject}}</div>
+                <div>to: <span ng-repeat="receiver in message.receivers">{{receiver.name}} </span>
+                </div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

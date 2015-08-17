@@ -1,15 +1,20 @@
 <ion-view>
     <ion-nav-title r="messageNewTitle"></ion-nav-title>
     <ion-content>
+        <input type="hidden" ng-model="message.id"/>
         <label class="item item-input">
-            <input ng-model="subject"></input>
+            <span class="input-label" r="messageSubject"></span>
+            <input type="text" ng-model="message.subject"/>
         </label>
         <label class="item item-input">
-            <textarea ng-model="content"></textarea>
+            <span class="input-label" r="messageContent"></span>
+            <textarea ng-model="message.content"></textarea>
         </label>
         <div class="padding button-bar">
-            <button class="button button-positive" ng-click="addEntry(content, subject)" r="post"></button>
-            <button class="button button-negative" ui-sref="home.messages.inbox" r="cancel"></button>
+            <button class="button button-positive" ng-click="addEntry()" r="messageSend"></button>
+            <button class="button button-calm" ng-click="saveDraft()" r="messageSave"></button>
+            <button class="button button-dark" ng-click="empty()" r="empty"></button>
+            <button class="button button-negative" ng-click="cancel()" r="cancel"></button>
         </div>
     </ion-content>
 </ion-view>

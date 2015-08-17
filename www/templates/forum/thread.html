@@ -9,13 +9,13 @@
 	<ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
 	  <!-- Dashboard Tab -->
-	  <ion-tab icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" ui-sref="home.thread.list">
+	  <ion-tab icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" ui-sref=".list">
           <ion-nav-title r="forumThreadEntries"></ion-nav-title>
           <ion-nav-view name="tab-list"></ion-nav-view>
 	  </ion-tab>
 
 	  <!-- Chats Tab -->
-	  <ion-tab title="{{newEntry}}" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" ui-sref="home.thread.newEntry">
+	  <ion-tab title="{{newEntry}}" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" ui-sref=".newEntry">
          <ion-nav-title r="forumThreadNewEntry"></ion-nav-title>
           <ion-nav-view name="tab-new"></ion-nav-view>
 	  </ion-tab>

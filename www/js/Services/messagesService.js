@@ -11,6 +11,11 @@ angular.module('starter.services')
                 .then(onSuccess, onError);
 	    };
 
+        var saveDraft = function (msg, onSuccess) {
+            $http.post(ApiEndpoint.url + "/commonmessages/drafts/", msg)
+                .then(onSuccess, onError);
+	    };
+
 		var transform = function (list) {
 		    return list.map(function (entry) {
 		        var parts = entry.links[0].href.split("/");
@@ -25,8 +30,7 @@ angular.module('starter.services')
 		    }, onError);
 		};
 
-
-		var getMessage = function (messageId, onSuccess) {
+        var getMessage = function (messageId, onSuccess) {
 		    $http.get(ApiEndpoint.url + "/commonmessages/" + messageId).then(function (result) {
 		        onSuccess(result.data)
 		    }, onError);
@@ -36,5 +40,6 @@ angular.module('starter.services')
 		    "add": add,
 		    "get": getMessage,
 		    "getList": getList,
+		    "saveDraft": saveDraft
 		};
 	}]);
