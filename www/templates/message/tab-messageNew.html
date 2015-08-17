@@ -7,6 +7,10 @@
             <input type="text" ng-model="message.subject"/>
         </label>
         <label class="item item-input">
+            <span class="input-label" r="messageReceivers"></span>
+                <ion-checkbox collection-repeat="rec in receivers" ng-model="rec.selected">{{rec.name}}</ion-checkbox>
+        </label>
+        <label class="item item-input">
             <span class="input-label" r="messageContent"></span>
             <textarea ng-model="message.content"></textarea>
         </label>
