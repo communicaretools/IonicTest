@@ -39,17 +39,21 @@ angular.module('starter.controllers')
                         name: resources.get("menuSettings")
                     },
                     {
+                        state: "calendar",
+                        name: resources.get("calendar")
+                    },
+                    {
                         state: "login",
                         name: resources.get("logOut")
-                    },
-                ]
+                    }
+                ];
             });
             
 
             if (typeof $scope.isLoggedIn === "undefined") {
                 loginManager.options(function (data) {
                     $scope.isLoggedIn = data.isLoggedIn;
-                })
+                });
             }
             $scope.$on("logInChange", function(e, status) {
                 $scope.isLoggedIn = status;

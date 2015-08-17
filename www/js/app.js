@@ -283,6 +283,16 @@ angular.module('starter', ['ionic', 'ngStorage', 'starter.controllers', 'starter
                         controller: 'MessageCtrl'
                     }
                 }
+            })
+            .state('home.calendar', {
+                url: '/calendar',
+                cache: false,
+                view: {
+                    'menuContent': {
+                        templateUrl: 'templates/calendar.html',
+                        controller: 'CalendarCtrl'
+                    }
+                }
             });
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('home/login');
