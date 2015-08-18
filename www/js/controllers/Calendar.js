@@ -2,9 +2,12 @@ angular.module('starter.controllers')
 	.controller('CalendarCtrl', [
 		'$scope',
 		'$log',
+		'$ionicPlatform',
 		'$cordovaCalendar',
-		function ($scope, $log, $cordovaCalendar) {
+		function ($scope, $log, $ionicPlatform, $cordovaCalendar) {
 			$scope.options = {};
+			$scope.options.startDate = new Date();
+			$scope.options.endDate = new Date();
 
 			var onError = function (e) {
 				$log.error(e.msg);
@@ -12,21 +15,27 @@ angular.module('starter.controllers')
 
 			$scope.addEvent = function (options) {
 				$log.log("Creating event...");
-				$cordovaCalendar.createEventInteractively(options)
-					.then(function(result) {
-						$log.log(result);
-					}, function(err) {
-						onError(err);
-					});
+				$ionicPlatform.ready(function() {
+					$log.log("Ionic Platform ready.");
+					$cordovaCalendar.createEventInteractively(options)
+						.then(function(result) {
+							$log.log(result);
+						}, function(err) {
+							onError(err);
+						});
+				});
+				
 			};
 
 			$scope.clear = function() {
+				$log.log("Clear!");
 				$scope.options = {};
+				$scope.options.startDate = new Date();
+				$scope.options.endDate = new Date();
 			};
 
 		}
 	]);
-
 
 
 	/*
