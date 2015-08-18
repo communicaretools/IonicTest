@@ -2,18 +2,22 @@
     <ion-nav-title r="messageNewTitle"></ion-nav-title>
     <ion-content>
         <input type="hidden" ng-model="message.id"/>
-        <label class="item item-input">
+
+        <label class="item item-stacked-label">
             <span class="input-label" r="messageSubject"></span>
             <input type="text" ng-model="message.subject"/>
         </label>
-        <label class="item item-input">
+
+        <label class="item item-stacked-label">
             <span class="input-label" r="messageReceivers"></span>
-                <ion-checkbox collection-repeat="rec in receivers" ng-model="rec.selected">{{rec.name}}</ion-checkbox>
         </label>
-        <label class="item item-input">
+        <ion-checkbox collection-repeat="h in helpers" ng-model="h.selected" ng-checked="h.selected">{{h.name}}</ion-checkbox>
+
+        <label class="item item-stacked-label">
             <span class="input-label" r="messageContent"></span>
             <textarea ng-model="message.content"></textarea>
         </label>
+
         <div class="padding button-bar">
             <button class="button button-positive" ng-click="addEntry()" r="messageSend"></button>
             <button class="button button-calm" ng-click="saveDraft()" r="messageSave"></button>

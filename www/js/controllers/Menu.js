@@ -1,10 +1,11 @@
 angular.module('starter.controllers')
     .controller('MenuCtrl', [
         '$scope',
+        '$state',
         '$localStorage',
         'loginManager',
         'resources',
-        function ($scope, $localStorage, loginManager, resources) {
+        function ($scope, $state, $localStorage, loginManager, resources) {
             resources.load().then(function () {
                 if (!$scope.user) {
                     $scope.user = $localStorage.user;   
@@ -58,6 +59,9 @@ angular.module('starter.controllers')
             $scope.$on("logInChange", function(e, status) {
                 $scope.isLoggedIn = status;
                 $scope.user = $localStorage.user;
+                if ($scope.isLoggedIn) {
+                    $state.go('home.login');
+                }
             });
         }
     ]);
