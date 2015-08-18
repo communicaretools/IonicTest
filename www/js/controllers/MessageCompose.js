@@ -21,14 +21,15 @@ angular.module('starter.controllers')
                 }
             }
 
-            var fetchIds = function(from) {
+            var fetchIds = function (from) {
+                if(!from) {return []};
                 return from.map(function(obj) {
                     return obj.id;
                 });
             }
 
             var markHelpers = function() {
-                var ids = $scope.message.receivers ? fetchIds($scope.message.receivers) : [];
+                var ids = fetchIds($scope.message.receivers);
                 $scope.helpers.forEach(function (r) {
                     r.selected = ids.indexOf(r.id) > -1;
                 });
@@ -50,8 +51,12 @@ angular.module('starter.controllers')
                 });
             }
 
+            var emptyMessage = function () {
+                return { id: '', subject: '', content: '', receivers: [] }
+            }
+
             var init = function() {
-                $scope.message = {};
+                $scope.message = emptyMessage();;
                 $scope.helpers = [];
                 messagesService.start(function(result) {
                     $scope.helpers = result.data;
@@ -64,12 +69,12 @@ angular.module('starter.controllers')
             init();
 
             $scope.empty = function () {
-                $scope.message = {};
+                $scope.message = emptyMessage();
                 markReceivers();
             };
 
             $scope.cancel = function () {
-                $scope.message = {};
+                $scope.message = emptyMessage();
                 $state.go('home.messages.inbox');
             };
 

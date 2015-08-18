@@ -146,4 +146,8 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
     margin-bottom: 3em;
 }
 
+label.has-error > input,
+label.has-error > textarea {  
+  border-bottom: 2px solid red;
+}
 

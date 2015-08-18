@@ -437,3 +437,20 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   left: 50.0%;
   top: 15%;
 }
+
+label.has-error > input,
+label.has-error > textarea {  
+  border: 2px solid red;
+}
+
+label.input.valid {  
+  border: 2px solid green;
+}
+
+.form-errors {
+  margin: 5px 0
+}
+.form-error {
+  padding: 2px 0 2px 16px;
+  color: red;
+}
