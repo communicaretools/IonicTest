@@ -3,8 +3,9 @@ angular.module('starter.controllers')
 		'$scope',
 		'$log',
 		'$ionicPlatform',
+		'$ionicLoading',
 		'$cordovaCalendar',
-		function ($scope, $log, $ionicPlatform, $cordovaCalendar) {
+		function ($scope, $log, $ionicPlatform, $ionicLoading, $cordovaCalendar) {
 			$scope.options = {};
 			$scope.options.startDate = new Date();
 			$scope.options.endDate = new Date();
@@ -17,10 +18,13 @@ angular.module('starter.controllers')
 				$log.log("Creating event...");
 				$ionicPlatform.ready(function() {
 					$log.log("Ionic Platform ready.");
+					$ionicLoading.show({template:'Please wait'});
 					$cordovaCalendar.createEventInteractively(options)
-						.then(function(result) {
-							$log.log(result);
+						.then(function() {
+							$log.log("success");
+							$ionicLoading.hide();
 						}, function(err) {
+							$ionicLoading.hide();
 							onError(err);
 						});
 				});
@@ -36,18 +40,3 @@ angular.module('starter.controllers')
 
 		}
 	]);
-
-
-	/*
- $cordovaCalendar.createEventInteractively({
-    title: 'Space Race',
-    location: 'The Moon',
-    notes: 'Bring sandwiches',
-    startDate: new Date(2015, 0, 6, 18, 30, 0, 0, 0),
-    endDate: new Date(2015, 1, 6, 12, 0, 0, 0, 0)
-  }).then(function (result) {
-    // success
-  }, function (err) {
-    // error
-  });
-	*/
