@@ -1,33 +1,32 @@
 <ion-side-menus enable-menu-with-back-views="true">
-  <ion-side-menu-content>
-    <ion-nav-bar class="bar-stable">
-        <ion-nav-buttons side="left">
-            <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
-        </ion-nav-buttons>
-    </ion-nav-bar>
-    <ion-nav-view name="menuContent"></ion-nav-view>
-  </ion-side-menu-content>
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
 
-  <ion-side-menu side="left" expose-aside-when="large">
-      <ion-content>
-        <div id="menu-header" class="padding" ng-show="isLoggedIn">
-          <img src='data:image/jpeg;base64,{{user.avatar}}' ng-show="user.avatar">
-          <img src="media/images/avatar/sample-avatar.jpg" ng-hide="user.avatar">
-          <h2>{{user.userName}}</h2>
-        </div>
+    <ion-side-menu side="left" expose-aside-when="large">
+        <ion-content>
+            <div id="menu-header" class="padding" ng-show="isLoggedIn">
+                <img ng-src='data:image/jpeg;base64,{{user.avatar}}' ng-show="user.avatar">
+                <img ng-src="media/images/avatar/sample-avatar.jpg" ng-hide="user.avatar">
+                <h2>{{user.userName}}</h2>
+            </div>
 
-        <!--LIST-->
-        <div ng-if="!isLoggedIn" class="list card">
-          <div class="item item-text-wrap" ui-sref="home.login" menu-close r="loginInfo">
-                <button class="button button-positive" r="loginInfo"></button>
-          </div>
-        </div>
-        <ion-list>
-          <ion-item ng-if="isLoggedIn" menu-close ng-repeat= "item in menuItems" ui-sref="home.{{item.state}}" ui-sref-active="activated">
-          {{item.name}}
-        </ion-item>
-
-        </ion-list>
-      </ion-content>
-  </ion-side-menu>
+            <!--LIST-->
+            <div ng-if="!isLoggedIn" class="list card">
+                <div class="item item-text-wrap" ui-sref="home.login" menu-close r="loginInfo">
+                    <button class="button button-positive" r="loginInfo"></button>
+                </div>
+            </div>
+            <ion-list>
+                <ion-item ng-if="isLoggedIn" menu-close ng-repeat="item in menuItems" ui-sref="home.{{item.state}}" ui-sref-active="activated">
+                    {{item.name}}
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
 </ion-side-menus>
