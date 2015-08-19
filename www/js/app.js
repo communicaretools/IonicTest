@@ -81,12 +81,11 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/exercise/exerciseView.html',
-                        controller: 'ExercisesCtrl'
+                        controller: 'ExerciseCtrl'
                     }
                 }
             })
-            //------------------------------------------ 
-            
+            //------------------------------------------           
             .state('home.exerciseView.sound', {
                 cache: false,
                 url: '/sound',
