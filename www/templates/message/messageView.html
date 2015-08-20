@@ -15,8 +15,13 @@
             <div class="item item-divider">
                 to: <span ng-repeat="receiver in message.receivers">{{receiver.name}} </span>
             </div>
+            <div class="item item-divider">
+                sent: {{message.sentAt | date}}
+            </div>
+            <div class="item item-divider">
+                subject: {{message.subject}}
+            </div>
             <div class="padding">
-                <h2>{{message.subject}}</h2>
                 <div ng-bind-html="message.content | unsafe">
                 </div>
             </div>
