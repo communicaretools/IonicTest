@@ -1,25 +1,33 @@
-<ion-view title="Exercise"+{{exerciseName}}>
+<ion-view title={{exTitle}}>
     <ion-nav-bar>
-        <ion-nav-buttons side="primary">
+        <ion-nav-buttons side="left">
             <button class="button button-clear " ui-sref="home.exercises.list" >
                 <i class="icon ion-ios-arrow-left"></i>
-            </button>
+            </button>   
         </ion-nav-buttons>
+        <ion-nav-buttons side="right">
+            <button class="button button-clear" ng-click="addToFv({{exerciseId}})">
+                <i class="icon ion-heart"></i>
+            </button>     
+        </ion-nav-buttons>        
     </ion-nav-bar>
+    
     <ion-content>
-        <div class="button-bar padding">
-            <button class="button " ui-sref="home.exerciseView.sound"><i class="icon ion-headphone" ></i></button>
-            <button class="button " ui-sref="home.exerciseView.text"><i class="icon ion-document-text"></i></button>
-        </div> 
-         
-        <div class="padding">
-            <ion-nav-view name="exerciseContent"></ion-nav-view>
+        <!--Nested views-->    
+        <div class="card">
+            <div class="item button-bar padding">
+                <button class="button" ng-class="{activated: $state.includes('home.exerciseView')}" ui-sref="home.exerciseView.sound" ><i class="icon ion-headphone" ></i></button>
+                <button class="button " ui-sref="home.exerciseView.text" ng-class="{activated: $state.includes('home.exerciseView')}"><i class="icon ion-document-text"></i></button>
+            </div> 
+            <div class="item">
+               <ion-nav-view name="exerciseContent"></ion-nav-view> 
+            </div>
+            <div class="item">
+                <button class="button button-clear button-positive" ng-click="showActionSheet()">
+                <i class="icon ion-more"></i>
+            </button>
+            </div>
         </div>
             
-        <div class="button-bar padding">
-            <button class="button button-clear"><i class="icon ion-heart"></i></button>
-            <button class="button button-clear"><i class="icon ion-more"></i></button>
-            <button class="button button-clear"><i class="icon ion-close"></i></button>                
-        </div>  
     </ion-content>
 </ion-view>

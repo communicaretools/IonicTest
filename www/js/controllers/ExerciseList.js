@@ -1,16 +1,36 @@
 angular.module('starter.controllers')
-    .controller('ExercisesCtrl', [
+    .controller('ExerciseListCtrl', [
         '$scope',
         'exercisesService',
+        '$localStorage',
+        '$state',
         'resources',
         function($scope,
             exercisesService,
+            $localStorage,
+            $state,
             resources) {
 
-            //hardcoded data
-            $scope.exercisesTemporaryList = exercisesService.load();
+            $scope.exercisesList=[];
+            $scope.fvExercisesList=exercisesService.getFv();
 
-            $scope.fvExerciseList=[];
+            var loadList =function() {
+                exercisesService.getList(function(result) {
+                    $scope.exercisesList = result;
+                    $localStorage.exList= result;//working!
+                });
+            };
+
+            loadList();
+
+            $scope.showFvInConsole=function() {
+                //console.log($scope.fvExercisesList);
+                delete $localStorage.favourites;
+                $state.forceReload();
+            }
+
+
+
         }
     ]);
 

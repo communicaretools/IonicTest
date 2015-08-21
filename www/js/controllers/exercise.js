@@ -1,25 +1,44 @@
 angular.module('starter.controllers')
     .controller('ExerciseCtrl', [
         '$scope',
+        '$stateParams',
         '$ionicActionSheet',
+        'exercisesService',
         'resources',
-        function($scope, 
+        '$state',
+        '$ionicPopup',
+        function($scope,
+            $stateParams, 
             $ionicActionSheet,
-            $ionicModal,
-            resources) {
+            exercisesService,
+            resources, 
+            $state, 
+            $ionicPopup) {
 
             console.log('ExerciseCtrl');
             $scope.test="This belongs to the ExerciseCtrl";
 
-            $scope.addToFv=function(){
-                console.log("addToFv");
-            }
+            $scope.exTitle=$stateParams.exerciseName;
 
-             // Triggered on a button click, or some other target
-             $scope.showActionSheet = function() {
+            $scope.exerciseId=$stateParams.exerciseId;
+            console.log("Id: "+$scope.exerciseId);
 
-               // Show the action sheet
-               var hideSheet = $ionicActionSheet.show({
+            $scope.exercise={};
+
+
+            $scope.addToFv=function(exerciseId){
+                $scope.exercise= exercisesService.getExerciseById(exerciseId);
+                console.log("addToFv");       
+                exercisesService.saveFv($scope.exercise);
+                $scope.showAlert();               
+            };
+
+
+            // Triggered on a button click, or some other target
+            $scope.showActionSheet = function() {
+
+                // Show the action sheet
+                var hideSheet = $ionicActionSheet.show({
                  buttons: [
                    { text: 'Add to favourites' },
                    { text: 'See related exercises' }
@@ -31,8 +50,20 @@ angular.module('starter.controllers')
                  buttonClicked: function(index) {
                    return true;
                  }
+                });
+            }; 
+
+            // An alert dialog
+             $scope.showAlert = function() {
+               var alertPopup = $ionicPopup.alert({
+                 title: 'Added ' + $scope.exTitle +' to favourites',
+                 //template: 'Add to favourites'
                });
-             };            
+               alertPopup.then(function(res) {
+                 console.log('alert');
+                 $state.go('home.exercises.fvList')
+               });
+             };
 
         }
     ]);

@@ -1,0 +1,31 @@
+<ion-view view-title="{{title}}">
+    <ion-nav-buttons side="right">
+        <button class="button button-clear" ng-click="showFvInConsole()">Console
+        </button>     
+    </ion-nav-buttons>  
+    <ion-content style="" class="has-header">
+        <ion-list class="list">
+            <!--<ion-item class="item item-thumbnail-left" ng-repeat="exercise in exercisesTemporaryList" ui-sref="home.exerciseModal({exerciseId: exercise.id, exerciseName: exercise.name})" ng-click="openExercise(exercise.id, exercise.name)">-->
+            <ion-item 
+            class="item item-thumbnail-left" 
+            ng-repeat="exercise in fvExercisesList track by $index" 
+            ui-sref="home.exerciseView({exerciseId: exercise.id, exerciseName: exercise.name})">            
+            	<img ng-src="media/images/thumbnails/sample-thumbnail.png"/>
+            	<h2>
+                	{{exercise.name}}
+            	</h2>
+            	<p>
+                	{{exercise.desc}}
+            	</p> 
+                <ion-option-button class="button-positive"
+                                   ng-click="share(item)">
+                  Share
+                </ion-option-button>
+                <ion-option-button class="button-info"
+                                   ng-click="edit(item)">
+                  Edit
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

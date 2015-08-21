@@ -19,6 +19,21 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
             }
         });
     })
+
+
+    .config(function($provide) {
+        $provide.decorator('$state', function($delegate, $stateParams) {
+            $delegate.forceReload = function() {
+                return $delegate.go($delegate.current, $stateParams, {
+                    reload: true,
+                    inherit: false,
+                    notify: true
+                });
+            };
+            return $delegate;
+        });
+    })
+
     .config(function ($stateProvider, $urlRouterProvider) {
 
         // Ionic uses AngularUI Router which uses the concept of states
@@ -61,17 +76,17 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 views: {
                     'tab-list': {
                         templateUrl: 'templates/exercise/tab-exercisesList.html',
-                        controller: 'ExercisesCtrl'
+                        controller: 'ExerciseListCtrl'
                     }
                 }
             })
-            .state('home.exercises.mine', {
+            .state('home.exercises.fvList', {
                 cache: false,
-                url: '/mine',
+                url: '/favourites',
                 views: {
-                    'tab-mine': {
-                        templateUrl: 'templates/exercise/tab-exercisesMine.html',
-                        controller: 'ExercisesCtrl'
+                    'tab-fvList': {
+                        templateUrl: 'templates/exercise/tab-exercisesFvList.html',
+                        controller: 'ExerciseListCtrl'
                     }
                 }
             })
