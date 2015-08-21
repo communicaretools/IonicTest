@@ -5,41 +5,41 @@
 }
 
 /* line 11, scss/style.scss */
-.item-content img {
-  vertical-align: middle;
+.buttons-right.buttons .button {
+  margin-left: 1em;
 }
 
-/* line 16, scss/style.scss */
+/* line 15, scss/style.scss */
 .citation {
   background-color: #f5f5f5;
   padding: .5em 1em;
 }
 
-/* line 20, scss/style.scss */
+/* line 19, scss/style.scss */
 .citation-author {
   font-weight: bold;
 }
 
-/* line 24, scss/style.scss */
+/* line 23, scss/style.scss */
 .centerme {
   margin: 0 auto;
   width: 100%;
   height: 100%;
 }
 
-/* line 30, scss/style.scss */
+/* line 29, scss/style.scss */
 dl.item.row {
   padding: 0;
 }
 
-/* line 33, scss/style.scss */
+/* line 32, scss/style.scss */
 dt.col.col-80,
 dt.col.col-50 {
   white-space: normal;
   padding: 1em;
 }
 
-/* line 38, scss/style.scss */
+/* line 37, scss/style.scss */
 dd.col {
   background-color: #4db295;
   color: white;
@@ -48,7 +48,7 @@ dd.col {
   white-space: normal;
 }
 
-/* line 45, scss/style.scss */
+/* line 44, scss/style.scss */
 dd.col.col-20 {
   background-color: #4db295;
   color: white;
@@ -57,7 +57,7 @@ dd.col.col-20 {
   text-align: center;
 }
 
-/* line 53, scss/style.scss */
+/* line 52, scss/style.scss */
 .fullscreen-player {
   max-width: 100%;
   max-height: 100%;
@@ -70,36 +70,46 @@ dd.col.col-20 {
   top: 0;
 }
 
-/* line 65, scss/style.scss */
+/* line 64, scss/style.scss */
+.iconassertive {
+  color: red;
+}
+
+/* line 69, scss/style.scss */
+.item-content img {
+  vertical-align: middle;
+}
+
+/* line 74, scss/style.scss */
 ion-content,
 .list ion-item.item .item-content {
   background-color: #eceeef;
 }
 
-/* line 71, scss/style.scss */
+/* line 80, scss/style.scss */
 ion-side-menu ion-content,
 ion-side-menu ion-content .list ion-item.item .item-content {
   background-color: #4db295;
   color: #f3e4b5;
 }
 
-/* line 76, scss/style.scss */
+/* line 85, scss/style.scss */
 ion-side-menu ion-content .list ion-item.item {
   border: 1px solid #449981;
   border-color: #449981;
 }
 
-/* line 80, scss/style.scss */
+/* line 89, scss/style.scss */
 ion-side-menu ion-content .list ion-item.item.activated .item-content {
   background-color: #449981;
 }
 
-/* line 87, scss/style.scss */
+/* line 96, scss/style.scss */
 #menu-header {
   background-image: url("../media/images/menu/menu-header.png");
   background-color: #cccccc;
 }
-/* line 90, scss/style.scss */
+/* line 99, scss/style.scss */
 #menu-header img {
   border: 1px solid #999;
   border-bottom-left-radius: 50%;
@@ -108,12 +118,12 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   border-top-right-radius: 50%;
   margin-top: 2em;
 }
-/* line 98, scss/style.scss */
+/* line 107, scss/style.scss */
 #menu-header h2 {
   margin: 0;
 }
 
-/* line 103, scss/style.scss */
+/* line 112, scss/style.scss */
 .mood {
   width: 250px;
   height: 250px;
@@ -122,7 +132,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   background-image: url("images/mood-bg/mood-bg.png");
 }
 
-/* line 115, scss/style.scss */
+/* line 124, scss/style.scss */
 .mood-image-1 {
   background-image: url("images/moods/big/big-1.png");
   background-repeat: no-repeat;
@@ -130,7 +140,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 115, scss/style.scss */
+/* line 124, scss/style.scss */
 .mood-image-2 {
   background-image: url("images/moods/big/big-2.png");
   background-repeat: no-repeat;
@@ -138,7 +148,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 115, scss/style.scss */
+/* line 124, scss/style.scss */
 .mood-image-3 {
   background-image: url("images/moods/big/big-3.png");
   background-repeat: no-repeat;
@@ -146,7 +156,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 115, scss/style.scss */
+/* line 124, scss/style.scss */
 .mood-image-4 {
   background-image: url("images/moods/big/big-4.png");
   background-repeat: no-repeat;
@@ -154,7 +164,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 115, scss/style.scss */
+/* line 124, scss/style.scss */
 .mood-image-5 {
   background-image: url("images/moods/big/big-5.png");
   background-repeat: no-repeat;
@@ -162,7 +172,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 115, scss/style.scss */
+/* line 124, scss/style.scss */
 .mood-image-6 {
   background-image: url("images/moods/big/big-6.png");
   background-repeat: no-repeat;
@@ -170,7 +180,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 115, scss/style.scss */
+/* line 124, scss/style.scss */
 .mood-image-7 {
   background-image: url("images/moods/big/big-7.png");
   background-repeat: no-repeat;
@@ -178,7 +188,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 115, scss/style.scss */
+/* line 124, scss/style.scss */
 .mood-image-8 {
   background-image: url("images/moods/big/big-8.png");
   background-repeat: no-repeat;
@@ -186,7 +196,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 115, scss/style.scss */
+/* line 124, scss/style.scss */
 .mood-image-9 {
   background-image: url("images/moods/big/big-9.png");
   background-repeat: no-repeat;
@@ -194,7 +204,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 115, scss/style.scss */
+/* line 124, scss/style.scss */
 .mood-image-10 {
   background-image: url("images/moods/big/big-10.png");
   background-repeat: no-repeat;
@@ -202,7 +212,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 115, scss/style.scss */
+/* line 124, scss/style.scss */
 .mood-image-11 {
   background-image: url("images/moods/big/big-11.png");
   background-repeat: no-repeat;
@@ -210,7 +220,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 115, scss/style.scss */
+/* line 124, scss/style.scss */
 .mood-image-12 {
   background-image: url("images/moods/big/big-12.png");
   background-repeat: no-repeat;
@@ -218,7 +228,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   width: 105%;
 }
 
-/* line 126, scss/style.scss */
+/* line 135, scss/style.scss */
 .center-mood {
   position: absolute;
   top: 90px;
@@ -228,7 +238,7 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   line-height: 50px;
 }
 
-/* line 142, scss/style.scss */
+/* line 151, scss/style.scss */
 .mood {
   margin-top: 3em;
   margin-bottom: 3em;
@@ -438,19 +448,8 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
   top: 15%;
 }
 
+/* line 158, scss/style.scss */
 label.has-error > input,
-label.has-error > textarea {  
-  border: 2px solid red;
-}
-
-label.input.valid {  
-  border: 2px solid green;
-}
-
-.form-errors {
-  margin: 5px 0
-}
-.form-error {
-  padding: 2px 0 2px 16px;
-  color: red;
+label.has-error > textarea {
+  border-bottom: 2px solid red;
 }

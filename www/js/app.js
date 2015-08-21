@@ -20,7 +20,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
         });
     })
 
-
+    //Configuring state reload (updateing lists)
     .config(function($provide) {
         $provide.decorator('$state', function($delegate, $stateParams) {
             $delegate.forceReload = function() {
@@ -29,6 +29,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                     inherit: false,
                     notify: true
                 });
+                console.log("refresh");
             };
             return $delegate;
         });
@@ -75,7 +76,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 url: '/list',
                 views: {
                     'tab-list': {
-                        templateUrl: 'templates/exercise/tab-exercisesList.html',
+                        templateUrl: 'templates/exercise/tab-exList.html',
                         controller: 'ExerciseListCtrl'
                     }
                 }
@@ -85,7 +86,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 url: '/favourites',
                 views: {
                     'tab-fvList': {
-                        templateUrl: 'templates/exercise/tab-exercisesFvList.html',
+                        templateUrl: 'templates/exercise/tab-exFvList.html',
                         controller: 'ExerciseListCtrl'
                     }
                 }

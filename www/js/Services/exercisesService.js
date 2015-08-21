@@ -16,32 +16,45 @@ angular.module('starter.services')
 
 		//storage
 		var getFv = function() {
-			var fv= $localStorage.favourites
+			var fv= $localStorage.favourites;
 			if(fv) {
 				return fv;
 			}
 			return []; 
 		};
 
+		//Saving exercise to localstordage favourites object
 		var saveFv = function(exercise) {
-
 			if(!$localStorage.favourites){
 				$localStorage.favourites=[];
 			}
-			$localStorage.favourites.push(exercise);
+
+			//check that exercise isn't already in favourites
+			if(!searchInList($localStorage.favourites, exercise.id)) {
+				exercise.fv=true;
+				$localStorage.favourites.push(exercise);
+			}
+			return exercise;
 		};
 
+		//Return true if exercise is in the list
+		var searchInList=function(list, id) {
+			for (var i=0; i<list.length; i++) {
+				if(list[i].id==id) {
+					return true;
+				}
+			}
+			return false;
+		};
+
+		//using the $stateParams to define the exercise (in the ExerciseCtrl)
 		var getExerciseById = function(id) {
-			console.log("getExerciseById");
 			var list=$localStorage.exList;
 			for  (i=0; i<list.length; i++ ) {
-				console.log(list[i]);
-				if(list[i] !== null) {//Not working
-            
+          
 					if(list[i].id==id) {
 						return list[i];
 					}
-				}
 
 			}
 			return null;

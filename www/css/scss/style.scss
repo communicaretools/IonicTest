@@ -7,10 +7,9 @@
 .bar.bar-stable .title {
     color: $headerTitleColor;
 }
-.item-content {
-    img {
-        vertical-align: middle;
-    }
+
+.buttons-right.buttons .button {
+    margin-left: 1em;
 }
 
 .citation {
@@ -60,6 +59,16 @@ dd.col.col-20 {
     position: fixed;
     right: 0;
     top: 0;
+}
+
+.iconassertive {
+    color: red;
+}
+
+.item-content {
+    img {
+        vertical-align: middle;
+    }
 }
 
 ion-content,
