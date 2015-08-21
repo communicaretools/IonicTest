@@ -1,12 +1,13 @@
 <ion-view>
     <ion-nav-title r="messageDraftsTitle"></ion-nav-title>
     <ion-content>
-        <ion-list class="list">
-            <ion-item class="item" collection-repeat="message in messages" ui-sref="home.messages.compose({messageId: message.id})">
+        <ion-list>
+            <ion-item collection-repeat="message in messages" ui-sref="home.messages.compose({messageId: message.id})">
                 <!-- This is supposed to be faster than ng-repeat -->
-                <div>subject: {{message.subject}}</div>
-                <div>to: <span ng-repeat="receiver in message.receivers">{{receiver.name}} </span>
-                </div>
+                <ion-item class="padding">subject: {{message.subject}}</ion-item>
+                <ion-item class="padding">last saved: {{message.lastModified | date }}</ion-item>
+                <ion-item class="padding">to: <span ng-repeat="receiver in message.receivers">{{receiver.name}} </span>
+                </ion-item>
             </ion-item>
         </ion-list>
     </ion-content>

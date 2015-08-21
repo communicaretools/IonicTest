@@ -13,11 +13,18 @@ angular.module('starter.controllers')
                 $log.error(e.msg);
             };
 
-            var onLoginSuccess = function (result) {
-                $ionicLoading.hide();
+            var getUser = function() {
                 profileManager.get(function (result) {
                     $localStorage.user = result.data;
-                }, onError);
+                    profileManager.getAvatar(function (result) {
+                        $localStorage.user.avatar = result.data;
+                    })
+                });
+            }
+
+            var onLoginSuccess = function (result) {
+                $ionicLoading.hide();
+                getUser();
                 $scope.$emit("logInChange", true);
                 $state.go('home.forum');
             };

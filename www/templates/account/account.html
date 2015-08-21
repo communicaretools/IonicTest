@@ -2,7 +2,35 @@
     <ion-nav-title r="settingsTitle"></ion-nav-title>
     <ion-content>
         <ion-list>
-            <ion-toggle ng-model="dateFormat" ng-change="updateFormat(dateFormat)"><span r="settingsDateFormat"></span></ion-toggle>
+            <ion-toggle ng-model="dateFormat" ng-change="updateFormat(dateFormat)">
+                <span r="settingsDateFormat"></span>
+            </ion-toggle>
+            <div class="item item-toggle">
+                <div><span r="avatar"></span></div>
+                <label class="toggle" ng-click="openModal()">
+                    <img ng-src='data:image/jpeg;base64,{{user.avatar}}' ng-show="user.avatar">
+                    <img ng-src="media/images/avatar/sample-avatar.jpg" ng-hide="user.avatar">
+                </label>
+            </div>
         </ion-list>
     </ion-content>
 </ion-view>
+
+<script id="avatar-modal.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar>
+            <h1 class="title" r="avatar"></h1>
+            <div class="button button-clear" ng-click="closeModal()">
+                <span class="icon ion-close"></span>
+            </div>
+        </ion-header-bar>
+        <ion-content>
+            <ion-list>
+                <ion-item class="badge" ng-repeat="a in modal.list">
+                    <img ng-src="css/images/avatars/{{a}}.png" ng-click="selectAvatar(a)" />
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-modal-view>
+</script>
+

@@ -5,8 +5,7 @@ angular.module('starter.services')
 		    $log.error(e.msg);
 	    };
 
-
-	    var transform = function (list) {
+        var transform = function (list) {
 	        return list.map(function (entry) {
 	            var parts = entry.links[0].href.split("/");
 	            var id = parts[parts.length - 1];

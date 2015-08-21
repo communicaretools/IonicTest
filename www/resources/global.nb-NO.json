@@ -1,4 +1,5 @@
 ﻿{
+  "avatar":  "Avatar",
   "back": "Tilbake",
   "calendar": "Kalender",
   "cameraTakePhoto": "Ta bilde",
@@ -35,9 +36,9 @@
   "messageDraftsTitle": "Kladder",
   "messageSubject": "Emne",
   "messageReceivers": "Mottaker",
-  "messageContent":  "Innhold",
+  "messageContent": "Innhold",
   "messageSend": "Send",
-  "messageSave":  "Lagre som kladd",
+  "messageSave": "Lagre som kladd",
   "no": "Nei",
   "notRelevant": "Ikke relevant",
   "password": "Passord",
