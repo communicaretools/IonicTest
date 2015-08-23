@@ -93,7 +93,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
             })
             .state('home.exerciseView', {
                 cache: false,
-                url: '/exercises/:exerciseId/:exerciseName',         
+                url: '/exercises/:exerciseId/:exerciseName',        
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/exercise/exerciseView.html',
@@ -106,8 +106,9 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 cache: false,
                 url: '/sound',
                 views: {
-                    'exerciseContent': {
+                    'tab-exSound': {
                         templateUrl: 'templates/exercise/exerciseSound.html',
+                        controller: 'ExerciseCtrl'
                     }
                 }
             })
@@ -115,12 +116,24 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 cache: false,
                 url: '/text',
                 views: {
-                    'exerciseContent': {
+                    'tab-exText': {
                         templateUrl: 'templates/exercise/exerciseText.html',
+                        controller: 'ExerciseCtrl'
 
                     }
                 }
-            })   
+            })
+            .state('home.exerciseView.details', {
+                cache: false,
+                url: '/details',
+                views: {
+                    'tab-exDetails': {
+                        templateUrl: 'templates/exercise/exerciseDetails.html',
+                        controller: 'ExerciseCtrl'
+
+                    }
+                }
+            }) 
 
             //------------------------------------------
             .state('home.forum', {

@@ -20,8 +20,12 @@ angular.module('starter.controllers')
 
             var loadList =function() {
                 exercisesService.getList(function(result) {
-                    $scope.exList = result;
-                    $localStorage.exList= result;//working!
+                    /*$scope.exList = result;
+                    $localStorage.exList= result;
+                    maybe better like this:*/
+                    $localStorage.exList= result;
+                     $scope.exList= $localStorage.exList
+
                 });
             };
 

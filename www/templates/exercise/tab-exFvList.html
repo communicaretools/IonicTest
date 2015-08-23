@@ -11,7 +11,7 @@
         <ion-list class="list">
             <!--<ion-item class="item item-thumbnail-left" ng-repeat="exercise in exercisesTemporaryList" ui-sref="home.exerciseModal({exerciseId: exercise.id, exerciseName: exercise.name})" ng-click="openExercise(exercise.id, exercise.name)">-->
             <ion-item 
-                        on-hold="showFvSheet()"
+            on-hold="showFvSheet()"
             class="item item-thumbnail-left" 
             ng-repeat="exercise in fvExList track by $index" 
             ui-sref="home.exerciseView({exerciseId: exercise.id, exerciseName: exercise.name})"> 

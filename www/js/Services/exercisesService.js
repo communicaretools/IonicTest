@@ -3,16 +3,20 @@ angular.module('starter.services')
 
 		var list=[];
 
-		var getList = function(aPassedFunction){
+		/*'getlist' ask for a resource. if it's successed, it loads the resource's data into a variable 'list' and call someFunction that gets this data as its argument. This someFunction will be defined when calling 'getList' (and its argument contains the resourc's data)
+		Is that what we call a promise?  Does 'getList' returns a promice?
+		*/
+		var getList = function(someFunction){
 			var path=resoursePath+'exercisesTemporary.json';
 			$http.get(path)
 				.then(function(success){
 					list= success.data.exercises;
-					aPassedFunction(list);//This function is defined when we call the getList
+					someFunction(list);//This function is defined when we call the getList
 				}, function(error)  {
 					console.log('Error');
 				});
 		};
+
 
 		//storage
 		var getFv = function() {
