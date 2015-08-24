@@ -20,21 +20,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
         });
     })
 
-    //Configuring state reload (updateing lists)
-    .config(function($provide) {
-        $provide.decorator('$state', function($delegate, $stateParams) {
-            $delegate.forceReload = function() {
-                return $delegate.go($delegate.current, $stateParams, {
-                    reload: true,
-                    inherit: false,
-                    notify: true
-                });
-                console.log("refresh");
-            };
-            return $delegate;
-        });
-    })
-
     .config(function ($stateProvider, $urlRouterProvider) {
 
         // Ionic uses AngularUI Router which uses the concept of states
@@ -93,7 +78,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
             })
             .state('home.exerciseView', {
                 cache: false,
-                url: '/exercises/:exerciseId/:exerciseName',        
+                url: '/exercises/:exerciseId/:exerciseName',   
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/exercise/exerciseView.html',
@@ -107,8 +92,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 url: '/sound',
                 views: {
                     'tab-exSound': {
-                        templateUrl: 'templates/exercise/exerciseSound.html',
-                        controller: 'ExerciseCtrl'
+                        templateUrl: 'templates/exercise/tab-exSound.html'
+                       
                     }
                 }
             })
@@ -117,8 +102,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 url: '/text',
                 views: {
                     'tab-exText': {
-                        templateUrl: 'templates/exercise/exerciseText.html',
-                        controller: 'ExerciseCtrl'
+                        templateUrl: 'templates/exercise/tab-exText.html'
 
                     }
                 }
@@ -128,8 +112,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 url: '/details',
                 views: {
                     'tab-exDetails': {
-                        templateUrl: 'templates/exercise/exerciseDetails.html',
-                        controller: 'ExerciseCtrl'
+                        templateUrl: 'templates/exercise/tab-exDetails.html'
 
                     }
                 }

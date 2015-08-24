@@ -160,3 +160,12 @@ label.has-error > textarea {
   border-bottom: 2px solid red;
 }
 
+.tabs-striped .tabs {
+ background-color: $appBgColor;
+ border: none;
+}
+
+.tabs-striped .tab-item.tab-item-active {
+ border-color: $appColor;
+}
+

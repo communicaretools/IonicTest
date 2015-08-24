@@ -32,10 +32,11 @@ angular.module('starter.controllers')
             // Initialzier
             loadList();
 
+
             $scope.cleanFvList=function() {
                 //console.log($scope.fvExList);
                 delete $localStorage.favourites;
-                $state.forceReload();
+                $state.reload();
             }
 
             $scope.edit=false;
@@ -94,7 +95,12 @@ angular.module('starter.controllers')
                alertPopup.then(function(res) {
                  console.log('alert');
                });
-             };                          
+             }; 
+
+            $scope.setView=function(value){
+                exercisesService.setCurrentView(value);
+                $state.go('home.exercises.'+value);
+            }                              
 
         }
     ]);

@@ -453,3 +453,14 @@ label.has-error > input,
 label.has-error > textarea {
   border-bottom: 2px solid red;
 }
+
+/* line 163, scss/style.scss */
+.tabs-striped .tabs {
+  background-color: #eceeef;
+  border: none;
+}
+
+/* line 168, scss/style.scss */
+.tabs-striped .tab-item.tab-item-active {
+  border-color: #4db295;
+}
