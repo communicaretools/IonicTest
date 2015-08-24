@@ -14,7 +14,6 @@ angular.module('starter.controllers')
                     $scope.title = resources.get("registrationTitle");
                     $scope.reg = result.data;
                     $scope.reg.type = $stateParams.type;
-                    console.log($scope.reg);
                 });
             };
 
