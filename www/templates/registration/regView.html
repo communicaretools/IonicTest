@@ -1,7 +1,8 @@
-<ion-view title="{{title}} - {{reg.type}}">
+<ion-view>
+    <ion-nav-title>{{title}} - {{reg.type}}</ion-nav-title>
     <ion-nav-bar>
         <ion-nav-buttons side="primary">
-            <button class="button button-clear " ui-sref="home.registration.list" >
+            <button class="button button-clear " ui-sref="home.registration.list">
                 <i class="icon ion-ios-arrow-left"></i>
             </button>
         </ion-nav-buttons>
@@ -12,7 +13,7 @@
                 {{reg.postedAt | date: dateFormat}}
             </div>
             <div class="item item-avatar" ng-if="reg.type == 'Smiley'">
-                <img ng-src="css/images/moods/small/{{reg.imageIndex}}.png" ng-if="reg.imageIndex!==-1" />
+                <img ng-src="css/images/moods/small/{{reg.imageIndex}}.png" ng-if="reg.imageIndex!==-1"/>
                 <p>
                     {{reg.text}}
                 </p>
@@ -34,23 +35,23 @@
                     <dt class="col col-80" r="registrationHoursOfSleep"></dt>
                     <dd class="col">{{reg.data.numberOfHoursSlept}}</dd>
                 </dl>
-                <dl class="item row">                
+                <dl class="item row">
                     <dt class="col col-80" r="registrationQualityOfPhysicalActivity"></dt>
                     <dd class="col">{{reg.data.satisfactionWithPhysicalActivity}}</dd>
                 </dl>
-                <dl class="item row">                 
+                <dl class="item row">
                     <dt class="col col-80" r="registrationMinutesOfPhysicalActivity"></dt>
                     <dd class="col">{{reg.data.numberOfMinutesInPhysicalActivity}}</dd>
                 </dl>
-                <dl class="item row">                   
+                <dl class="item row">
                     <dt class="col col-80" r="registrationQualityOfDiet"></dt>
                     <dd class="col">{{reg.data.satisfactionWithDiet}}</dd>
                 </dl>
-                <dl class="item row">                 
+                <dl class="item row">
                     <dt class="col col-80" r="registrationQualityOfSocial"></dt>
                     <dd class="col">{{reg.data.satisfactionWithSocialRelations}}</dd>
                 </dl>
-                <dl class="item row">                 
+                <dl class="item row">
                     <dt class="col col-80" r="registrationTakenMeds"></dt>
                     <dd class="col col-20">{{reg.data.takenMedications}}</dd>
                 </dl>
