@@ -5,7 +5,6 @@ angular.module('starter.services')
 	    };
 
 	    var add = function (type, entry, onSuccess) {
-	        console.log(entry);
 	        $http.post(ApiEndpoint.url + "/register/" + type, entry).then(onSuccess, onError);
 	    };
 
