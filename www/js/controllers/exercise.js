@@ -17,14 +17,45 @@ angular.module('starter.controllers')
             $ionicHistory,
             $ionicPopup) {
 
-            console.log('ExerciseCtrl');          
+            //console.log('ExerciseCtrl');          
             $scope.test="This belongs to the ExerciseCtrl";
 
             $scope.exTitle=$stateParams.exerciseName;
             $scope.exerciseId=$stateParams.exerciseId;            
             $scope.exercise= exercisesService.getExerciseById($stateParams.exerciseId);
-            console.log($scope.exercise);
 
+
+            
+            $scope.currentStep="";
+
+            var steps= $scope.exercise.steps;
+            $scope.stepNr=0;
+            $scope.currentStep=steps[$scope.stepNr];
+            //$scope.showPrevious=false;       
+
+           $scope.previousStep=function(nr) {
+                if(nr>-1) {
+                    $scope.stepNr=nr;
+                    $scope.currentStep=steps[nr];
+                    $scope.showPrevious=true;
+                    console.log(nr);
+                }
+                else {
+                    $scope.showPrevious=false; 
+                }
+
+           }
+           $scope.nextStep=function(nr) {
+                if(nr< steps.length) {
+                    $scope.stepNr=nr;
+                    $scope.currentStep=steps[nr];
+                    console.log(nr);
+                }
+           }           
+
+
+
+            console.log($scope.exercise);
 
             $scope.addToFv=function(exerciseId){               
                 console.log("addToFv");
@@ -65,12 +96,9 @@ angular.module('starter.controllers')
              };  
 
             $scope.goBackToList=function (){              
-                if($ionicHistory.backView()) {
-                   $state.go($ionicHistory.backView().stateId); 
-                }
-                else {
-                    $state.go('home.exercises.list');
-                }               
+                var view=exercisesService.getCurrentView();
+                $state.go('home.exercises.'+view);
+                              
             }                 
         }
     ]);
