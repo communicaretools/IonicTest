@@ -1,6 +1,8 @@
-angular.module('starter.controllers').controller('DiaryCtrl', [
+angular.module('starter.controllers')
+	.controller('DiaryCtrl', [
 	'diaryService',
 	function (diaryService) {
 	var vm = this;
-	diaryService.hello();
+	vm.entries = diaryService.get();
+	console.log(vm.entries);
 }]);

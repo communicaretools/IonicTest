@@ -4,8 +4,7 @@
         <ion-list ng-repeat="entry in thread">
             <ion-item>
                 <b>{{entry.author}} - {{entry.date | date: dateFormat }}</b>
-                <p ng-bind-html="entry.content | unsafe">
-                <p>
+                <p ng-bind-html="entry.content | unsafe"></p>
                 <ion-option-button class="button-positive" ng-click="quoteEntry(entry)" r="forumCite"></ion-option-button>
             </ion-item>
         </ion-list>

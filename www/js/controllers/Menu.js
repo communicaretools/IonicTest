@@ -44,7 +44,7 @@ angular.module('starter.controllers')
                         name: resources.get("calendar")
                     },
                     {
-                        state: "diary",
+                        state: "diary.list",
                         name: resources.get("diary")
                     },
                     {

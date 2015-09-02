@@ -247,15 +247,11 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/message/messages.html',
-                    },
-                    'tab-list': {
-                        templateUrl: 'templates/message/tab-messageInbox.html',
-                        controller: 'MessagesCtrl'
                     }
                 }
             })
             .state('home.messages.inbox', {
-                url: '/list/inbox',
+                url: '/inbox',
                 cache: false,
                 views: {
                     'tab-inbox': {
@@ -265,7 +261,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 }
             })
             .state('home.messages.outbox', {
-                url: '/list/outbox',
+                url: '/outbox',
                 cache: false,
                 views: {
                     'tab-outbox': {
@@ -275,7 +271,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 }
             })
             .state('home.messages.drafts', {
-                url: '/list/drafts',
+                url: '/drafts',
                 cache: false,
                 views: {
                     'tab-drafts': {
@@ -320,7 +316,27 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/diary/diary.html',
-                        controller: 'DiaryCtrl'
+                       
+                    }
+                }
+            })
+            .state('home.diary.list', {
+                url: '/list',
+                cache: false,
+                views: {
+                    'tab-list': {
+                        templateUrl: 'templates/diary/tab-list.html',
+                        controller: 'DiaryCtrl as vm'
+                    }
+                }
+            })
+            .state('home.diary.newEntry', {
+                url: '/newEntry',
+                cache: false,
+                views: {
+                    'tab-newEntry': {
+                        templateUrl: 'templates/diary/tab-newEntry.html',
+                        controller: 'DiaryCtrl as vm'
                     }
                 }
             });
