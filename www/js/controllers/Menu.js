@@ -8,7 +8,7 @@ angular.module('starter.controllers')
         function ($scope, $state, $localStorage, loginManager, resources) {
             resources.load().then(function () {
                 if (!$scope.user) {
-                    $scope.user = $localStorage.user;   
+                    $scope.user = $localStorage.user;
                 }
                 $scope.menuItems = [
                     {
@@ -18,7 +18,7 @@ angular.module('starter.controllers')
                     {
                         state: "exercises",
                         name: resources.get("menuExercises")
-                    },                    
+                    },
                     {
                         state: "registration",
                         name: resources.get("menuRegistrations")
@@ -42,6 +42,10 @@ angular.module('starter.controllers')
                     {
                         state: "calendar",
                         name: resources.get("calendar")
+                    },
+                    {
+                        state: "diary",
+                        name: resources.get("diary")
                     },
                     {
                         state: "login",

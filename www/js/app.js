@@ -160,7 +160,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                     }
                 }
             })
-
             .state('home.registrationView', {
                 cache: false,
                 url: '/registration/:type/:regId',
@@ -312,6 +311,16 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                     'menuContent': {
                         templateUrl: 'templates/calendar/calendar.html',
                         controller: 'CalendarCtrl'
+                    }
+                }
+            })
+            .state('home.diary', {
+                url: '/diary',
+                cache: false,
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/diary/diary.html',
+                        controller: 'DiaryCtrl'
                     }
                 }
             });
