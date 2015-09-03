@@ -3,10 +3,11 @@ angular.module('starter.controllers')
         '$scope',
         'threadService',
         function($scope, threadService) {
+            var onSuccess = function (result) {
+                $scope.threads = result;
+            };
             var loadThreads = function() {
-                threadService.get(function (result) {
-                    $scope.threads = result;
-                });
+                threadService.get(onSuccess);
             };
             $scope.threads = [];
 

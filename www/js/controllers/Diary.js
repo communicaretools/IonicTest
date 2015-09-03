@@ -3,6 +3,11 @@ angular.module('starter.controllers')
 	'diaryService',
 	function (diaryService) {
 	var vm = this;
-	vm.entries = diaryService.get();
+
+	var onSuccess = function (result) {
+		vm.entries = result;
+	};
+	vm.entries = diaryService.get(onSuccess);
+
 	console.log(vm.entries);
 }]);

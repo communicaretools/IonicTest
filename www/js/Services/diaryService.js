@@ -1,7 +1,12 @@
 angular.module('starter.services')
 	.factory('diaryService', [
 		'$http',
-		function($http) {
+		'$log',
+		function($http, $log) {
+			var onError = function (e) {
+				$log.error(e.msg);
+			};
+
 			var addEntry = function () {
 
 			};
@@ -10,7 +15,10 @@ angular.module('starter.services')
 
 			};
 
-			var getEntries = function() {
+			var getEntries = function(userId, onSuccess) {
+				//var urlRoot ="http://sps.rr-research.no/test/connectApi/api";
+				//$http.get(urlRoot+ "diary/"+ userId).then(onSuccess, onError);
+
 				var entries = [
 				{
 					date: "2014",
