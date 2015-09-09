@@ -1,18 +1,11 @@
 <ion-view>
     <ion-nav-title r="forumThreadNewEntry"></ion-nav-title>
     <ion-content class="padding">
-        <p ng-if="toQuote">
-            <span r="forumCited"></span><br/>
-            <b>{{toQuote.author}}</b>
-            <i>
-                {{toQuote.content}}
-            </i>
-        </p>
         <label class="item item-input">
-            <textarea ng-model="entry" r="forumEntryHint"></textarea>
+            <textarea ng-model="content" r="forumEntryHint"></textarea>
         </label>
         <div class="padding button-bar">
-            <button class="button button-positive" ng-click="addEntry(entry)" r="post"></button>
+            <button class="button button-positive" ng-click="addEntry(content)" r="post"></button>
             <button class="button button-negative" ui-sref="home.diary.list" r="cancel"></button>
         </div>
     </ion-content>

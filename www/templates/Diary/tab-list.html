@@ -3,7 +3,7 @@
     <ion-content>
         <ion-list>
             <ion-item ng-repeat="entry in vm.entries">
-                <b>{{entry.date}}</b>
+                <b>{{entry.enteredAt}}</b>
                 <p>{{entry.content}}</p>
                 <ion-option-button class="button-positive" ng-click="quoteEntry(entry)" r="diaryEdit"></ion-option-button>
                 <ion-option-button class="button" ng-click="quoteEntry(entry)" r="diaryDelete"></ion-option-button>

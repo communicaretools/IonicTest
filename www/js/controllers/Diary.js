@@ -1,18 +1,18 @@
 angular.module('starter.controllers')
     .controller('DiaryCtrl', [
-        'diaryService',
-        function(diaryService) {
+        '$localStorage', 'diaryService',
+        function ($localStorage, diaryService) {
             var vm = this;
 
-            var loadEntries = function(userId) {
+            var loadEntries = function () {
+                var userId = $localStorage.user.userId
                 diaryService.get(userId, function(result) {
                     vm.entries = result;
                 });
-                console.log(vm.entries);
             }
 
             vm.entries = [];
 
-            loadEntries(6);
+            loadEntries();
         }
     ]);

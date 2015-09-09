@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
-    .controller('EntryCtrl', [
+    .controller('ForumEntryCtrl', [
         '$scope',
         '$state',
         '$stateParams',

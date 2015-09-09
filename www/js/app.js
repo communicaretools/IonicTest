@@ -156,7 +156,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 views: {
                     'tab-new': {
                         templateUrl: 'templates/forum/tab-entryNew.html',
-                        controller: 'EntryCtrl'
+                        controller: 'ForumEntryCtrl'
                     }
                 }
             })
@@ -336,7 +336,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 views: {
                     'tab-newEntry': {
                         templateUrl: 'templates/diary/tab-newEntry.html',
-                        controller: 'DiaryCtrl as vm'
+                        controller: 'DiaryEntryCtrl as vm'
                     }
                 }
             });
