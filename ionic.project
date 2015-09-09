@@ -5,6 +5,10 @@
     {
       "path": "/api",
       "proxyUrl": "http://sps.rr-research.no/test/reconnect-pretest/webchoice/api"
+    },
+    {
+      "path": "/connectApi",
+      "proxyUrl": "http://sps.rr-research.no/test/connectApi/api"
     }
   ]
 }

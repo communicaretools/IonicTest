@@ -1,7 +1,7 @@
 angular.module('starter.services')
 	.factory('diaryService', [
-		'$http',
-		function($http) {
+		'$http', 'ApiEndpoint',
+		function ($http, ApiEndpoint) {
 			var addEntry = function () {
 
 			};
@@ -10,17 +10,10 @@ angular.module('starter.services')
 
 			};
 
-			var getEntries = function() {
-				var entries = [
-				{
-					date: "2014",
-					content: "Hallo"
-				},
-				{
-					date: "2015",
-					content: "Hei"
-				}];
-				return entries;
+			var getEntries = function (userId, onSuccess) {
+			    $http.get(ApiEndpoint.connectApiUrl+/diary/collection/+userId).then(function(result) {
+			        onSuccess(result.data);
+			    })
 			};
 			return {
 				"get": getEntries,
