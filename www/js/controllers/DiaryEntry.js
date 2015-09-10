@@ -22,9 +22,9 @@ angular.module('starter.controllers')
                 console.log(newEntry);
 
                 // locks the db
-                //diaryService.add(newEntry, function () {
-                //    $state.go('home.diary.list');
-                //});
+                diaryService.add(newEntry, function () {
+                    $state.go('home.diary.list');
+                });
             };
         }
     ]);
