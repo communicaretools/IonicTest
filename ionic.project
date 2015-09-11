@@ -8,7 +8,7 @@
     },
     {
       "path": "/connectApi",
-      "proxyUrl": "http://sps.rr-research.no/test/connectApi/api"
+      "proxyUrl": "http://sps.rr-research.no/test/connectApi"
     }
   ]
 }

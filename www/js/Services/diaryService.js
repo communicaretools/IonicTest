@@ -2,6 +2,7 @@ angular.module('starter.services')
 	.factory('diaryService', [
 		'$http', '$log', 'ApiEndpoint',
 		function ($http, $log, ApiEndpoint) {
+		    var diaryEndpoint = ApiEndpoint.connectApiUrl + '/diary/api/diary/';
 
 		    var onError = function (e) {
 		        $log.error(e.msg);
@@ -9,7 +10,7 @@ angular.module('starter.services')
 
 		    var addEntry = function (entry, onSuccess) {
 		        console.log(entry);
-		        $http.post(ApiEndpoint.connectApiUrl + '/diary/collection', entry)
+		        $http.post(diaryEndpoint + 'collection', entry)
                     .then(onSuccess, onError);
 		    };
 
@@ -18,7 +19,7 @@ angular.module('starter.services')
 			};
 
 			var getEntries = function (userId, onSuccess) {
-			    $http.get(ApiEndpoint.connectApiUrl + '/diary/collection/' + userId)
+			    $http.get(diaryEndpoint + 'collection/' + userId)
 			        .then(function(result) {
 			            onSuccess(result.data);
 			        });
