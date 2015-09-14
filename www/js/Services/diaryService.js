@@ -22,7 +22,7 @@ angular.module('starter.services')
 			    $http.get(diaryEndpoint + 'collection/' + userId)
 			        .then(function(result) {
 			            onSuccess(result.data);
-			        });
+			        }, onError);
 			};
 			return {
 				"get": getEntries,
