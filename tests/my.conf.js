@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path, that will be used to resolve files and exclude
-    basePath: '',
+    basePath: '../',
 
 
     // frameworks to use
@@ -14,10 +14,11 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
 	files: [
-	  '../www/lib/angular/angular.js',
-	  '../www/js/*.js',
-	  '../www/lib/angular-mocks/angular-mocks.js',
-	  '*.js'
+	  'www/lib/ionic/js/ionic.bundle.js',
+	  'www/js/*.js',
+      'www/js/**/*.js',
+      'www/lib/angular-mocks/angular-mocks.js',
+	  'tests/*.js'
 	],
       
   
