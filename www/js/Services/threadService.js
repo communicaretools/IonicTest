@@ -1,5 +1,8 @@
 angular.module('starter.services')
 	.factory('threadService', ['$http', '$log', 'ApiEndpoint', function ($http, $log, ApiEndpoint) {
+	    var forumEndpoint = ApiEndpoint.connectApiUrl + '/forum/api/thread';
+        //var forumEndpoint = "http://localhost:8100/threadTest"
+
 	    var forumId = 1;
 
 		var onError = function (e) {
@@ -15,17 +18,9 @@ angular.module('starter.services')
 			});
 		};
 
-		var transform = function (list) {
-		    return list.map(function (entry) {
-		        var parts = entry.links[0].href.split("/");
-		        var id = parts[parts.length - 1];
-		        return angular.extend(entry, { "id": id });
-		    });
-		};
-
 		var getThreads = function (onSuccess){
-		    $http.get(ApiEndpoint.url + "/forum/" + forumId).then(function (result) {
-		        onSuccess(transform(result.data["forum-threads"]));
+		    $http.get(forumEndpoint + "/collection/" + forumId).then(function (result) {
+		        onSuccess(result.data);
 		    }, onError);
 		};
 

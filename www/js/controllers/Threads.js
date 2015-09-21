@@ -4,7 +4,7 @@ angular.module('starter.controllers')
         'threadService',
         function($scope, threadService) {
             var onSuccess = function (result) {
-                $scope.threads = result;
+                $scope.threads = result.threads;
             };
             var loadThreads = function() {
                 threadService.get(onSuccess);

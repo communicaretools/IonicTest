@@ -4,12 +4,11 @@ angular.module('starter.controllers')
         function ($localStorage, diaryService, preferenceService) {
             var vm = this;
 
-            var loadEntries = function () {
-                var userId = $localStorage.user.userId
-                diaryService.get(userId, function(result) {
+            var loadEntries = function() {
+                diaryService.get(function(result) {
                     vm.entries = result;
                 });
-            }
+            };
             
             vm.dateFormat = preferenceService.getDateFormat();
 

@@ -3,10 +3,9 @@ angular.module('starter.controllers')
         '$scope',
         '$stateParams',
         '$state',
-        '$localStorage',
         'resources',
         'registrationService',
-        function($scope, $stateParams, $state, $localStorage, resources, registrationService) {
+        function($scope, $stateParams, $state, resources, registrationService) {
             $scope.newReg = {};
             $scope.numberOfTimes = function(n) {
                 return new Array(n + 1);
@@ -17,8 +16,7 @@ angular.module('starter.controllers')
             };
 
             $scope.sendRegistration = function(type) {
-                var userId = $localStorage.user.userId;
-                registrationService.add(userId, type, $scope.newReg, function() {
+                registrationService.add(type, $scope.newReg, function() {
                     $state.go("home.registration.list");
                 });
             };

@@ -25,7 +25,7 @@ angular.module('starter.controllers')
 
             $scope.openModal = function () {
                 profileManager.avatarList(function(result) {
-                    $scope.modal.list = result.data.avatars;
+                    $scope.modal.list = result.data;
                 });
                 $scope.modal.show();
             };

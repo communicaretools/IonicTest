@@ -14,13 +14,13 @@ angular.module('starter.controllers')
             };
 
             var getUser = function() {
-                profileManager.get(function (result) {
+                profileManager.get(function(result) {
                     $localStorage.user = result.data;
-                    profileManager.getAvatar(function (result) {
+                    profileManager.getAvatar($localStorage.user.userId, function(result) {
                         $localStorage.user.avatar = result.data;
                     })
                 });
-            }
+            };
 
             var onLoginSuccess = function (result) {
                 $ionicLoading.hide();
@@ -29,7 +29,7 @@ angular.module('starter.controllers')
                 $state.go('home.forum');
             };
 
-            var onLoginError = function (result) {
+            var onLoginError = function(result) {
                 $scope.informationText = null;
                 $ionicLoading.hide();
                 $log.error(result);
@@ -37,7 +37,7 @@ angular.module('starter.controllers')
                 if (result.status === 403) {
                     $scope.informationText = resources.get('loginError');
                 }
-            }
+            };
             var onLogoutSuccess = function() {
                 $scope.$emit("logInChange", false);
                 loginManager.options(options);

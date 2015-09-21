@@ -9,6 +9,38 @@
     {
       "path": "/connectApi",
       "proxyUrl": "http://sps.rr-research.no/test/connectApi"
+    },
+    {
+      "path": "/authTest",
+        "proxyUrl": "http://localhost:52456/api/authentication"
+    },
+    {
+      "path": "/profileTest",
+        "proxyUrl": "http://localhost:57305/api/profile"
+    },
+    {
+      "path": "/diaryTest",
+        "proxyUrl": "http://localhost:60441/api/diary"
+    },
+    {
+      "path": "/avatarTest",
+      "proxyUrl": "http://localhost:57971/api/avatar"
+    },
+    {
+      "path": "/forumTest",
+      "proxyUrl": "http://localhost:64017/api/forum"
+    },
+    {
+      "path": "/threadTest",
+      "proxyUrl": "http://localhost:64017/api/thread"
+    },
+    {
+      "path": "/entryTest",
+      "proxyUrl": "http://localhost:64017/api/entry"
+    },
+    {
+      "path": "/registrationTest",
+      "proxyUrl": "http://localhost:54430/api/registration"
     }
   ]
 }
