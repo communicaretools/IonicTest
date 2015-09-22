@@ -41,6 +41,10 @@
     {
       "path": "/registrationTest",
       "proxyUrl": "http://localhost:54430/api/registration"
+    },
+    {
+      "path": "/feedTest",
+      "proxyUrl": "http://localhost:63750/api/feed"
     }
   ]
 }

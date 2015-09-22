@@ -12,8 +12,16 @@ angular.module('starter.controllers')
                 }
                 $scope.menuItems = [
                     {
+                        state: "feed",
+                        name: resources.get("menuFeed")
+                    },
+                    {
                         state: "forum",
                         name: resources.get("menuForum")
+                    },
+                    {
+                        state: "diary.list",
+                        name: resources.get("diary")
                     },
                     {
                         state: "exercises",
@@ -36,16 +44,12 @@ angular.module('starter.controllers')
                         name: resources.get("menuVideo")
                     },
                     {
-                        state: "account",
-                        name: resources.get("menuSettings")
-                    },
-                    {
                         state: "calendar",
                         name: resources.get("calendar")
                     },
                     {
-                        state: "diary.list",
-                        name: resources.get("diary")
+                        state: "account",
+                        name: resources.get("menuSettings")
                     },
                     {
                         state: "login",

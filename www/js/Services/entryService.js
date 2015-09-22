@@ -1,6 +1,6 @@
 angular.module('starter.services')
 	.factory('entryService', ['$http', '$log', 'ApiEndpoint', function ($http, $log, ApiEndpoint) {
-	    var forumEntryEndpoint = ApiEndpoint.connectApiUrl + '/forum/api/thread';
+	    var forumEntryEndpoint = ApiEndpoint.connectApiUrl + '/forum/api/entry';
 	    //var forumEntryEndpoint = "http://localhost:8100/entryTest"
         
 	    var selected;

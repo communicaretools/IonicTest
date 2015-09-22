@@ -1,0 +1,11 @@
+ <ion-view>
+     <ion-nav-title r="feedTitle"></ion-nav-title>
+    <ion-content>
+        <!--LIST-->
+        <ion-list>
+            <ion-item collection-repeat="item in vm.feed">
+                <div>{{item.module}} - {{item.type}}</div>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

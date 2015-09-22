@@ -117,7 +117,17 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                     }
                 }
             }) 
-
+             //------------------------------------------
+            .state('home.feed', {
+                cache: false,
+                url: '/feed',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/feed/feed.html',
+                        controller: 'FeedCtrl as vm'
+                    }
+                }
+            })
             //------------------------------------------
             .state('home.forum', {
                 cache: false,

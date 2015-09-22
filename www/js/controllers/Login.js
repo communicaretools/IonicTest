@@ -26,7 +26,7 @@ angular.module('starter.controllers')
                 $ionicLoading.hide();
                 getUser();
                 $scope.$emit("logInChange", true);
-                $state.go('home.forum');
+                $state.go('home.feed');
             };
 
             var onLoginError = function(result) {

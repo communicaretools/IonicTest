@@ -18,7 +18,6 @@ angular.module('starter.services')
             };
 
             var getAvatar = function (userId, onSuccess) {
-                userId = 28;
                 $http.get(avatarEndpoint + "/resource/" + userId)
                     .then(onSuccess, onError);
             }
