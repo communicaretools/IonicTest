@@ -1,15 +1,10 @@
 /*-----------------------------------*/
-/* line 7, scss/style.scss */
 .bar.bar-stable .title {
-  color: #4db295;
-}
+  color: #4db295; }
 
-/* line 11, scss/style.scss */
 .buttons-right.buttons .button {
-  margin-left: 1em;
-}
+  margin-left: 1em; }
 
-/* line 16, scss/style.scss */
 .card-wrap {
   height: 100% !important;
   display: -webkit-box !important;
@@ -39,63 +34,44 @@
   -moz-box-align: stretch !important;
   -webkit-align-items: stretch !important;
   -ms-flex-align: stretch !important;
-  align-items: stretch !important;
-}
+  align-items: stretch !important; }
 
-/* line 49, scss/style.scss */
 .citation {
   background-color: #f5f5f5;
-  padding: .5em 1em;
-}
+  padding: .5em 1em; }
 
-/* line 53, scss/style.scss */
 .citation-author {
-  font-weight: bold;
-}
+  font-weight: bold; }
 
-/* line 57, scss/style.scss */
 .centerme {
   margin: 0 auto;
   width: 100%;
-  height: 100%;
-}
+  height: 100%; }
 
-/* line 63, scss/style.scss */
 dl.item.row {
-  padding: 0;
-}
+  padding: 0; }
 
-/* line 66, scss/style.scss */
-dt.col.col-80,
-dt.col.col-50 {
+dt.col.col-80, dt.col.col-50 {
   white-space: normal;
-  padding: 1em;
-}
+  padding: 1em; }
 
-/* line 71, scss/style.scss */
 dd.col {
   background-color: #4db295;
   color: white;
   font-size: 2em;
   text-align: center;
-  white-space: normal;
-}
+  white-space: normal; }
 
-/* line 78, scss/style.scss */
 dd.col.col-20 {
   background-color: #4db295;
   color: white;
   font-size: 1em;
   padding-top: 1em;
-  text-align: center;
-}
+  text-align: center; }
 
-/* line 86, scss/style.scss */
 .exercise-step {
-  text-align: center;
-}
+  text-align: center; }
 
-/* line 91, scss/style.scss */
 .full-card {
   -webkit-box-flex: 1 !important;
   -moz-box-flex: 1 !important;
@@ -132,10 +108,8 @@ dd.col.col-20 {
   -moz-box-align: center !important;
   -webkit-align-items: center !important;
   -ms-flex-align: center !important;
-  align-items: center !important;
-}
+  align-items: center !important; }
 
-/* line 131, scss/style.scss */
 .fullscreen-player {
   max-width: 100%;
   max-height: 100%;
@@ -145,417 +119,347 @@ dd.col.col-20 {
   overflow: none;
   position: fixed;
   right: 0;
-  top: 0;
-}
+  top: 0; }
 
-/* line 143, scss/style.scss */
 .iconassertive {
-  color: red;
-}
+  color: red; }
 
-/* line 148, scss/style.scss */
 .item-content img {
-  vertical-align: middle;
-}
+  vertical-align: middle; }
 
-/* line 153, scss/style.scss */
-ion-content,
-.list ion-item.item .item-content {
-  background-color: #eceeef;
-}
+ion-content, .list ion-item.item .item-content {
+  background-color: #eceeef; }
 
-/* line 159, scss/style.scss */
-ion-side-menu ion-content,
-ion-side-menu ion-content .list ion-item.item .item-content {
+ion-side-menu ion-content, ion-side-menu ion-content .list ion-item.item .item-content {
   background-color: #4db295;
-  color: #f3e4b5;
-}
+  color: #f3e4b5; }
 
-/* line 164, scss/style.scss */
 ion-side-menu ion-content .list ion-item.item {
   border: 1px solid #449981;
-  border-color: #449981;
-}
+  border-color: #449981; }
 
-/* line 168, scss/style.scss */
 ion-side-menu ion-content .list ion-item.item.activated .item-content {
-  background-color: #449981;
-}
+  background-color: #449981; }
 
-/* line 175, scss/style.scss */
 #menu-header {
   background-image: url("../media/images/menu/menu-header.png");
-  background-color: #cccccc;
-}
-/* line 178, scss/style.scss */
-#menu-header img {
-  border: 1px solid #999;
-  border-bottom-left-radius: 50%;
-  border-bottom-right-radius: 50%;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-  margin-top: 2em;
-}
-/* line 186, scss/style.scss */
-#menu-header h2 {
-  margin: 0;
-}
+  background-color: #cccccc; }
+  #menu-header img {
+    border: 1px solid #999;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    margin-top: 2em; }
+  #menu-header h2 {
+    margin: 0; }
 
-/* line 191, scss/style.scss */
 .mood {
   width: 250px;
   height: 250px;
   margin: 0 auto;
   position: relative;
-  background-image: url("images/mood-bg/mood-bg.png");
-}
+  background-image: url("images/mood-bg/mood-bg.png"); }
 
-/* line 203, scss/style.scss */
 .mood-image-1 {
   background-image: url("images/moods/big/big-1.png");
   background-repeat: no-repeat;
   height: 105%;
-  width: 105%;
-}
+  width: 105%; }
 
-/* line 203, scss/style.scss */
 .mood-image-2 {
   background-image: url("images/moods/big/big-2.png");
   background-repeat: no-repeat;
   height: 105%;
-  width: 105%;
-}
+  width: 105%; }
 
-/* line 203, scss/style.scss */
 .mood-image-3 {
   background-image: url("images/moods/big/big-3.png");
   background-repeat: no-repeat;
   height: 105%;
-  width: 105%;
-}
+  width: 105%; }
 
-/* line 203, scss/style.scss */
 .mood-image-4 {
   background-image: url("images/moods/big/big-4.png");
   background-repeat: no-repeat;
   height: 105%;
-  width: 105%;
-}
+  width: 105%; }
 
-/* line 203, scss/style.scss */
 .mood-image-5 {
   background-image: url("images/moods/big/big-5.png");
   background-repeat: no-repeat;
   height: 105%;
-  width: 105%;
-}
+  width: 105%; }
 
-/* line 203, scss/style.scss */
 .mood-image-6 {
   background-image: url("images/moods/big/big-6.png");
   background-repeat: no-repeat;
   height: 105%;
-  width: 105%;
-}
+  width: 105%; }
 
-/* line 203, scss/style.scss */
 .mood-image-7 {
   background-image: url("images/moods/big/big-7.png");
   background-repeat: no-repeat;
   height: 105%;
-  width: 105%;
-}
+  width: 105%; }
 
-/* line 203, scss/style.scss */
 .mood-image-8 {
   background-image: url("images/moods/big/big-8.png");
   background-repeat: no-repeat;
   height: 105%;
-  width: 105%;
-}
+  width: 105%; }
 
-/* line 203, scss/style.scss */
 .mood-image-9 {
   background-image: url("images/moods/big/big-9.png");
   background-repeat: no-repeat;
   height: 105%;
-  width: 105%;
-}
+  width: 105%; }
 
-/* line 203, scss/style.scss */
 .mood-image-10 {
   background-image: url("images/moods/big/big-10.png");
   background-repeat: no-repeat;
   height: 105%;
-  width: 105%;
-}
+  width: 105%; }
 
-/* line 203, scss/style.scss */
 .mood-image-11 {
   background-image: url("images/moods/big/big-11.png");
   background-repeat: no-repeat;
   height: 105%;
-  width: 105%;
-}
+  width: 105%; }
 
-/* line 203, scss/style.scss */
 .mood-image-12 {
   background-image: url("images/moods/big/big-12.png");
   background-repeat: no-repeat;
   height: 105%;
-  width: 105%;
-}
+  width: 105%; }
 
-/* line 214, scss/style.scss */
 .center-mood {
   position: absolute;
   top: 90px;
   left: 90px;
   height: 70px;
   width: 70px;
-  line-height: 50px;
-}
+  line-height: 50px; }
 
-/* line 230, scss/style.scss */
 .mood {
   margin-top: 3em;
-  margin-bottom: 3em;
-}
-/* line 3, scss/_mixins.scss */
-.mood .mood-1 {
-  text-decoration: none;
-  color: white;
-  display: block;
-  height: 32px;
-  width: 32px;
-  line-height: 32px;
-  margin-left: -16px;
-  margin-top: -16px;
-  text-align: center;
-  position: absolute;
-  background-image: url("images/moods/small/1.png");
-  background-repeat: no-repeat;
-  left: 67.5%;
-  top: 19.68911%;
-}
-/* line 3, scss/_mixins.scss */
-.mood .mood-2 {
-  text-decoration: none;
-  color: white;
-  display: block;
-  height: 32px;
-  width: 32px;
-  line-height: 32px;
-  margin-left: -16px;
-  margin-top: -16px;
-  text-align: center;
-  position: absolute;
-  background-image: url("images/moods/small/2.png");
-  background-repeat: no-repeat;
-  left: 80.31089%;
-  top: 32.5%;
-}
-/* line 3, scss/_mixins.scss */
-.mood .mood-3 {
-  text-decoration: none;
-  color: white;
-  display: block;
-  height: 32px;
-  width: 32px;
-  line-height: 32px;
-  margin-left: -16px;
-  margin-top: -16px;
-  text-align: center;
-  position: absolute;
-  background-image: url("images/moods/small/3.png");
-  background-repeat: no-repeat;
-  left: 85%;
-  top: 50.0%;
-}
-/* line 3, scss/_mixins.scss */
-.mood .mood-4 {
-  text-decoration: none;
-  color: white;
-  display: block;
-  height: 32px;
-  width: 32px;
-  line-height: 32px;
-  margin-left: -16px;
-  margin-top: -16px;
-  text-align: center;
-  position: absolute;
-  background-image: url("images/moods/small/4.png");
-  background-repeat: no-repeat;
-  left: 80.31089%;
-  top: 67.5%;
-}
-/* line 3, scss/_mixins.scss */
-.mood .mood-5 {
-  text-decoration: none;
-  color: white;
-  display: block;
-  height: 32px;
-  width: 32px;
-  line-height: 32px;
-  margin-left: -16px;
-  margin-top: -16px;
-  text-align: center;
-  position: absolute;
-  background-image: url("images/moods/small/5.png");
-  background-repeat: no-repeat;
-  left: 67.5%;
-  top: 80.31089%;
-}
-/* line 3, scss/_mixins.scss */
-.mood .mood-6 {
-  text-decoration: none;
-  color: white;
-  display: block;
-  height: 32px;
-  width: 32px;
-  line-height: 32px;
-  margin-left: -16px;
-  margin-top: -16px;
-  text-align: center;
-  position: absolute;
-  background-image: url("images/moods/small/6.png");
-  background-repeat: no-repeat;
-  left: 50.0%;
-  top: 85%;
-}
-/* line 3, scss/_mixins.scss */
-.mood .mood-7 {
-  text-decoration: none;
-  color: white;
-  display: block;
-  height: 32px;
-  width: 32px;
-  line-height: 32px;
-  margin-left: -16px;
-  margin-top: -16px;
-  text-align: center;
-  position: absolute;
-  background-image: url("images/moods/small/7.png");
-  background-repeat: no-repeat;
-  left: 32.5%;
-  top: 80.31089%;
-}
-/* line 3, scss/_mixins.scss */
-.mood .mood-8 {
-  text-decoration: none;
-  color: white;
-  display: block;
-  height: 32px;
-  width: 32px;
-  line-height: 32px;
-  margin-left: -16px;
-  margin-top: -16px;
-  text-align: center;
-  position: absolute;
-  background-image: url("images/moods/small/8.png");
-  background-repeat: no-repeat;
-  left: 19.68911%;
-  top: 67.5%;
-}
-/* line 3, scss/_mixins.scss */
-.mood .mood-9 {
-  text-decoration: none;
-  color: white;
-  display: block;
-  height: 32px;
-  width: 32px;
-  line-height: 32px;
-  margin-left: -16px;
-  margin-top: -16px;
-  text-align: center;
-  position: absolute;
-  background-image: url("images/moods/small/9.png");
-  background-repeat: no-repeat;
-  left: 15%;
-  top: 50.0%;
-}
-/* line 3, scss/_mixins.scss */
-.mood .mood-10 {
-  text-decoration: none;
-  color: white;
-  display: block;
-  height: 32px;
-  width: 32px;
-  line-height: 32px;
-  margin-left: -16px;
-  margin-top: -16px;
-  text-align: center;
-  position: absolute;
-  background-image: url("images/moods/small/10.png");
-  background-repeat: no-repeat;
-  left: 19.68911%;
-  top: 32.5%;
-}
-/* line 3, scss/_mixins.scss */
-.mood .mood-11 {
-  text-decoration: none;
-  color: white;
-  display: block;
-  height: 32px;
-  width: 32px;
-  line-height: 32px;
-  margin-left: -16px;
-  margin-top: -16px;
-  text-align: center;
-  position: absolute;
-  background-image: url("images/moods/small/11.png");
-  background-repeat: no-repeat;
-  left: 32.5%;
-  top: 19.68911%;
-}
-/* line 3, scss/_mixins.scss */
-.mood .mood-12 {
-  text-decoration: none;
-  color: white;
-  display: block;
-  height: 32px;
-  width: 32px;
-  line-height: 32px;
-  margin-left: -16px;
-  margin-top: -16px;
-  text-align: center;
-  position: absolute;
-  background-image: url("images/moods/small/12.png");
-  background-repeat: no-repeat;
-  left: 50.0%;
-  top: 15%;
-}
+  margin-bottom: 3em; }
+  .mood .mood-1 {
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
+    text-align: center;
+    position: absolute;
+    background-image: url("images/moods/small/1.png");
+    background-repeat: no-repeat;
+    left: converToPercent(calculateLeft(1));
+    top: converToPercent(calculateTop(1)); }
+  .mood .mood-2 {
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
+    text-align: center;
+    position: absolute;
+    background-image: url("images/moods/small/2.png");
+    background-repeat: no-repeat;
+    left: converToPercent(calculateLeft(2));
+    top: converToPercent(calculateTop(2)); }
+  .mood .mood-3 {
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
+    text-align: center;
+    position: absolute;
+    background-image: url("images/moods/small/3.png");
+    background-repeat: no-repeat;
+    left: converToPercent(calculateLeft(3));
+    top: converToPercent(calculateTop(3)); }
+  .mood .mood-4 {
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
+    text-align: center;
+    position: absolute;
+    background-image: url("images/moods/small/4.png");
+    background-repeat: no-repeat;
+    left: converToPercent(calculateLeft(4));
+    top: converToPercent(calculateTop(4)); }
+  .mood .mood-5 {
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
+    text-align: center;
+    position: absolute;
+    background-image: url("images/moods/small/5.png");
+    background-repeat: no-repeat;
+    left: converToPercent(calculateLeft(5));
+    top: converToPercent(calculateTop(5)); }
+  .mood .mood-6 {
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
+    text-align: center;
+    position: absolute;
+    background-image: url("images/moods/small/6.png");
+    background-repeat: no-repeat;
+    left: converToPercent(calculateLeft(6));
+    top: converToPercent(calculateTop(6)); }
+  .mood .mood-7 {
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
+    text-align: center;
+    position: absolute;
+    background-image: url("images/moods/small/7.png");
+    background-repeat: no-repeat;
+    left: converToPercent(calculateLeft(7));
+    top: converToPercent(calculateTop(7)); }
+  .mood .mood-8 {
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
+    text-align: center;
+    position: absolute;
+    background-image: url("images/moods/small/8.png");
+    background-repeat: no-repeat;
+    left: converToPercent(calculateLeft(8));
+    top: converToPercent(calculateTop(8)); }
+  .mood .mood-9 {
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
+    text-align: center;
+    position: absolute;
+    background-image: url("images/moods/small/9.png");
+    background-repeat: no-repeat;
+    left: converToPercent(calculateLeft(9));
+    top: converToPercent(calculateTop(9)); }
+  .mood .mood-10 {
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
+    text-align: center;
+    position: absolute;
+    background-image: url("images/moods/small/10.png");
+    background-repeat: no-repeat;
+    left: converToPercent(calculateLeft(10));
+    top: converToPercent(calculateTop(10)); }
+  .mood .mood-11 {
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
+    text-align: center;
+    position: absolute;
+    background-image: url("images/moods/small/11.png");
+    background-repeat: no-repeat;
+    left: converToPercent(calculateLeft(11));
+    top: converToPercent(calculateTop(11)); }
+  .mood .mood-12 {
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    margin-left: -16px;
+    margin-top: -16px;
+    text-align: center;
+    position: absolute;
+    background-image: url("images/moods/small/12.png");
+    background-repeat: no-repeat;
+    left: converToPercent(calculateLeft(12));
+    top: converToPercent(calculateTop(12)); }
 
-/* line 237, scss/style.scss */
-label.has-error > input,
-label.has-error > textarea {
-  border-bottom: 2px solid red;
-}
+label.has-error > input, label.has-error > textarea {
+  border-bottom: 2px solid red; }
 
-/* line 242, scss/style.scss */
 .tabs-striped .tabs {
   background-color: #eceeef;
-  border: none;
-}
+  border: none; }
 
-/* line 247, scss/style.scss */
 .tabs-striped .tab-item.tab-item-active {
-  border-color: #4db295;
-}
+  border-color: #4db295; }
 
-/* line 253, scss/style.scss */
 .scroll {
-  height: 100% !important;
-}
+  height: 100% !important; }
 
-/* line 260, scss/style.scss */
 .next-card {
   position: absolute;
-  bottom: 20px;
-}
+  bottom: 20px; }
 
-/* line 264, scss/style.scss */
 .previous-card {
   position: absolute;
-  top: 20px;
-}
+  top: 20px; }
+
+.feed-item {
+  overflow: hidden; }
+
+.feed-content {
+  min-height: 52px; }
+
+.feed-title {
+  font-size: 1.3em;
+  float: left; }
+
+.feed-description {
+  font-size: 1em;
+  float: left; }
+
+.feed-date {
+  font-size: 0.9em;
+  float: right; }

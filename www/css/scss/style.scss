@@ -257,26 +257,21 @@ label.has-error > textarea {
     top: 20px;
 }
 
-.feed-list {
-    list-style: none;
-	margin-left: 0;
-}
 .feed-item {
     overflow: hidden;
-    padding: 0;
 }
 .feed-content {
-    min-height: 92px;
-    padding: 1em;
-    h3 {
-        font-size: 1.3em;
-        margin-bottom: 0;
-    }
-    .date {
-        font-size: 0.9em;
-        float:right; 
-    }
+    min-height: 52px;
+}
+.feed-title {
+    font-size: 1.3em;
+    float:left; 
 }
 .feed-description {
     font-size: 1em;
+    float:left; 
+}
+.feed-date {
+    font-size: 0.9em;
+    float:right; 
 }

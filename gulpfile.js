@@ -16,7 +16,21 @@ var paths = {
 gulp.task('default', ['sass']);
 
 gulp.task('sass', function(done) {
-  gulp.src('./scss/ionic.app.scss')
+    gulp.src('./scss/ionic.app.scss')
+        .pipe(sass({
+            errLogToConsole: true
+        }))
+        .pipe(gulp.dest('./www/css/'))
+        .pipe(minifyCss({
+            keepSpecialComments: 0
+        }))
+        .pipe(rename({ extname: '.min.css' }))
+        .pipe(gulp.dest('./www/css/'))
+        .on('end', done);
+});
+
+gulp.task('sass-local', function(done) {
+  gulp.src('./www/css/scss/style.scss')
     .pipe(sass({
       errLogToConsole: true
     }))
