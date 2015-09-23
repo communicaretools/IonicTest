@@ -13,6 +13,10 @@ angular.module('starter.controllers')
                     vm.feed = result.data.entries;
                 });
             };
+            vm.setClasses = function(data) {
+                data.moduleClass = data.module.toLowerCase();
+                data.typeClass = data.type.toLowerCase();
+            };
 
             vm.feed = [];
             vm.reminders = [];

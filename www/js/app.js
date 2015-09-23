@@ -131,7 +131,10 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
             //------------------------------------------
             .state('home.forum', {
                 cache: false,
-                url: '/threads',
+                url: '/threads/:forumId',
+                params: {
+                    forumId: 1,
+                },
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/forum/threads.html',

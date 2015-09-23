@@ -2,9 +2,84 @@
      <ion-nav-title r="feedTitle"></ion-nav-title>
     <ion-content>
         <!--LIST-->
-        <ion-list>
-            <ion-item collection-repeat="item in vm.feed">
-                <div>{{item.module}} - {{item.type}}</div>
+        <ion-list class="list">
+            <ion-item class="item feed-item module-{{item.moduleClass}} type-{{item-typeClass}}" ng-repeat="item in vm.feed" ng-init="vm.setClasses(item)">
+
+                <div class="item-icon-left feed-content" ng-switch="item.module">
+                    <div ng-switch-when="Home">
+                        <!-- newUser -->
+                        <i class="icon ion-person-add"></i>
+                        <div class="date">{{item.timestamp}}</div>
+                        <h3 class="feed-title" r="feedNewUser"></h3>
+                    </div>
+
+                    <div ng-switch-when="CommonMessage">
+                        <i class="icon ion-email"></i>
+                        <div class="date">{{item.timestamp}}</div>
+                        <h3 class="feed-title">
+                            <a ui-sref="home.messageView({messageId: item.data.id })">
+                                <span r="feedReceived"></span>
+                                <span ng-if="item.data.read" r="feedAndRead"></span>
+                                <span ng-if="item.data.replied" r="feedAndReplied"></span>
+                            </a>
+                        </h3>
+                        <div class="feed-description">
+                            <div>
+                                <span r="feedWithSubject"></span>
+                                <span>"{{item.data.subject}}"</span>
+                            </div>
+                            <div>
+                                <span r="feedFrom"></span>
+                                <span>{{item.data.sender}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div ng-switch-when="Forum">
+                        <i class="icon ion-person-stalker"></i>
+                        <div class="date">{{item.timestamp}}</div>
+                        <h3 class="feed-title" ng-switch="item.type">
+                            <a ng-switch-when="NewEntry" ui-sref="home.thread.list({threadId: item.data.id})" r="feedNewEntry"></a>
+                            <a ng-switch-when="ForumEntry" ui-sref="home.thread.list({threadId: item.data.id})" r="feedNewEntry"></a>
+                            <a ng-switch-when="NewThread" ui-sref="home.thread.list({threadId: item.data.id})" r="feedNewThread"></a>
+                            <a ng-switch-when="ForumThread" ui-sref="home.thread.list({threadId: item.data.id})" r="feedNewThread"></a>
+                        </h3>
+
+                        <div class="feed-description" ng-switch="item.type">
+                            <span ng-switch-when="NewEntry">
+                                <span r="feedPostedIn"></span>
+                                <a ui-sref="home.thread.list({threadId: item.data.id})">{{item.data.name}}</a>
+                            </span>
+                            <span ng-switch-when="ForumEntry">
+                                <span r="feedPostedIn"></span>
+                                <a ui-sref="home.thread.list({threadId: item.data.id})">{{item.data.name}}</a>
+                            </span>
+                            <span ng-switch-when="NewThread">
+                                <span r="feedCreatedIn"></span>
+                                <a ui-sref="home.forum.({forumId: item.data.id})">{{item.data.name}}</a>
+                            </span>
+                            <span ng-switch-when="ForumThread">
+                                <span r="feedCreatedIn"></span>
+                                <a ui-sref="home.forum.({forumId: item.data.id})">{{item.data.name}}</a>
+                            </span>
+
+                            <span r="feedBy"></span>
+                            <span>{{item.data.postingUser}}</span>
+                        </div>
+                    </div>
+
+                    <div ng-switch-when="Exercise">
+                        <!--reminder-->
+                        <div class="date">{{item.timestamp}}</div>
+                        <h3 class="feed-title">
+                            <a href="Exercises" r="feedExercise"></a>
+                        </h3>
+                        <div class="feed-description">
+                            <p><span r="feedWithName"></span> {{item.data.name}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </ion-item>
         </ion-list>
     </ion-content>
