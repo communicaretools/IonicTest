@@ -1,12 +1,22 @@
 <ion-view>
-    <ion-nav-title r="forumThreadNewEntry"></ion-nav-title>
+    <ion-nav-title r="diaryNewEntryTitle"></ion-nav-title>
     <ion-content class="padding" ng-init="vm.startEntry()">
-        <label class="item item-input">
-            <textarea ng-model="vm.entry.content" r="forumEntryHint"></textarea>
+        <div class="mood">
+            <div ng-repeat="t in vm.numberOfTimes(12) track by $index">
+                <a class="mood-{{$index}}" ng-click="vm.selectSmiley($index)"></a>
+            </div>
+            <div class="center-mood">
+                <div class="mood-image-{{vm.entry.mood}}" ng-show="vm.entry.mood"></div>
+            </div>
+        </div>
+        <label class="item item-input item-floating-label">
+            <span class="input-label" r="diaryContent"></span>
+            <textarea ng-model="vm.entry.content" r="diaryEntryHint"></textarea>
         </label>
         <div class="padding button-bar">
-            <button class="button button-positive" ng-click="addEntry()" r="post"></button>
-            <button class="button button-negative" ui-sref="home.diary.list" r="cancel"></button>
+            <button class="button button-positive" ng-click="vm.addEntry()" r="post"></button>
+            <button class="button button-neutral" ng-click="vm.saveEntry()" r="save"></button>
+            <button class="button button-negative" ng-click="vm.cancel()" r="cancel"></button>
         </div>
     </ion-content>
 </ion-view>

@@ -11,7 +11,8 @@ angular.module('starter.services')
             };
 
             var saveAutosave = function (module, data, onSuccess) {
-                $http.post(autosaveEndpoint + "/autosave?module=" + module, {model: data})
+                var model = { module: module, data: JSON.stringify(data) };
+                $http.post(autosaveEndpoint + "/autosave",  model)
                     .then(onSuccess, onError);
             }
 

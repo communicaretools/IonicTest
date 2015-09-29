@@ -10,7 +10,6 @@ angular.module('starter.services')
 		    };
 
 		    var addEntry = function (entry, onSuccess) {
-		        console.log(entry);
 		        $http.post(diaryEndpoint + '/collection', entry)
                     .then(onSuccess, onError);
 		    };

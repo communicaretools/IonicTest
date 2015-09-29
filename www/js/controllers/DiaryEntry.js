@@ -7,14 +7,23 @@ angular.module('starter.controllers')
         'autosaveService',
         function($state, $stateParams, $localStorage, diaryService, autosaveService) {
             var vm = this;
-            vm.entry = {content: '', mood: ''}
 
-            vm.cancel = function() {
-                $state.go('home.diary.list');
+            vm.numberOfTimes = function (n) {
+                return new Array(n + 1);
             };
 
+            vm.cancel = function () {
+                autosaveService.delete("Diary", function () {
+                    $state.go('home.diary.list');
+                });
+            };
+
+            vm.selectSmiley = function(index) {
+                vm.entry.mood = index;
+            }
+
             vm.addEntry = function() {
-                entry.patientId = $localStorage.user.userId;
+                vm.entry.patientId = $localStorage.user.userId;
 
                 diaryService.add(vm.entry, function () {
                     autosaveService.delete("Diary", function () {
@@ -23,11 +32,20 @@ angular.module('starter.controllers')
                 });
             };
 
-            vm.startEntry = function() {
-                autosaveService.get("Diary", function (result) {
-                    vm.entry.content = result.data.content;
-                    vm.entry.mood = result.data.mood;
+            vm.startEntry = function () {
+                vm.entry = { content: '', mood: -1 }
+                autosaveService.get("Diary", function(result) {
+                    if (result) {
+                        vm.entry.content = result.data.content;
+                        vm.entry.mood = result.data.mood;
+                    }
                 });
+            }
+
+            vm.saveEntry = function() {
+                autosaveService.save("Diary", vm.entry, function() {
+                    $state.go('home.diary.list');
+                })
             }
         }
     ]);
