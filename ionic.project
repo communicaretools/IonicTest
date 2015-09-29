@@ -45,6 +45,10 @@
     {
       "path": "/feedTest",
       "proxyUrl": "http://localhost:63750/api/feed"
+    },
+    {
+      "path": "/autosaverTest",
+      "proxyUrl": "http://localhost:64963/api/autosaver"
     }
   ]
 }

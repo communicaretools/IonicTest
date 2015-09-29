@@ -15,7 +15,7 @@ angular.module('starter.controllers')
 
             $scope.selectAvatar = function(selected) {
                 profileManager.saveAvatar(selected, function () {
-                    profileManager.getAvatar(function(result) {
+                    profileManager.getAvatar($localStorage.user.id, function(result) {
                         $localStorage.user.avatar = result.data;
                         $scope.avatar = result.data;
                     });

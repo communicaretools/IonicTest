@@ -1,11 +1,11 @@
 <ion-view>
     <ion-nav-title r="forumThreadNewEntry"></ion-nav-title>
-    <ion-content class="padding">
+    <ion-content class="padding" ng-init="vm.startEntry()">
         <label class="item item-input">
-            <textarea ng-model="content" r="forumEntryHint"></textarea>
+            <textarea ng-model="vm.entry.content" r="forumEntryHint"></textarea>
         </label>
         <div class="padding button-bar">
-            <button class="button button-positive" ng-click="addEntry(content)" r="post"></button>
+            <button class="button button-positive" ng-click="addEntry()" r="post"></button>
             <button class="button button-negative" ui-sref="home.diary.list" r="cancel"></button>
         </div>
     </ion-content>

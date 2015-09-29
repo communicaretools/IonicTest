@@ -1,26 +1,33 @@
 angular.module('starter.controllers')
     .controller('DiaryEntryCtrl', [
-        '$scope',
         '$state',
         '$stateParams',
         '$localStorage',
         'diaryService',
-        function($scope, $state, $stateParams, $localStorage, diaryService) {
+        'autosaveService',
+        function($state, $stateParams, $localStorage, diaryService, autosaveService) {
+            var vm = this;
+            vm.entry = {content: '', mood: ''}
 
-            $scope.cancel = function() {
+            vm.cancel = function() {
                 $state.go('home.diary.list');
             };
 
-            $scope.addEntry = function(content) {
-                var newEntry = {
-                    content: content,
-                    mood: -1,
-                    patientId: $localStorage.user.userId
-                };
+            vm.addEntry = function() {
+                entry.patientId = $localStorage.user.userId;
 
-                diaryService.add(newEntry, function() {
-                    $state.go('home.diary.list');
+                diaryService.add(vm.entry, function () {
+                    autosaveService.delete("Diary", function () {
+                        $state.go('home.diary.list');
+                    });
                 });
             };
+
+            vm.startEntry = function() {
+                autosaveService.get("Diary", function (result) {
+                    vm.entry.content = result.data.content;
+                    vm.entry.mood = result.data.mood;
+                });
+            }
         }
     ]);
