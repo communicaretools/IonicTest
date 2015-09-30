@@ -10,19 +10,20 @@ angular.module('starter.services')
                 $log.error(e.msg);
             };
 
-            var saveAutosave = function (module, data, onSuccess) {
+            var saveAutosave = function (module, localIdentifier, data, onSuccess) {
+                if (!data) return;
                 var model = { module: module, data: JSON.stringify(data) };
-                $http.post(autosaveEndpoint + "/autosave",  model)
+                $http.post(autosaveEndpoint + "/autosave/"+localIdentifier,  model)
                     .then(onSuccess, onError);
             }
 
-            var getAutosave = function (module, onSuccess) {
-                $http.get(autosaveEndpoint + "/autosave?module=" + module)
+            var getAutosave = function (module, localIdentifier, onSuccess) {
+                $http.get(autosaveEndpoint + "/autosave/"+localIdentifier+"?module=" + module)
                     .then(onSuccess, onError);
             }
 
-            var deleteAutosave = function (module, onSuccess) {
-                $http.delete(autosaveEndpoint + "/autosave?module=" + module)
+            var deleteAutosave = function (module, localIdentifier, onSuccess) {
+                $http.delete(autosaveEndpoint + "/autosave/" + localIdentifier + "?module=" + module)
                     .then(onSuccess, onError);
             }
             

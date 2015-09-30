@@ -2,16 +2,21 @@ angular.module('starter.controllers')
     .controller('ThreadsCtrl', [
         '$scope',
         '$stateParams',
+        'resources',
         'threadService',
-        function ($scope, $stateParams, threadService) {
+        function ($scope, $stateParams, resources, threadService) {
             var forumId = $stateParams.forumId;
 
-            var onSuccess = function (result) {
+            var onGetSuccess = function (result) {
                 $scope.threads = result.threads;
             };
             var loadThreads = function (forumId) {
                 //offscreenBuffering()
-                threadService.get(forumId, onSuccess);
+                $scope.strings = {
+                    'newTab': resources.get("forumNewThread"),
+                    'listTab': resources.get("forumThreads")
+                }
+                threadService.get(forumId, onGetSuccess);
             };
             $scope.threads = [];
 

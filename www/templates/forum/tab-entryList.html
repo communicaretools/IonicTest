@@ -1,8 +1,8 @@
 <ion-view>
     <ion-nav-title r="forumThreadEntries"></ion-nav-title>
     <ion-content padding="true">
-        <ion-list ng-repeat="entry in thread">
-            <ion-item>
+        <ion-list>
+            <ion-item ng-repeat="entry in thread">
                 <b>{{entry.author}} - {{entry.date | date: dateFormat }}</b>
                 <p ng-bind-html="entry.content | unsafe"></p>
                 <ion-option-button class="button-positive" ng-click="quoteEntry(entry)" r="forumCite"></ion-option-button>

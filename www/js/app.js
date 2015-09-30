@@ -131,14 +131,33 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
             //------------------------------------------
             .state('home.forum', {
                 cache: false,
-                url: '/threads/:forumId',
+                url: '/forum/:forumId',
                 params: {
                     forumId: 1,
                 },
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/forum/threads.html',
-                        controller: 'ThreadsCtrl'
+                        templateUrl: 'templates/forum/forum.html'
+                    }
+                }
+            })
+            .state('home.forum.list', {
+                cache: false,
+                url: '/list',
+                views: {
+                    'tab-list': {
+                        controller: "ThreadsCtrl",
+                        templateUrl: 'templates/forum/tab-threadList.html'
+                    }
+                }
+            })
+            .state('home.forum.newThread', {
+                cache: false,
+                url: '/newThread',
+                views: {
+                    'tab-new': {
+                        controller: "NewThreadCtrl",
+                        templateUrl: 'templates/forum/tab-threadNew.html'
                     }
                 }
             })

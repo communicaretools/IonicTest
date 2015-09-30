@@ -1,6 +1,6 @@
 <ion-view>
     <ion-nav-title r="forumThreadNewEntry"></ion-nav-title>
-    <ion-content class="padding">
+    <ion-content class="padding" ng-init="startEntry()">
         <p ng-if="toQuote">
             <span r="forumCited"></span><br/>
             <b>{{toQuote.author}}</b>
@@ -9,11 +9,12 @@
             </i>
         </p>
         <label class="item item-input">
-            <textarea ng-model="entry" r="forumEntryHint"></textarea>
+            <textarea ng-model="entry.content" r="forumEntryHint"></textarea>
         </label>
         <div class="padding button-bar">
-            <button class="button button-positive" ng-click="addEntry(entry)" r="post"></button>
-            <button class="button button-negative" ui-sref="home.thread.list" r="cancel"></button>
+            <button class="button button-positive" ng-click="addEntry()" r="post"></button>
+            <button class="button button-positive" ng-click="saveEntry()" r="save"></button>
+            <button class="button button-negative" ng-click="cancel()" r="cancel"></button>
         </div>
     </ion-content>
 </ion-view>

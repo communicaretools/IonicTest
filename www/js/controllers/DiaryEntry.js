@@ -13,7 +13,7 @@ angular.module('starter.controllers')
             };
 
             vm.cancel = function () {
-                autosaveService.delete("Diary", function () {
+                autosaveService.delete("Diary", 0, function () {
                     $state.go('home.diary.list');
                 });
             };
@@ -26,7 +26,7 @@ angular.module('starter.controllers')
                 vm.entry.patientId = $localStorage.user.userId;
 
                 diaryService.add(vm.entry, function () {
-                    autosaveService.delete("Diary", function () {
+                    autosaveService.delete("Diary", 0, function () {
                         $state.go('home.diary.list');
                     });
                 });
@@ -34,7 +34,7 @@ angular.module('starter.controllers')
 
             vm.startEntry = function () {
                 vm.entry = { content: '', mood: -1 }
-                autosaveService.get("Diary", function(result) {
+                autosaveService.get("Diary", 0, function(result) {
                     if (result) {
                         vm.entry.content = result.data.content;
                         vm.entry.mood = result.data.mood;
@@ -43,7 +43,7 @@ angular.module('starter.controllers')
             }
 
             vm.saveEntry = function() {
-                autosaveService.save("Diary", vm.entry, function() {
+                autosaveService.save("Diary", 0, vm.entry, function() {
                     $state.go('home.diary.list');
                 })
             }
