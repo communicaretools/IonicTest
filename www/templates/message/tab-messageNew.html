@@ -1,6 +1,6 @@
 <ion-view>
     <ion-nav-title r="messageNewTitle"></ion-nav-title>
-    <ion-content>
+    <ion-content ng-init="startDraft()">
         <form name="msgForm" novalidate="">
             <input type="hidden" ng-model="message.id"/>
 
@@ -18,13 +18,20 @@
             </label>
             <ion-checkbox name="helpers" collection-repeat="h in helpers" ng-model="h.selected" ng-checked="h.selected">{{h.name}}</ion-checkbox>
 
-
         </form>
         <div class="padding button-bar">
             <button class="button button-positive" ng-click="addEntry()" ng-disabled="msgForm.$invalid" r="messageSend"></button>
-            <button class="button button-calm" ng-click="saveDraft()" r="messageSave"></button>
-            <button class="button button-dark" ng-click="empty()" r="empty"></button>
-            <button class="button button-negative" ng-click="cancel()" r="cancel"></button>
+            <button class="button button-calm button-small" ng-click="saveDraft()" r="messageSave"></button>
+            <button class="button button-stable" ng-click="autosaveDraft()">Autosave</button>
         </div>
+        <div class="padding button-bar">
+            <button class="button button-dark" ng-click="empty()" r="empty"></button>
+            <button class="button button-royal" ng-click="cancel()" r="cancel"></button>
+            <button class="button button-assertive" ng-click="delete()" r="delete"></button>
+        </div>
+        <label class="item" ng-if="message.inreplyto">
+            <span class="input-label">Svar p&aring;:</span>
+            <input type="text" readonly ng-model="message.inreplyto" />
+        </label>
     </ion-content>
 </ion-view>

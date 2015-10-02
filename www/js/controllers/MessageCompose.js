@@ -4,7 +4,8 @@ angular.module('starter.controllers')
         '$state',
         '$stateParams',
         'messagesService',
-        function ($scope, $state, $stateParams, messagesService) {
+        'autosaveService',
+        function ($scope, $state, $stateParams, messagesService, autosaveService) {
             var findToSendTo = function () {
                 return $scope.helpers.map(
                     function(obj) {
@@ -12,12 +13,14 @@ angular.module('starter.controllers')
                     }
                 );
             };
+
             var message = function() {
                 return {
                     id: $scope.message.id,
                     receivers: findToSendTo(),
-                    rawcontent: $scope.message.content,
-                    subject: $scope.message.subject
+                    rawContent: $scope.message.content,
+                    subject: $scope.message.subject,
+                    inreplyto: $scope.message.inreplyto
                 }
             }
 
@@ -40,29 +43,35 @@ angular.module('starter.controllers')
                     id: draft.id,
                     content: draft.content,
                     subject: draft.subject,
-                    receivers: draft.receivers
+                    receivers: draft.receivers,
+                    inreplyto: draft.inReplyTo ? draft.inReplyTo.id : null
                 };
             }
 
-            var fetchDraft = function(msgId) {
-                messagesService.get($stateParams.messageId, function(result) {
+            var fetchDraft = function () {
+                var msgId = findMessageId();
+                if (msgId == 0) { return; }
+                messagesService.get(msgId, function(result) {
                     extractDraft(result);
                     markHelpers();
                 });
             }
 
-            var emptyMessage = function () {
-                return { id: '', subject: '', content: '', receivers: [] }
-            }
-
-            var init = function() {
-                $scope.message = emptyMessage();;
+            var emptyMessage = function() {
+                return { id: '', subject: '', content: '', receivers: [], inreplyto: null }
+            };
+            var findMessageId = function() {
+                return $stateParams.messageId && $stateParams.messageId != null
+                    ? $stateParams.messageId
+                    : 0;
+            };
+            var init = function () {
+                $scope.message = emptyMessage();
+                $scope.message.inreplyto = messagesService.getReplyTo();
                 $scope.helpers = [];
                 messagesService.start(function(result) {
                     $scope.helpers = result.data;
-                    if ($stateParams.messageId && $stateParams.messageId != null) {
-                        fetchDraft($stateParams.messageId);
-                    }
+                    fetchDraft();
                 });
             };
 
@@ -70,26 +79,42 @@ angular.module('starter.controllers')
 
             $scope.empty = function () {
                 $scope.message = emptyMessage();
-                markReceivers();
+                messagesService.selectReplyTo();
+                markHelpers();
             };
 
+            $scope.delete = function () {
+                if (!$scope.message.id) {
+                    $state.go('home.messages.drafts');
+                }
+                messagesService.deleteDraft($scope.message.id, function () {
+                    $state.go('home.messages.drafts', { time: undefined });
+                })
+            }
+
             $scope.cancel = function () {
-                $scope.message = emptyMessage();
-                $state.go('home.messages.inbox');
+                $state.go('home.messages.inbox', { time: undefined });
+                messagesService.selectReplyTo();
             };
 
             $scope.addEntry = function () {
-                var newMessage = message();
-                messagesService.add(newMessage, function () {
-                    $state.go('home.messages.outbox');
+                messagesService.add(message(), function () {
+                    $state.go('home.messages.outbox', { time: undefined });
+                    messagesService.selectReplyTo();
                 });
             };
 
             $scope.saveDraft = function () {
-                var newMessage = message();
-                messagesService.saveDraft(newMessage, function () {
-                    $state.go('home.messages.drafts');
+                messagesService.saveDraft(message(), function(result) {
+                    $state.go('home.messages.drafts', { time: undefined });
+                    messagesService.selectReplyTo();
                 });
+            }
+
+            $scope.autosaveDraft = function () {
+                messagesService.saveDraft(message(), function (result) {
+                    $scope.message.id = result.data.id;
+                })
             }
         }
     ]);
