@@ -4,7 +4,7 @@ angular.module('starter.controllers')
         'registrationService',
         'preferenceService',
         function($scope, registrationService, preferenceService) {
-            var loadList = function() {
+            var loadList = function () {
                 registrationService.getList(function (result) {
                     $scope.dateFormat = preferenceService.getDateFormat();
                     $scope.list = result;

@@ -5,7 +5,7 @@ angular.module('starter.controllers')
         '$state',
         'resources',
         'registrationService',
-        function ($scope, $stateParams, $state, resources, registrationService) {
+        function($scope, $stateParams, $state, resources, registrationService) {
             $scope.newReg = {};
             $scope.numberOfTimes = function(n) {
                 return new Array(n + 1);

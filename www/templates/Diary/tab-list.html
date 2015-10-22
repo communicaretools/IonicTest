@@ -1,0 +1,13 @@
+<ion-view>
+    <ion-nav-title r="diary"></ion-nav-title>
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="entry in vm.entries">
+                <b>{{entry.enteredAt | date: vm.dateFormat}}</b>
+                <p ng-bind-html="entry.content | unsafe"></p>
+                <ion-option-button class="button-positive" ng-click="quoteEntry(entry)" r="diaryEdit"></ion-option-button>
+                <ion-option-button class="button" ng-click="quoteEntry(entry)" r="diaryDelete"></ion-option-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

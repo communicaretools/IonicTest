@@ -1,5 +1,5 @@
 # IonicTest
-Forum test
+ConnectApi test
 
 Run 
 $ npm install -g cordova ionic

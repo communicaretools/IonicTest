@@ -15,7 +15,7 @@ angular.module('starter.controllers')
 
             $scope.selectAvatar = function(selected) {
                 profileManager.saveAvatar(selected, function () {
-                    profileManager.getAvatar(function(result) {
+                    profileManager.getAvatar($localStorage.user.id, function(result) {
                         $localStorage.user.avatar = result.data;
                         $scope.avatar = result.data;
                     });
@@ -25,7 +25,7 @@ angular.module('starter.controllers')
 
             $scope.openModal = function () {
                 profileManager.avatarList(function(result) {
-                    $scope.modal.list = result.data.avatars;
+                    $scope.modal.list = result.data;
                 });
                 $scope.modal.show();
             };

@@ -11,8 +11,10 @@
         if (nameTag !== 'button' &&
         ((nameTag === 'input' && type === 'submit') || (nameTag === 'input' && type === 'reset'))) {
             elm.val(resText);
-        } else if (nameTag !== 'button' && nameTag === 'input') {
+        } else if (nameTag !== 'button' && (nameTag === 'input' || nameTag === "textarea")) {
             elm.attr("placeholder", resText);
+        } else if (nameTag === 'ion-tab') {
+            elm.attr('title', resText);
         } else if (nameTag === 'img') {
             elm.attr('alt', resText);
         } else {

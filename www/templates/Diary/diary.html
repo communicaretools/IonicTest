@@ -1,0 +1,13 @@
+<ion-view>
+    <ion-tabs class="tabs-icon-top tabs-color-active-positive">
+        <!-- Dashboard Tab -->
+        <ion-tab title="Innlegg" icon-off="ion-ios-filing-outline" icon-on="ion-ios-filing" ui-sref="home.diary.list">
+            <ion-nav-title r="messageInboxTitle"></ion-nav-title>
+            <ion-nav-view name="tab-list"></ion-nav-view>
+        </ion-tab>
+        <ion-tab title="Nytt Innlegg" icon-off="ion-filing" icon-on="ion-filing" ui-sref="home.diary.newEntry">
+            <ion-nav-title r="messageOutboxTitle"></ion-nav-title>
+            <ion-nav-view name="tab-newEntry"></ion-nav-view>
+        </ion-tab>
+    </ion-tabs>
+</ion-view>

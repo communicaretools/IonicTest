@@ -3,27 +3,32 @@ angular.module('starter.services')
         "$http",
         "$log",
         "ApiEndpoint", function ($http, $log, ApiEndpoint) {
+            var profileEndpoint = ApiEndpoint.connectApiUrl + '/profile/api/profile';
+            var avatarEndpoint = ApiEndpoint.connectApiUrl + '/avatar/api/avatar';
+            //var profileEndpoint = "http://localhost:8100/profileTest"
+            //var avatarEndpoint = "http://localhost:8100/avatarTest"
+
             var onError = function (e) {
                 $log.error(e.msg);
             };
 
             var getUser = function (onSuccess) {
-                $http.get(ApiEndpoint.url + "/profile/userdata")
+                $http.get(profileEndpoint + "/userdata")
                     .then(onSuccess, onError);
             };
 
-            var getAvatar = function(onSuccess) {
-                $http.get(ApiEndpoint.url + "/profile/avatar")
+            var getAvatar = function (userId, onSuccess) {
+                $http.get(avatarEndpoint + "/resource/" + userId)
                     .then(onSuccess, onError);
             }
 
             var avatarList = function(onSuccess) {
-                $http.get(ApiEndpoint.url + "/profile/avatarList")
+                $http.get(avatarEndpoint + "/collection")
                     .then(onSuccess, onError);
             }
             
             var saveAvatar = function (avatar, onSuccess) {
-                $http.post(ApiEndpoint.url + "/profile/avatarList", { 'avatar': avatar })
+                $http.post(avatarEndpoint + "/resource", { 'avatar': avatar })
                     .then(onSuccess, onError);
             }
 

@@ -1,6 +1,7 @@
 angular.module('starter.controllers')
     .controller('VideoCtrl', [
-        '$scope',
-        function ($scope) {
+        function () {
+        	var vm = this;
+        	vm.value = "Hallo";
         }
     ]);

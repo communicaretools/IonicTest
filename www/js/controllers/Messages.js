@@ -6,8 +6,9 @@ angular.module('starter.controllers')
         function ($scope, $state, messagesService) {
             var box = $state.current.name.split(/[.]+/).pop();
 
-            var loadMessages = function (box) {
-                messagesService.getList(box, function (result) {
+            var loadMessages = function (box, page) {
+                page = page == null ? 1 : page;
+                messagesService.getList(box, page, function (result) {
                     $scope.messages = result;
                 });
             };

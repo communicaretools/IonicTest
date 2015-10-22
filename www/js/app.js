@@ -117,15 +117,47 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                     }
                 }
             }) 
-
+             //------------------------------------------
+            .state('home.feed', {
+                cache: false,
+                url: '/feed',
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/feed/feed.html',
+                        controller: 'FeedCtrl as vm'
+                    }
+                }
+            })
             //------------------------------------------
             .state('home.forum', {
                 cache: false,
-                url: '/threads',
+                url: '/forum/:forumId',
+                params: {
+                    forumId: 1,
+                },
                 views: {
                     'menuContent': {
-                        templateUrl: 'templates/forum/threads.html',
-                        controller: 'ThreadsCtrl'
+                        templateUrl: 'templates/forum/forum.html'
+                    }
+                }
+            })
+            .state('home.forum.list', {
+                cache: false,
+                url: '/list',
+                views: {
+                    'tab-list': {
+                        controller: "ThreadsCtrl",
+                        templateUrl: 'templates/forum/tab-threadList.html'
+                    }
+                }
+            })
+            .state('home.forum.newThread', {
+                cache: false,
+                url: '/newThread',
+                views: {
+                    'tab-new': {
+                        controller: "NewThreadCtrl",
+                        templateUrl: 'templates/forum/tab-threadNew.html'
                     }
                 }
             })
@@ -156,11 +188,10 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 views: {
                     'tab-new': {
                         templateUrl: 'templates/forum/tab-entryNew.html',
-                        controller: 'EntryCtrl'
+                        controller: 'ForumEntryCtrl'
                     }
                 }
             })
-
             .state('home.registrationView', {
                 cache: false,
                 url: '/registration/:type/:regId',
@@ -248,15 +279,11 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 views: {
                     'menuContent': {
                         templateUrl: 'templates/message/messages.html',
-                    },
-                    'tab-list': {
-                        templateUrl: 'templates/message/tab-messageInbox.html',
-                        controller: 'MessagesCtrl'
                     }
                 }
             })
             .state('home.messages.inbox', {
-                url: '/list/inbox',
+                url: '/inbox',
                 cache: false,
                 views: {
                     'tab-inbox': {
@@ -266,7 +293,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 }
             })
             .state('home.messages.outbox', {
-                url: '/list/outbox',
+                url: '/outbox',
                 cache: false,
                 views: {
                     'tab-outbox': {
@@ -276,7 +303,7 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                 }
             })
             .state('home.messages.drafts', {
-                url: '/list/drafts',
+                url: '/drafts',
                 cache: false,
                 views: {
                     'tab-drafts': {
@@ -312,6 +339,36 @@ angular.module('starter', ['ionic', 'ngCordova', 'ngStorage', 'starter.controlle
                     'menuContent': {
                         templateUrl: 'templates/calendar/calendar.html',
                         controller: 'CalendarCtrl'
+                    }
+                }
+            })
+            .state('home.diary', {
+                url: '/diary',
+                cache: false,
+                views: {
+                    'menuContent': {
+                        templateUrl: 'templates/diary/diary.html',
+                       
+                    }
+                }
+            })
+            .state('home.diary.list', {
+                url: '/list',
+                cache: false,
+                views: {
+                    'tab-list': {
+                        templateUrl: 'templates/diary/tab-list.html',
+                        controller: 'DiaryCtrl as vm'
+                    }
+                }
+            })
+            .state('home.diary.newEntry', {
+                url: '/newEntry',
+                cache: false,
+                views: {
+                    'tab-newEntry': {
+                        templateUrl: 'templates/diary/tab-newEntry.html',
+                        controller: 'DiaryEntryCtrl as vm'
                     }
                 }
             });

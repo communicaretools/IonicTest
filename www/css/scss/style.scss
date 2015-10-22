@@ -169,9 +169,6 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
     background-color: $menuActivatedColor;
 }
 
-
-
-
 #menu-header {
     background-image: url("../media/images/menu/menu-header.png");
     background-color: #cccccc;
@@ -225,8 +222,6 @@ ion-side-menu ion-content .list ion-item.item.activated .item-content {
     //border-radius: 200%;
 }
 
-
-
 .mood {
     @extend %mood-style;
     @include moods;
@@ -248,14 +243,10 @@ label.has-error > textarea {
  border-color: $appColor;
 }
 
-
 //As part of the exercise text cards 
 .scroll{
   height: 100% !important;
 }
-
-
-
 
 .next-card {
     position: absolute;
@@ -264,7 +255,23 @@ label.has-error > textarea {
 .previous-card {
     position: absolute;
     top: 20px;
-    ;
 }
 
-
+.feed-item {
+    overflow: hidden;
+}
+.feed-content {
+    min-height: 52px;
+}
+.feed-title {
+    font-size: 1.3em;
+    float:left; 
+}
+.feed-description {
+    font-size: 1em;
+    float:left; 
+}
+.feed-date {
+    font-size: 0.9em;
+    float:right; 
+}
