@@ -16,5 +16,16 @@ angular.module('starter.controllers')
             $scope.messages = [];
 
             loadMessages(box);
+
+            $scope.replyTo = function(msg) {
+                messagesService.selectReplyTo(msg);
+                $state.go('home.messages.compose');
+            }
+            $scope.delete = function(msg) {
+                messagesService.deleteDraft(msg.id, function() {
+                    var index = $scope.messages.indexOf(msg);
+                    $scope.messages.splice(index, 1);
+                });
+            };
         }
     ]);

@@ -13,7 +13,7 @@
             <ion-nav-title r="messageDraftsTitle"></ion-nav-title>
             <ion-nav-view name="tab-drafts"></ion-nav-view>
         </ion-tab>
-        <ion-tab icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" ui-sref=".compose({messageId: ''})">
+        <ion-tab icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" ui-sref="home.messages.compose({messageId: null})" ui-sref-opts="{inherit: false}">
             <ion-nav-title r="messageNewTitle"></ion-nav-title>
             <ion-nav-view name="tab-new"></ion-nav-view>
         </ion-tab>

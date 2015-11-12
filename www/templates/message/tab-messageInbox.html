@@ -7,6 +7,7 @@
                 <ion-item class="padding">subject: {{message.subject}}</ion-item>
                 <ion-item class="padding">received: {{message.sentAt | date }}</ion-item>
                 <ion-item class="padding">from: {{message.sender.name}}</ion-item>
+                <ion-option-button class="button-positive" ng-click="replyTo(message)" r="messageReply"></ion-option-button>
         </ion-item>
         </ion-list>
     </ion-content>
