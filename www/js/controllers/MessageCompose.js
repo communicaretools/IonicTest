@@ -4,8 +4,7 @@ angular.module('starter.controllers')
         '$state',
         '$stateParams',
         'messagesService',
-        'autosaveService',
-        function ($scope, $state, $stateParams, messagesService, autosaveService) {
+        function ($scope, $state, $stateParams, messagesService) {
             var findToSendTo = function () {
                 return $scope.helpers.map(
                     function(obj) {
@@ -90,7 +89,7 @@ angular.module('starter.controllers')
                 messagesService.deleteDraft($scope.message.id, function () {
                     $state.go('home.messages.drafts', { time: undefined });
                 })
-            }
+            };
 
             $scope.cancel = function () {
                 $state.go('home.messages.inbox', { time: undefined });
